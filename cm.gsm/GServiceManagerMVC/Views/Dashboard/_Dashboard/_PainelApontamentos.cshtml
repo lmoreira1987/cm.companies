@@ -1,0 +1,19 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.AtividadeLog
+<div class="panel css-panel-apontamentos col-md-12">
+    <div class="panel-heading css-panel-heading-apontamentos col-md-12">
+        <i class="fa fa-bars js-tgl-apontamentos">
+        </i>Apontamentos
+    </div>
+    <div class="panel-body col-md-12" id="painel-apontamentos" style="display:none;">
+        <div class="css-list-scroll">
+            @foreach (var apt in Model.Apontamentos)
+            {
+                <div class="css-list-item">
+                    <label>@apt.usuarioLogin - @apt.dataInclusão</label>
+                    <p>@apt.apontamento</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

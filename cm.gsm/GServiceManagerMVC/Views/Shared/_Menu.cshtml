@@ -1,0 +1,104 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Menu.MenuViewModel>
+<link href="~/Content/_Layout/_Menu.css" rel="stylesheet" />
+<div class="row">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+            <div class="navbar-header col-md-12">
+
+                <button type="button" class="navbar-toggle pull-left show" href="#menu-toggle" id="menu-toggle-btn">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand css-a-brand col-md-2" href="@Url.Action("Index", "Dashboard")">
+                    <img src="~/Images/Logo_op_gsm.png" />
+                </a>
+
+
+                <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse col-md-2 col-sm-2 col-xs-2 pull-right">
+                    <ul class="nav navbar-nav ">
+                        <li>
+                            <a id="js-a-pdf"><i class="fa fa-info-circle fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a id="js-btn-bloquear"><i class="fa fa-lock fa-2x"></i></a>
+                        </li>
+                        <li style="margin-top: 5px" class="dropdown">
+                            <div class="dropdown css-dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <img width="50px" height="50px" src="~/Resources/Avatar/@ViewBag.user.avatar">
+                                    <span style="color:white" class="control-label" id="js-nome">@ViewBag.user.nome</span><b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"></a>
+                                    <li>
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"></a>
+                                        <a href="bs_UsuarioPerfil.aspx">
+                                            <i class="fa fa-user fa-1x"></i> Perfil
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Redirecionar", "Menu")">
+                                            <span class="fa fa-lock fa-1x"></span> Sair
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <div class="col-md-1"></div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav" id="css-ul">
+        @foreach (var item in Model.Where(x => x.idPai <= 1))
+        {
+            int count = Model.Where(x => x.idPai > 1 && item.id == x.idPai).Count();
+
+            if (count == 0)
+            {
+                <li class="list css-li css-li-top">
+                    <div class="row">
+                        <a href="@Url.Action("Index", item.menu)">
+                            <span class="fa @item.icone">&nbsp;</span>
+                            <span>@item.menu</span>
+                        </a>
+                    </div>
+                </li>
+            }
+            else
+            {
+
+                <li class="list css-li js-li-fa" style="background-color:#337ab7">
+                    <div class="row">
+                        <a class="subMenu" href="#@item.id-Menu" aria-expanded="false" aria-controls="subMenu" data-toggle="collapse">
+                            <span class="fa @item.icone">&nbsp;</span>
+                            <span>@item.menu</span>
+                            <span class="fa fa-chevron-right js-span-fa css-pull-right"></span>
+                        </a>
+                        <div class="collapse" id="@item.id-Menu">
+                            @foreach (var item2 in Model.Where(x => x.idPai > 1 && item.id == x.idPai).OrderBy(x => x.menu))
+                            {
+                                <a class="left-span" href="@Url.Action(item2.menu,item.menu)">@item2.menu</a>
+                            }
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+﻿@model Tuple<long, int, dynamic>
+
+<link href="~/Content/Relatorio/RelatorioColaborador.css" rel="stylesheet" />
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="css-div-title">
+    <h3 class="page-title"><a class="css-a-rel" href="~/Dashboard/">Dashboard </a>/ Relatórios</h3>
+</div>
+
+<div class="row">
+    @if (Model.Item1 == 4)
+    {
+        @Html.Partial("~/Views/Relatorio/_RelatorioColaborador.cshtml", Model);
+    }
+</div>

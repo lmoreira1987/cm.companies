@@ -1,0 +1,33 @@
+<!-- WrapLayout
+The WrapLayout is similar to the StackLayout, but it does not just stack all child elements to one column/row, it wraps them to new columns/rows if no space is left. 
+The WrapLayout is often used with items of the same size, but this is not a requirement. -->
+
+<Page>
+    <ActionBar title="Wrap Layout">
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <!-- Sample (orientation="horizontal") -->
+    <!-- <WrapLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
+      <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+      <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+      <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+      <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </WrapLayout> -->
+
+    <!-- Sample (orientation="vertical") -->
+    <!-- <WrapLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
+        <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </WrapLayout> -->
+
+    <!-- Sample (itemWidth="30" itemHeight="30") -->
+    <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" backgroundColor="lightgray">
+        <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </WrapLayout>
+</Page>

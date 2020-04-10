@@ -1,0 +1,61 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.informacoesUser
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<link href="~/Content/Dashboard/IndexColaborador.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="container-spaceless">
+        <h3 style="font-family:Arial">Dashboard</h3>
+
+        <div class="metro-nav col-md-12">
+            <div class="metro-nav-block nav-block-orange col-xs-12">
+                <a class="js-a-blocos" id-valor="1">
+                    <span class="fa fa-clock-o"></span>
+                    <div class="info">@ViewBag.Semana</div>
+                    <div class="status">Hora/Semana</div>
+                </a>
+            </div>
+            <div class="metro-nav-block nav-block-grey col-xs-12">
+                <a class="js-a-blocos" id-valor="2">
+                    <span class="fa fa-calendar"></span>
+                    <div class="info">@ViewBag.Mes</div>
+                    <div class="status">Hora(s)/Mês</div>
+                </a>
+            </div>
+            <div class="metro-nav-block nav-block-green col-xs-12">
+                <a class="js-a-blocos" id-valor="3">
+                    <span class="fa fa-check"></span>
+                    <div class="info">@ViewBag.Concluidas</div>
+                    <div class="status">Atividades Concluídas</div>
+                </a>
+            </div>
+            <div class="metro-nav-block nav-block-yellow col-xs-12">
+                <a>
+                    <span class="fa fa-book" id="js-a-block-pdf"></span>
+                    <div class="info"></div>
+                    <div class="status">Manual do Dashboard</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="js-div-painel-minhas-atividades">
+    @Html.Partial("~/Views/Dashboard/_Dashboard/_ColaboradorPainelMinhasAtividades.cshtml", Model.atividadesUser)
+</div>
+<div id="js-div-painel-atividades-grupo">
+    @Html.Partial("~/Views/Dashboard/_Dashboard/_ColaboradorPainelAtividadesGrupo.cshtml", Model.atividadesdoGrupo)
+</div>
+<div id="js-div-painel-minhas-horas">
+    @Html.Partial("~/Views/Dashboard/_Dashboard/_ColaboradorPainelMinhasHoras.cshtml", Model)
+</div>
+<script src="~/Scripts/_JQuery/jquery.ui.widget.js"></script>
+<script src="~/Scripts/_JQuery/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/_JQuery/jquery.fileupload.js"></script>
+<script src="~/Scripts/Dashboard/IndexColaborador.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LocalAPI.Init();
+    });
+</script>

@@ -1,0 +1,203 @@
+﻿.panel {
+    cursor: default;
+    border-radius: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.panel-heading {
+    border-radius: 0;
+    background-color: #4A8BC2;
+    color: white;
+}
+
+.panel-body {
+    color: gray;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.css-panel-heading-apontamentos {
+    border-radius: 0;
+    background-color: #74B749;
+    color: white;
+}
+
+.css-panel-apontamentos {
+    border-radius: 0;
+    border-color: #74B749;
+    border-right-width: 1;
+}
+
+.css-panel-heading-anexos {
+    border-radius: 0;
+    background-color: #ffb400;
+    color: white;
+}
+
+.css-panel-anexos {
+    border-radius: 0;
+    border-color: #ffb400;
+    border-right-width: 1;
+}
+
+.css-panel-atividades {
+    border-color: #4A8BC2;
+}
+
+.css-list-scroll {
+    max-height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fa-bars {
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.css-list-item {
+    padding: 0.7%;
+    border-style: solid;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+}
+
+.fa-pause:hover {
+    color: #c4c2c2;
+    cursor: pointer;
+}
+
+.fa-bars:hover {
+    color: #c4c2c2;
+}
+
+.fa-stop:hover {
+    color: #c4c2c2;
+}
+
+.fa-clock-o:hover {
+    color: #c4c2c2;
+}
+
+.fa-check-log:hover {
+    color: #b1ff66;
+}
+
+.fa-exclamation:hover {
+    color: rgb(255, 0, 0);
+}
+
+.fa-play:hover {
+    color: #c4c2c2;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(196, 194, 194, 0.56) 3px 0px inset;
+    -webkit-border-radius: 0;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    background: rgba(128, 128, 128, 0.78);
+}
+
+.fa-times {
+    color: #ef310f;
+}
+
+    .fa-times:hover {
+        color: #ff711f;
+    }
+
+.fa-check-log {
+    color: limegreen;
+}
+
+.css-spaceless {
+    margin: 0 0 0 0;
+    padding: 5px 5px 5px 5px !important;
+}
+
+.css-spaceless-more {
+    margin: 0 0 0 0;
+    padding: 5px 5px 8px 5px !important;
+}
+
+.css-sides-free {
+    margin: 0 0 0 0;
+    padding: 5px 0 5px 0 !important;
+}
+
+.blocky {
+    border-radius: 0;
+}
+
+.css-btn-seletor {
+    color: white;
+    background-color: limegreen;
+    border-color: limegreen;
+}
+
+    .css-btn-seletor:hover {
+        color: white;
+        background-color: lime;
+        border-color: lime;
+    }
+
+.css-anexos {
+    border: 2px solid #ffb400;
+    max-height: 172px;
+    overflow-y: scroll;
+}
+
+.css-lista-anexos {
+    max-height: 170px !important;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-top: 1px solid #ffb400;
+}
+
+.css-seletor-arquivo {
+    border-left: 0;
+}
+
+.css-tabela-spaceless {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.css-td {
+    border-left: 1px solid #ffb400;
+}
+
+.css-thead {
+    border-bottom: 2px solid #ffb400 !important;
+}
+
+.css-check {
+    color: white !important;
+}
+
+    .css-check:hover {
+        color: lime !important;
+    }
+
+.css-i-atividade-toggle {
+    cursor: pointer;
+}

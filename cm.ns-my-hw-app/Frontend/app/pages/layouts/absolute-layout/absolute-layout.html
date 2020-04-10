@@ -1,0 +1,32 @@
+<!-- AbsoluteLayout
+The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. 
+The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes. -->
+
+<ActionBar title="Absolute Layout">
+    <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+</ActionBar>
+
+<Page>
+    <!-- <AbsoluteLayout>
+      <Label text="This is Label 1" left="30" top="70"></Label>
+    </AbsoluteLayout> -->
+
+    <!-- <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
+        <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
+        <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
+        <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"></Label>
+        <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label>
+    </AbsoluteLayout> -->
+
+    <AbsoluteLayout width="310" height="510" backgroundColor="lightgray">
+        <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"></Label>
+        <Label text="margin='30'" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"></Label>
+
+        <Label text="10, 310" left="10" top="310" width="90" height="90" backgroundColor="red"></Label>
+        <Label text="110, 310" left="110" top="310" width="90" height="90" backgroundColor="green"></Label>
+        <Label text="110, 410" left="110" top="410" width="90" height="90" backgroundColor="blue"></Label>
+        <Label text="10, 410" left="10" top="410" width="90" height="90" backgroundColor="yellow"></Label>
+    </AbsoluteLayout>
+</Page>
+
+    

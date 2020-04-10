@@ -1,0 +1,91 @@
+﻿#css-ul {
+	background-color: #4a8bc2 !important;
+	margin-top: 60px;
+}
+
+.css-dropdown > .dropdown-toggle{
+	background-color: #4a8bc2 !important;
+}
+
+.css-dropdown .open{
+	background-color: #4a8bc2;
+}
+
+#css-ul-sub {
+	background-color: black !important;
+}
+
+.subMenu {
+	background-color:#337ab7;
+	display: block;
+	list-style-type: list-unstyled;
+}
+
+.left-span{
+	background-color:#404040;
+	display: block;
+	list-style-type: list-unstyled;
+    padding-left:10px;
+}
+
+.left-span:hover {
+	background-color:#555454 !important;
+	display: block;
+	list-style-type: list-unstyled;
+}
+
+.css-li {
+	border-bottom: 1px solid #404040;
+}
+
+.css-li-top {
+	border-top: 1px solid #404040;
+}
+
+.css-a-brand {
+	cursor: pointer;
+	margin-left: 0px !important;
+}
+
+.css-container-fluid {
+	margin-top: 40px;
+}
+
+h3, h4, h5 {
+	color: #888888 !important;
+}
+
+.css-btn-foto {
+	height:60px;
+}
+
+a {
+	cursor: pointer;
+}
+.col1{
+background: #5C7080;
+}
+.col2{
+background: #6BC0FF;
+}
+.col3{
+background: #E8AA4C;
+}
+.col4{
+background: #FF384E;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(196, 194, 194, 0.56)  3px 0px  inset; 
+    -webkit-border-radius: 0;
+} 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    background: rgba(128, 128, 128, 0.78); 
+}

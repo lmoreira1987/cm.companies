@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2ab90114ad348878488461b2142807f" Name="Diagram1">
+        <EntityTypeShape EntityType="db_GServiceManagerModel.AditivoContrato" Width="1.5" PointX="7.5" PointY="81.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Anexo" Width="1.5" PointX="21" PointY="74.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Aplicativo" Width="1.5" PointX="18" PointY="86.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Area" Width="1.5" PointX="3" PointY="69.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Atividade" Width="1.5" PointX="29.25" PointY="73.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.AtividadeExecucao" Width="1.5" PointX="31.5" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.AtividadePrazo" Width="1.5" PointX="9.75" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.bancoHora" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Cargo" Width="1.5" PointX="5.25" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Checklist" Width="1.5" PointX="9.75" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ClausulaContrato" Width="1.5" PointX="18.75" PointY="81.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Cliente" Width="1.5" PointX="3" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ConfiguradorObjeto" Width="1.5" PointX="15" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ConfiguradorOrdemServico" Width="1.5" PointX="12.75" PointY="71.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ConfiguradorProjetoUsuario" Width="1.5" PointX="9.75" PointY="69.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Contrato" Width="1.5" PointX="5.25" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.DashboardChart" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Despesa" Width="1.5" PointX="24.75" PointY="90.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.DocumentoExterno" Width="1.5" PointX="5.25" PointY="80.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.DominiosValido" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Email" Width="1.5" PointX="9.75" PointY="86.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.EmailNovoUsuario" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Empresa" Width="1.5" PointX="0.75" PointY="76.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Fase" Width="1.5" PointX="10.5" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.FaseOrdemServico" Width="1.5" PointX="21" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Feriado" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Formulario" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.FraseKanban" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Funcionalidade" Width="1.5" PointX="20.25" PointY="86.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.GrupoUsuario" Width="1.5" PointX="3" PointY="78.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Homologacao" Width="1.5" PointX="15.75" PointY="72.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Hora" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.LogAtividade" Width="1.5" PointX="31.5" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.LogOrdemServico" Width="1.5" PointX="12.75" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Notificacao" Width="1.5" PointX="23.25" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Ordem" Width="1.5" PointX="12.75" PointY="78.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ParametroContrato" Width="1.5" PointX="18.75" PointY="71.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Parecer" Width="1.5" PointX="21" PointY="67.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Perfil" Width="1.5" PointX="3" PointY="85.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Pergunta" Width="1.5" PointX="15.75" PointY="78.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Ponto" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.PrioridadeOrdemlog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Projeto" Width="1.5" PointX="15.75" PointY="83" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ProjetoAdministrativo" Width="1.5" PointX="24" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.PropostaPrazo" Width="1.5" PointX="15" PointY="92.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.PropostaValor" Width="1.5" PointX="24" PointY="80.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Ramal" Width="1.5" PointX="9.75" PointY="121.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Recurso" Width="1.5" PointX="15.75" PointY="66.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.RecursoEfetivo" Width="1.5" PointX="34.5" PointY="71.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.RecursoOrcado" Width="1.5" PointX="29.25" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Reembolso" Width="1.5" PointX="27" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Servico" Width="1.5" PointX="24" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Status" Width="1.5" PointX="10.5" PointY="91.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.StatusAtividade" Width="1.5" PointX="27" PointY="68.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.StatusAtividadeExecucao" Width="1.5" PointX="29.25" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.StatusOrdemServico" Width="1.5" PointX="26.25" PointY="72.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.sysdiagram" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TblLog" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Tecnologia" Width="1.5" PointX="5.25" PointY="65.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Telefone" Width="1.5" PointX="9.75" PointY="131.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoAtividade" Width="1.5" PointX="13.5" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoCriticidade" Width="1.5" PointX="16.5" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoEvento" Width="1.5" PointX="10.5" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoNotificacao" Width="1.5" PointX="21" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoOrdemServico" Width="1.5" PointX="10.5" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoOrdemServicoPergunta" Width="1.5" PointX="12.75" PointY="95.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoParecer" Width="1.5" PointX="18.75" PointY="66.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoServico" Width="1.5" PointX="21.75" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TipoSituacao" Width="1.5" PointX="3" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Usuario" Width="1.5" PointX="7.5" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.ValorCobrar" Width="1.5" PointX="10.5" PointY="99" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.AplicativoOrdem" Width="1.5" PointX="25.25" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.AplicativoServico" Width="1.5" PointX="29.25" PointY="81" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.FuncionalidadeOrdem" Width="1.5" PointX="26.5" PointY="82" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.FuncionalidadePerfil" Width="1.5" PointX="22.5" PointY="87.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.FuncionalidadeServico" Width="1.5" PointX="29.25" PointY="84.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.Menu" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.PerfilAcesso" Width="1.5" PointX="5.25" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.PrioridadeAlteracaoPrazo" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.SASFEVEREIRO" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.TempRel" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.tvRanking" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.UsuarioGrupoUsuario" Width="1.5" PointX="9.75" PointY="82.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GServiceManagerModel.UsuarioPerfil" Width="1.5" PointX="18.75" PointY="78" IsExpanded="true" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AditivoContrato_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ClausulaContrato_AditivoContrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ParametroContrato_AditivoContrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Projeto_AditivoContrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Anexo_LogOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Anexo_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Anexo_Parecer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Anexo_Servico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Aplicativo_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AplicativoOrdem_Aplicativo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AplicativoServico_Aplicativo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Funcionalidade_Aplicativo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Area_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Cargo_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogOrdemServico_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Parecer_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Atividade_Atividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Atividade_Servico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Atividade_StatusAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Atividade_TipoAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AtividadeExecucao_Atividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AtividadePrazo_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogAtividade_Atividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_RecursoEfetivo_Atividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AtividadeExecucao_StatusAtividadeExecucao" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AtividadePrazo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Usuario_Cargo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Checklist_LogAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Checklist_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Checklist_Pergunta" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Checklist_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Checklist_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ClausulaContrato_ClausulaContrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ClausulaContrato_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Cliente_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Contrato_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_DocumentoExterno_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorObjeto_ConfiguradorOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_Fase" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorOrdemServico_UsuarioProximo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorProjetoUsuario_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ConfiguradorProjetoUsuario_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Contrato_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Contrato_TipoSituacao" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ParametroContrato_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Projeto_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK__Reembolso__Despe__0A096455" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_DocumentoExterno" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Email_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_GrupoUsuario_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Perfil_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Usuario_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FaseOrdemServico_Fase" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_FaseOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FaseOrdemServico_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FaseOrdemServico_Parecer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FaseOrdemServico_StatusOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_StatusOrdemServico_FaseOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FuncionalidadeOrdem_Funcionalidade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FuncionalidadePerfil_Funcionalidade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FuncionalidadeServico_Funcionalidade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_UsuarioGrupoUsuario_GrupoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Homologacao_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Homologacao_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Homologacao_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogAtividade_Recurso" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogOrdemServico_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogOrdemServico_TipoEvento" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_LogOrdemServico_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Notificacao_Parecer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Notificacao_TipoNotificacao" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AplicativoOrdem_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FuncionalidadeOrdem_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_TipoOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_UsuarioCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_UsuarioUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ordem_ValorCobrar" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Parecer_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_PropostaPrazo_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_PropostaValor_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Servico_Ordem" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ParametroContrato_TipoCriticidade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ParametroContrato_TipoServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Parecer_TipoParecer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Parecer_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_StatusOrdemServico_Parecer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_PerfilAcesso_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Pergunta_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_UsuarioPerfil_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Pergunta_TipoAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Pergunta_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Pergunta_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK__Reembolso__Proje__0AFD888E" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Projeto_TipoSituacao" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Projeto_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ProjetoAdministrativo_Projeto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_ProjetoAdministrativo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_PropostaValor_TipoServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_RecursoOrcado_PropostaValor" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Ramal_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Recurso_Recurso" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Recurso_TipoAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Recurso_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_RecursoEfetivo_Recurso" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_RecursoOrcado_Recurso" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK__Reembolso__Usuar__0BF1ACC7" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_AplicativoServico_Servico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_FuncionalidadeServico_Servico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Servico_TipoServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_StatusOrdemServico_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_StatusAtividadeExecucao_StatusAtividade" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Telefone_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_TipoOrdemServicoPergunta_TipoOrdemServico" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_UsuarioGrupoUsuario_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_UsuarioPerfil_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.TecnologiaUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_GServiceManagerModel.TecnologiaProjeto" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Atividade_Tecnologia" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Servico_Servico" />
+        <AssociationConnector Association="db_GServiceManagerModel.FK_Servico_Tecnologia" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

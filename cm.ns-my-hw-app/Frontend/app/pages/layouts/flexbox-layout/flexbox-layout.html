@@ -1,0 +1,61 @@
+<!-- FlexboxLayout
+The FlexboxLayout is a non-conforming implementation of the 
+CSS Flexible Box Layout based on an existing Apache-2 licensed flexbox implementation hosted on github.com/google/flexbox-layout. -->
+<Page>
+    <ActionBar title="Flexbox Layout"> 
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <!-- Sample (flexDirection="row", alignItems="stretch" (default)) -->
+    <!-- <FlexboxLayout width="300" height="300" backgroundColor="lightgray">
+        <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </FlexboxLayout> -->
+
+    <!-- Sample (flexDirection="column", alignItems="stretch" (default)) -->
+    <!-- <FlexboxLayout flexDirection="column" width="300" height="300" backgroundColor="lightgray">
+        <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </FlexboxLayout> -->
+
+    <!-- Sample (flexDirection="row", alignItems="flex-start") -->
+    <!-- <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+        <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </FlexboxLayout> -->
+
+    <!-- Sample (flexDirection="row", custom order) -->
+    <!-- <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+        <Label order="3" text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+        <Label order="4" text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+        <Label order="2" text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+        <Label order="1" text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+    </FlexboxLayout> -->
+
+    <!-- Sample (flexWrap="wrap") -->
+    <!-- <FlexboxLayout flexWrap="wrap" height="300" width="300" backgroundColor="lightgray">
+        <Label text="Label 1" width="100" height="50" backgroundColor="red"></Label>
+        <Label text="Label 2" width="100" height="50" backgroundColor="green"></Label>
+        <Label text="Label 3" width="100" height="50" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="100" height="50" backgroundColor="yellow"></Label>
+    </FlexboxLayout> -->
+
+    <!-- Sample (flexDirection="column-reverse", justifyContent="space-around", alignSelf) -->
+    <FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch"
+        height="300" width="300" backgroundColor="lightgray">
+        <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
+        <Label alignSelf="center" text="Label 2" width="50" height="50" backgroundColor="green"></Label>
+        <Label alignSelf="flex-end" text="Label 3" width="50" height="50" backgroundColor="blue"></Label>
+        <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
+  </FlexboxLayout>
+</Page>
+
+    
+
+    

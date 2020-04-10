@@ -1,0 +1,45 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.AtividadeLog
+<div>
+    @{
+        string atividade = " #" + Model.atividadeId + " - " + Model.atividadeNome;
+        string dataFim = " - ";
+        string prazoEstimado = Model.atividadePrazoEstimado + "h";
+        if (Model.atividadeDataEstimadaFim.HasValue)
+        {
+            dataFim = Model.atividadeDataEstimadaFim.Value.ToString("dd/MM/yyyy");
+        }
+    }
+</div>
+
+<link href="~/Content/Dashboard/AtividadeLog.css" rel="stylesheet" />
+<link href="~/Content/_JQuery/jquery.fileupload.css" rel="stylesheet" />
+
+<h3 style="font-family:Arial" id="js-atividade" js-atividade-id="@Model.atividadeId">Atividade Log</h3>
+
+<div style="padding-left:15px;">
+    <div id="js-div-painel-atividade">
+        @Html.Partial("~/Views/Dashboard/_Dashboard/_PainelAtividade.cshtml", Model)
+    </div>
+
+    <div class="row">
+        <div id="js-div-painel-apontamentos">
+            @Html.Partial("~/Views/Dashboard/_Dashboard/_PainelApontamentos.cshtml", Model)
+        </div>
+    </div>
+    <div class="row">
+        <div id="js-div-painel-anexos">
+            @Html.Partial("~/Views/Dashboard/_Dashboard/_PainelAnexos.cshtml", Model)
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/_JQuery/jquery.ui.widget.js"></script>
+<script src="~/Scripts/_JQuery/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/_JQuery/jquery.fileupload.js"></script>
+<script src="~/Scripts/Dashboard/AtividadeLog.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LocalAPI.Init();
+    });
+</script>

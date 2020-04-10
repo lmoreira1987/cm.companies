@@ -1,0 +1,409 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>GSM | Global Service Manager </title>
+    <meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
+    <meta name="author" content="htmlcoder.me">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/xGSM/images/favicon.ico">
+
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/xGSM/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="/xGSM/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="/xGSM/css/animations.css" rel="stylesheet">
+
+    <!-- Worthy core CSS file -->
+    <link href="/xGSM/css/style.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link href="/xGSM/css/custom.css" rel="stylesheet">
+</head>
+
+<body class="no-trans">
+    <!-- scrollToTop -->
+    <!-- ================ -->
+    <div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+    <!-- header start -->
+    <!-- ================ -->
+    <header class="header fixed clearfix navbar navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+
+                    <!-- header-left start -->
+                    <!-- ================ -->
+                    <div class="header-left clearfix">
+
+                        <!-- logo -->
+                        <div class="logo smooth-scroll">
+                            <a href="#banner">
+                                <img id="logo" src="/xGSM/images/logo.png" alt="Worthy">
+                            </a>
+                        </div>
+
+                        <!-- name-and-slogan -->
+                        <div class="site-name-and-slogan smooth-scroll">
+                            <div class="site-name"></div>
+                            <div class="site-slogan"></div>
+                        </div>
+
+                    </div>
+                    <!-- header-left end -->
+
+                </div>
+                <div class="col-xs-8 col-md-8">
+
+                    <!-- header-right start -->
+                    <!-- ================ -->
+                    <div class="header-right clearfix">
+
+                        <!-- main-navigation start -->
+                        <!-- ================ -->
+                        <div class="main-navigation animated">
+
+                            <!-- navbar start -->
+                            <!-- ================ -->
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
+
+                                    <!-- Toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="active"><a href="#banner">Login</a></li>
+                                            <li><a href="#about">Sobre o GSM</a></li>
+                                            <li><a href="#services">Por que o GSM?</a></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </nav>
+                            <!-- navbar end -->
+
+                        </div>
+                        <!-- main-navigation end -->
+
+                    </div>
+                    <!-- header-right end -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- banner start -->
+    <!-- ================ -->
+    <div id="banner" class="banner">
+        <div class="banner-image"></div>
+        <div class="banner-caption">
+            <div class="container">
+                <div class="row">
+                    <form id="form" runat="server">
+                        <asp:ToolkitScriptManager ID="scriptManagerLogin" runat="server" EnableScriptGlobalization="true"
+                                                  AsyncPostBackTimeout="36000" EnableScriptLocalization="true" EnablePageMethods="true">
+                            <scripts>
+                                <asp:scriptreference path="~/Scripts/JScript.js" scriptmode="Auto" />
+                            </scripts>
+                        </asp:ToolkitScriptManager>
+                        <asp:UpdatePanel ID="updatePanel2" runat="server" ViewStateMode="Enabled">
+                            <contenttemplate>
+
+                                <%--<div class="col-md-4 col-md-offset-4 object-non-visible" data-animation-effect="fadeIn">
+                                    --%>
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <asp:TextBox ID="txtLogin" MaxLength="70" class="form-control" Style="margin-bottom: 10px; height: 25px; opacity:0.65; -moz-opacity: 0.65; filter: alpha(opacity=65);" runat="server" placeholder="Login" autofocus></asp:TextBox>
+                                        <asp:TextBox ID="txtSenha" TextMode="Password" MaxLength="20" class="form-control" Style="margin-bottom: 10px; height: 25px; opacity:0.65; -moz-opacity: 0.65; filter: alpha(opacity=65);" placeholder="Senha" runat="server"></asp:TextBox>
+                                        <div class="help-block with-errors"></div>
+                                        <div id="AcessarTroca" runat="server" style="display: none;">
+                                            <asp:UpdatePanel ID="upTrocarSenha" runat="server" UpdateMode="Conditional" Visible="false"
+                                                             ClientIDMode="Static">
+                                                <contenttemplate>
+
+                                                    <asp:TextBox ID="txtNovaSenha" TextMode="Password" MaxLength="20" class="form-control" Style="margin-bottom: 10px; height: 25px; opacity:0.65; -moz-opacity: 0.65; filter: alpha(opacity=65);" runat="server" placeholder="Senha"></asp:TextBox>
+                                                    <asp:TextBox ID="txtNovaSenha2" TextMode="Password" MaxLength="20" class="form-control" Style="margin-bottom: 10px; height: 25px; opacity:0.65; -moz-opacity: 0.65; filter: alpha(opacity=65);" placeholder="Nova Senha" runat="server"></asp:TextBox>
+
+                                                </contenttemplate>
+                                            </asp:UpdatePanel>
+                                        </div>
+
+                                        <asp:LinkButton ID="lkReset" runat="server" CommandArgument="ResetarSenha" CommandName="ResetarSenha" Style="color: white; text-decoration: none;"><i class="icon-question-sign"></i><span>&nbsp;Esqueci a Senha</span></asp:LinkButton>
+
+                                        <asp:Button ID="btnEntrar" OnClick="BtnEntrarClick" class="btn btn-lg btn-primary btn-block"
+                                                    ValidationGroup="vlG" runat="server" Text="Login" />
+
+                                        <asp:LinkButton ID="lkVoltar" PostBackUrl="~/Pages/bs_xLogin.aspx" Visible="false" runat="server" Style="color: white; text-decoration: none;text-align:right;"><i class="icon-question-sign"></i><span>&nbsp;Voltar</span></asp:LinkButton>
+
+                                    </div>
+
+                                    <asp:ValidationSummary ID="ValidationSummary1" ShowMessageBox="true" ShowSummary="false"
+                                                           runat="server" ValidationGroup="vlG" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLogin"
+                                                                Display="None" ErrorMessage="Digite o Login !" InitialValue="" ValidationGroup="vlG"
+                                                                SetFocusOnError="true">&nbsp;</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtSenha"
+                                                                Display="None" ErrorMessage="Digite a Senha !" InitialValue="" ValidationGroup="vlG"
+                                                                SetFocusOnError="true">&nbsp;</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNovaSenha"
+                                                                Display="None" ErrorMessage="Digite a nova Senha !" InitialValue="" ValidationGroup="vlG"
+                                                                SetFocusOnError="true">&nbsp;</asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtNovaSenha2"
+                                                                Display="None" ErrorMessage="Redigite a nova Senha !" InitialValue="" ValidationGroup="vlG"
+                                                                SetFocusOnError="true">&nbsp;</asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="CompareValidator2" runat="server" ValidationGroup="vlG"
+                                                          SetFocusOnError="true" ErrorMessage="A senha do campo Confirmação está diferente do campo Nova Senha"
+                                                          ControlToCompare="txtNovaSenha" Display="None" ControlToValidate="txtNovaSenha2"></asp:CompareValidator>
+                            </contenttemplate>
+                        </asp:UpdatePanel>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+    <!-- section start -->
+    <!-- ================ -->
+    <div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="about" class="title text-center">Sobre o  <span>GSM</span></h1>
+                    <p class="lead text-center">"O sistema busca dar velocidade a integração entre nossos clientes e serviços."</p>
+                    <div class="space"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/xGSM/images/section-image-1.png" alt="">
+                            <div class="space"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <p style="text-align: justify;text-justify: inter-word;">
+                                O Global Service Manager (GSM) é um sistema remoto destinado ao cadastro e acompanhamento de ordens de serviços internos e externos, é um sistema eficiente que busca dar velocidade a integração entre nossos clientes e serviços.
+                                O GSM foi criado em 2013 e desde o momento é atualizado diariamente para satisfazer cada vez mais as necessidades dos clientes e funcionários da Global System.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-caret-right pr-10 text-colored"></i>Interface simples</li>
+                                <li><i class="fa fa-caret-right pr-10 text-colored"></i>Status de trabalho</li>
+                                <li><i class="fa fa-caret-right pr-10 text-colored"></i>Dashboard personalizado</li>
+                                <li><i class="fa fa-caret-right pr-10 text-colored"></i>Análise de horas trabalhadas</li>
+                                <li><i class="fa fa-caret-right pr-10 text-colored"></i>Gestão alinhada a simplicidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                    <h2>Operação GSM </h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Fábrica
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body" style="text-align: justify;text-justify: inter-word;">
+                                            A Fábrica, dá ao colaborador a possibilidade de criar uma série de Atividades e Serviços, dentro
+                                            das Ordens de Serviço criadas.
+                                            Dentro da Fábrica, temos subitens específicos para isso, além de constar também um subitem
+                                            para gestão do Painel de Produção e de prioridades.
+                                            Contamos com determinadas funções dentro do Menu Fábrica, e são elas:
+                                            <ul>
+                                                <li>Atividade;</li>
+                                                <li>Cad Painel de Produção;</li>
+                                                <li>Painel Produção;</li>
+                                                <li>Prazo;</li>
+                                                <li>Prioridade;</li>
+                                                <li>Serviço</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Gestão
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            No Menu de Gestão, é possível, Gerenciar os projetos e fazer uma análise geral das atividades
+                                            que estão sendo desenvolvidas por prazo estipulado para as mesmas.
+                                            <br />Também é possível verificar
+                                            as configurações dos projetos, para que se tenha total conhecimento dos responsáveis e dos
+                                            processos nele contidos.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Relatórios
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            Os Relatórios são interfaces gerenciais que permite que o usuário responsável por determinado
+                                            setor possa analisar informações de tempo VS prazo de projeto em Fábrica, horas trabalhadas,
+                                            projetos em aberto, informações detalhadas sobre projetos, entre outros.
+                                            O Menu conta com os seguintes tópicos:
+                                            <ul>
+                                                <li>Consolidado Projeto</li>
+                                                <li>Consolidado Recurso</li>
+                                                <li>Detalhado Projeto</li>
+                                                <li>Detalhado Recurso</li>
+                                                <li>Tempo Fábrica</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section end -->
+    <!-- section start -->
+    <!-- ================ -->
+    <div class="section translucent-bg bg-image-1 blue">
+        <div class="container object-non-visible" data-animation-effect="fadeIn">
+            <h1 id="services" class="text-center title">Por que o GSM?</h1>
+            <div class="space"></div>
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="media">
+                        <div class="media-body text-right">
+                            <h4 class="media-heading">Motivo 1</h4>
+                            <p style="text-align: justify;text-justify: inter-word;">
+                                O GSM é um software com interface amigável, simples e moderna, que busca facilitar a gestão dos serviços de forma dinâmica e interativa, um poderoso aliado na gestão dos serviços da empresa.
+                            </p>
+                        </div>
+                        <div class="media-right"><i class="fa fa-cog"></i></div>
+                    </div>
+
+                    <div class="media">
+                        <div class="media-body text-right">
+                            <h4 class="media-heading">Motivo 2</h4>
+                            <p style="text-align: justify;text-justify: inter-word;">
+                                A Ferramenta trabalha com diversos níveis de hierarquia, onde cada nível é responsável por determinados tipos de aprovação, esse padrão visa dar confiabilidade e organização para a gestão de serviços.
+                            </p>
+                        </div>
+                        <div class="media-right"><i class="fa fa-check"></i></div>
+                    </div>
+
+                </div>
+                <div class="space visible-xs"></div>
+                <div class="col-sm-6">
+
+                    <div class="media">
+                        <div class="media-body text-right">
+                            <h4 class="media-heading">Motivo 3</h4>
+                            <p style="text-align: justify;text-justify: inter-word;">
+                                Integração com todos os browsers, inclusive mobile, e possui usabilidade fácil, garantindo rapidez e melhor aproveitamento da jornada de trabalho.
+                            </p>
+                        </div>
+                        <div class="media-right"><i class="fa fa-desktop"></i></div>
+                    </div>
+
+                    <div class="media">
+                        <div class="media-body text-right">
+                            <h4 class="media-heading">Motivo 4</h4>
+                            <p style="text-align: justify;text-justify: inter-word;">
+                                O Dashboard é a tela inicial do GSM, foi elaborado para atender a necessidade de cada perfil no software, mostrando de forma resumida painéis de acompanhamento dos serviços gerados pela empresa.
+                            </p>
+                        </div>
+                        <div class="media-right"><i class="fa fa-desktop"></i></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section end -->
+    <!-- footer start -->
+    <!-- ================ -->
+    <footer id="footer">
+
+        <!-- .subfooter start -->
+        <!-- ================ -->
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center">&copy; <% Response.Write(DateTime.Now.Year.ToString()); %> GSM | Global System All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .subfooter end -->
+
+    </footer>
+    <!-- footer end -->
+    <!-- JavaScript files placed at the end of the document so the pages load faster
+        ================================================== -->
+    <!-- Jquery and Bootstap core js files -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/plugins/jquery.min.js") %>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/bootstrap/js/bootstrap.min.js") %>'></script>
+
+    <!-- Bootbox -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/js/bootbox.js") %>'></script>
+
+    <!-- Modernizr javascript -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/plugins/modernizr.js") %>'></script>
+
+    <!-- Isotope javascript -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/plugins/isotope/isotope.pkgd.min.js") %>'></script>
+
+    <!-- Backstretch javascript -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/plugins/jquery.backstretch.min.js") %>'></script>
+
+    <!-- Appear javascript -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/plugins/jquery.appear.js") %>'></script>
+
+    <!-- Initialization of Plugins -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/js/template.js") %>'></script>
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src='<%= ResolveUrl ("/xGSM/js/custom.js") %>'></script>
+
+</body>
+</html>

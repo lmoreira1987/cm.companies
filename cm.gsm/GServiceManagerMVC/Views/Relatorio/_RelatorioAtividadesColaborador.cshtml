@@ -1,0 +1,42 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>
+
+<div class="col-md-12 css-div-table">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="col-md-1">Ordem</th>
+                <th class="col-md-1">Servico</th>
+                <th class="col-md-1">Projeto</th>
+                <th class="col-md-1">Atividade</th>
+                <th class="col-md-1">Status Atividade</th>
+                <th class="col-md-1">Status OS</th>
+                <th class="col-md-1">Dt. Conclusão</th>
+                <th class="col-md-1">Qtd. Horas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ordem</td>
+                    <td>@item.servico</td>
+                    <td>@item.projeto</td>
+                    <td>@item.atividade</td>
+                    <td>@item.statusAtividade</td>
+                    <td>@item.statusOS</td>
+
+                    @if (item.dataEfetivaFim.HasValue)
+                    {
+                        <td>@item.dataEfetivaFim.Value</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+
+                    <td>@item.tempoEfetivo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

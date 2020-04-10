@@ -1,0 +1,66 @@
+<!-- GridLayout
+The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, 
+they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. 
+To add additional columns and rows, you have to specify column definition items (separated by commas) to the columns property and row definition items 
+(separated by commas) to the rows property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, 
+as a percentage of the available space or automatically:
+
+Absolute: Fixed size of pixels.
+Star (*): Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. 
+So 3/7 means the same as 30/70.
+Auto: Takes as much space as needed by the contained child element(s). -->
+
+
+
+<Page>
+    <ActionBar title="Grid Layout">
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <!-- <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" backgroundColor="lightgray" >
+      <Label text="Label 1" row="0" col="0" backgroundColor="red"></Label>
+      <Label text="Label 2" row="0" col="1" colSpan="2" backgroundColor="green"></Label>
+      <Label text="Label 3" row="1" col="0" rowSpan="2" backgroundColor="blue"></Label>
+      <Label text="Label 4" row="1" col="1" backgroundColor="yellow"></Label>
+      <Label text="Label 5" row="1" col="2" backgroundColor="orange"></Label>
+      <Label text="Label 6" row="2" col="1" backgroundColor="pink"></Label>
+      <Label text="Label 7" row="2" col="2" backgroundColor="purple"></Label>
+    </GridLayout> -->
+
+    <!-- <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" backgroundColor="lightgray">
+        <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+        <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+        <Label text="Label 3" col="0" row="1" backgroundColor="blue"></Label>
+        <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
+    </GridLayout> -->
+
+    <!-- <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" backgroundColor="lightgray" >
+        <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+        <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+        <Label text="Label 3" col="0" row="1" backgroundColor="blue"></Label>
+        <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
+    </GridLayout> -->
+
+    <!-- <StackLayout width="200" height="200" backgroundColor="palegreen">
+        <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" backgroundColor="lightgray">
+            <Label text="Label 1" col="0" backgroundColor="red"></Label>
+            <Label text="Label 2" col="1" backgroundColor="green"></Label>
+        </GridLayout>
+    </StackLayout> -->
+
+    <!-- <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" backgroundColor="lightgray" >
+        <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+        <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+        <Label text="Label 3" width="150" col="0" row="1" backgroundColor="blue"></Label>
+    </GridLayout> -->
+
+    <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
+        <Image src="res://icon_new" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"></Image>
+        <Label text="My cat loves the camera" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+        <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+        <Label text="comments: 26" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+    </GridLayout>
+  </Page>
+    
+
+    

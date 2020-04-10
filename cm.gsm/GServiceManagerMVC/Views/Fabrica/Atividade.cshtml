@@ -1,0 +1,40 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Fabrica.AtividadeViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Fabrica/Atividade.css" rel="stylesheet" />
+<link href="~/Content/_JQuery/jquery.fileupload.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="container-spaceless">
+        <h3 style="font-family:Arial">Atividades</h3>
+    </div>
+</div>
+
+<div id="js-div-tabela-atividades-first">
+    @Html.Partial("~/Views/Fabrica/_Atividade/_TabelaAtividadesFirst.cshtml", Model)
+</div>
+<div class="row"></div>
+<div id="js-div-partial-criar-atividade-os">
+
+</div>
+<div class="row"></div>
+<div id="js-div-partial-criar-atividade">
+
+</div>
+<div class="row"></div>
+<div id="js-div-partial-edit-atividade">
+
+</div>
+
+<script src="~/Scripts/_JQuery/jquery.ui.widget.js"></script>
+<script src="~/Scripts/_JQuery/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/_JQuery/jquery.fileupload.js"></script>
+<script src="~/Scripts/Fabrica/Atividade.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LocalAPI.Init();
+    });
+</script>

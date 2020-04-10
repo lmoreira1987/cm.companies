@@ -1,0 +1,55 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Dashboard.AtividadeUser>
+<style>
+    .css-sides-padd{
+        padding:3px 10px 3px 10px !important;
+        margin-left:0!important;
+        margin-right:0!important;
+    }
+    .css-table{
+        margin:10px !important;
+        padding:0!important;
+    }
+</style>
+<div class="row">
+    <div class="container-spaceless">
+        <div class="panel col-md-12 col-xs-12 css-panel-dash">
+            <div class="panel-heading col-md-12 col-xs-12 css-panel-header-dash"><i class="fa fa-bars css-sides-padd"></i> Minhas Atividades</div>
+            <div class="panel-body css-sides-padd css-panel-body-scroll">
+                <h4 class="css-sides-padd">Pendentes</h4>
+                <div class="row" style="max-width:97%!important; margin-left:5px;">
+                    <table class="table table-bordered css-table">
+                        <thead>
+                            <tr class="active">
+                                <th class="col-md-1"></th>
+                                <th class="col-md-2">Projeto</th>
+                                <th class="col-md-3">Atividade</th>
+                                <th class="col-md-2">Status</th>
+                                <th class="col-md-2">Dt Est. Fim</th>
+                                <th class="col-md-2">Qtd. Horas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var act in Model)
+                            {
+                                <tr class="painel" js-id-atividade="@act.atividadeId">
+                                    <td class="css-td-icone" js-id-atividade="@act.atividadeId">
+                                        <a title="Log de Atividade" class="js-log-click"><i class="fa fa-clock-o fa-2x"></i></a>
+                                    </td>
+                                    <td class="js-td-click">@Convert.ToString(act.projetoNome)</td>
+                                    <td class="js-td-click">SO @Convert.ToString(act.servicoId)#@Convert.ToString(act.atividadeId) - @Convert.ToString(act.atividadeNome)</td>
+                                    <td class="js-td-click">@Convert.ToString(act.statusNome)</td>
+                                    <td class="js-td-click">
+                                        @{if (@act.dataEstimadaFim.HasValue)
+                                        {@act.dataEstimadaFim.Value.ToString("dd/MM/yyyy")}
+                                        else { }}
+                                    </td>
+                                    <td class="js-td-click">@act.quantidadeHoras</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

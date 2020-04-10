@@ -1,0 +1,179 @@
+﻿.panel-heading {
+    border-radius: 0;
+    background-color: #404040;
+    color: white;
+}
+
+.panel {
+    border-radius: 0;
+    border-color: #404040;
+}
+
+.css-header-log-dash {
+    padding: 0 0 0 0 !important;
+}
+
+.css-panel-dash {
+    padding: 0 0 0 0 !important;
+}
+
+.css-panel-header-dash {
+    padding: 10px 0 10px 0 !important;
+}
+
+.panel-body {
+    color: gray;
+    margin-left: 3.7%;
+}
+
+.css-div-table {
+    margin-left: 3.7%;
+}
+
+.css-td-icone {
+    text-align: center;
+}
+
+.painel {
+    cursor: pointer;
+}
+
+    .painel:hover {
+        background-color: #f5f5f5;
+    }
+
+.css-sides-free {
+    margin: 0 0 0 0 !important;
+    padding: 5px 0 5px 0 !important;
+}
+
+.fa-bars {
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(196, 194, 194, 0.56) 3px 0px inset;
+    -webkit-border-radius: 0;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    background: rgba(128, 128, 128, 0.78);
+}
+
+.fa-times {
+    color: #ef310f;
+}
+
+    .fa-times:hover {
+        color: #ff711f;
+    }
+
+.fa-check-log {
+    color: limegreen;
+}
+
+    .fa-check-log:hover {
+        color: #b1ff66;
+    }
+
+.css-spaceless {
+    margin: 0 0 0 0;
+    padding: 5px 5px 5px 5px !important;
+}
+
+.css-spaceless-more {
+    margin: 0 0 0 0;
+    padding: 5px 5px 8px 5px !important;
+}
+
+.blocky {
+    border-radius: 0;
+}
+
+.css-btn-seletor {
+    color: white;
+    background-color: limegreen;
+    border-color: limegreen;
+}
+
+    .css-btn-seletor:hover {
+        color: white;
+        background-color: lime;
+        border-color: lime;
+    }
+
+.css-anexos {
+    border: 2px solid #ffb400;
+}
+
+.css-lista-anexos {
+    max-height: 170px !important;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-top: 1px solid #ffb400;
+}
+
+.css-seletor-arquivo {
+    border-left: 0;
+}
+
+.css-tabela-spaceless {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.css-td {
+    border-left: 1px solid #ffb400;
+}
+
+.css-thead {
+    border-bottom: 2px solid #ffb400 !important;
+}
+
+.css-sides-padd {
+    padding: 3px 10px 3px 10px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.css-table {
+    margin: 10px !important;
+    padding: 0 !important;
+}
+
+.css-td-play-icon {
+    vertical-align: middle !important;
+    text-align: center !important;
+    border-left: none !important;
+}
+
+.css-play-icon-group:hover {
+    color: #199f19 !important;
+}
+
+.css-td-descricao {
+    border-right: none !important;
+}
+
+.css-pan-blue {
+    background-color: #5bc0de;
+}
+
+.css-group-pan-border {
+    border-color: #5bc0de;
+}
+
+.css-panel-body-scroll {
+    overflow: scroll;
+    max-height: 300px;
+}

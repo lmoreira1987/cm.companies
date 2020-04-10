@@ -1,0 +1,95 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.AtividadeLog
+<div>
+    @{
+        string atividade = " #" + Model.atividadeId + " - " + Model.atividadeNome;
+        string dataFim = " - ";
+        string prazoEstimado = Model.atividadePrazoEstimado + "h";
+        if (Model.atividadeDataEstimadaFim.HasValue)
+        {
+            dataFim = Model.atividadeDataEstimadaFim.Value.ToString("dd/MM/yyyy");
+        }
+
+        string statusIcon;
+        string title;
+
+        if (Model.statusAtividadeNome == "Pendente")
+        {
+            statusIcon = "fa-play";
+            title = "Iniciar";
+        }
+        else
+        {
+            if (Model.statusAtividadeNome == "Start")
+            {
+                statusIcon = "fa-play";
+                title = "Iniciar";
+            }
+            else
+            {
+                if (Model.statusAtividadeNome == "Em processo")
+                {
+                    statusIcon = "fa-pause";
+                    title = "Pausar";
+                }
+                else
+                {
+                    if (Model.statusAtividadeNome == "Impedimento")
+                    {
+                        statusIcon = "fa-stop";
+                        title = "Em impedimento";
+                    }
+                    else
+                    {
+                        statusIcon = "";
+                        title = "Concluída";
+                    }
+                }
+            }
+        }
+    }
+</div>
+
+<div class="panel css-panel-anexos col-md-12">
+    <div class="panel-heading css-panel-heading-anexos col-md-12">
+        <i class="fa fa-bars js-tgl-anexos">
+        </i>Anexos
+    </div>
+    <div class="row"></div>
+    <div class="panel-body" id="painel-anexos" style="display:none;">
+        <div class="css-list-scroll">
+
+
+            <table class="table css-tabela-spaceless col-md-12">
+                <thead class="active">
+                    <tr class="active css-thead">
+                        <th class="col-md-1">Número</th>
+                        <th class="col-md-1">Descrição</th>
+                        <th class="col-md-8">Arquivo</th>
+                        <th class="col-md-2 ">Dt. Upload</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var anx in Model.Anexos)
+                    {
+                        <tr>
+                            <td>@anx.sequenciaAnexo</td>
+                            <td class="css-td">@anx.nome</td>
+                            <td class="css-td">@anx.nomeInterno</td>
+                            <td class="css-td">@anx.dataUpload.Value.ToString("dd/MM/yyyy")</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+</div>

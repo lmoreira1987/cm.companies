@@ -1,0 +1,18 @@
+/* GridLayout {
+    border-radius: 5;
+    border-color:red;
+    border-width: 5;
+} */
+
+.page-header{
+    background-color: #6296c7;
+}
+
+.page-title {
+    font-size: 14;
+    color: #fac950;
+}
+
+.bold{
+    font-weight: bold;
+}

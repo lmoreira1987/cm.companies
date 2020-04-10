@@ -1,0 +1,76 @@
+﻿@model Tuple<long, int, dynamic>
+
+@{
+    string titulo = string.Empty;
+
+    if (Model.Item2 == 1)
+    {
+        titulo = "Relatório de Horas / Semana";
+    }
+    else if (Model.Item2 == 2)
+    {
+        titulo = "Relatório de Horas / Mês";
+    }
+    else if (Model.Item2 == 3)
+    {
+        titulo = "Relatório de Atividades Concluídas";
+    }
+}
+
+<div class="panel">
+    <div class="panel-heading"><i class="fa fa-bars"></i><spa id="js-span-titulo"> @titulo</spa></div>
+    <div class="row">
+        <div class="panel-body">
+            <div class="row css-div-margin">
+                <div class="col-md-1">
+                    Relatórios
+                </div>
+            </div>
+            <div class="row css-div-margin">
+                <div class="col-md-1">
+                    <select id="js-slc-relatorios">
+                        <option value="0">Selecione</option>
+                        <option value="1">Horas / Semana</option>
+                        <option value="2">Hora / Mês</option>
+                        <option value="3">Atividades Concluídas</option>
+                        <option value="4">Atividades Concluídas Grupo</option>
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="row css-div-margin">
+                <div id="js-div-parcial">
+                    @if (Model.Item2 == 1)
+                    {
+                        var modelo = (List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>)Model.Item3;
+
+                        @Html.Partial("~/Views/Relatorio/_RelatorioSemanaColaborador.cshtml", modelo)
+                    }
+                    else if (Model.Item2 == 2)
+                    {
+                        var modelo = (List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>)Model.Item3;
+
+                        @Html.Partial("~/Views/Relatorio/_RelatorioMesColaborador.cshtml", modelo)
+                    }
+                    else if (Model.Item2 == 3)
+                    {
+                        var modelo = (List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>)Model.Item3;
+
+                        @Html.Partial("~/Views/Relatorio/_RelatorioAtividadesColaborador.cshtml", modelo)
+                    }
+                    else
+                    {
+                        @Html.Partial("~/Views/Relatorio/_RelatorioAtividadesGrupoColaborador.cshtml", new List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>())
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Relatorio/RelatorioColaborador.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LocalAPI.Init();
+    });
+</script>

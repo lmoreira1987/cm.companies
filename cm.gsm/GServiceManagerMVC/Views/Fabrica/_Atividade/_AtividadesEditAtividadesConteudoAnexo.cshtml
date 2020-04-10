@@ -1,0 +1,115 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Fabrica.AnexoViewModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel col-md-12" style="border-color:#5bc0de !important;">
+            <div class="panel-heading col-md-12" style="background-color:#5bc0de !important;">
+                <i class="fa fa-bars css-i-atividade-toggle js-i-toggle-atividade"></i><span> Anexos</span>
+            </div>
+            <div class="row-fluid">
+                <div class="panel-body js-div-panel-atividade">
+                    <br />
+                    <div class="row css-div-margin">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Listagem de Evidências Anteriores</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 css-div-table">
+                                <table class="table table-bordered" id="js-tbl-evidencia-anterior">
+                                    <thead>
+                                        <tr class="active">
+                                            <th class="col-md-1"></th>
+                                            <th class="col-md-5">Descrição</th>
+                                            <th class="col-md-4">Arquivo</th>
+                                            <th class="col-md-2 ">Dt. Upload</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Where(x => x.editar == false))
+                                        {
+                                            <tr id="@item.id">
+                                                <td><input type="checkbox" class="js-ckb-anexo" /></td>
+                                                <td>@item.descricao</td>
+                                                <td>@item.arquivo</td>
+                                                <td>@item.data</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="col-md-2">
+                                <i id="js-i-adicionar-download" class="fa fa-download fa-2x css-i-atividade-toggle" title="Adicionar na Listagem de Evidências"></i>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label class="css-label">Descrição</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="js-txt-file-descricao" />
+                            </div>
+                            <div class="col-md-1">
+                                <label class="css-label">Anexo</label>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="btn btn-success fileinput-button">
+                                    <i class="fa fa-upload"></i>
+                                    <span>Escolher arquivo</span>
+                                    <input type="file" name="files" id="js-btn-file-anexo">
+                                </span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" disabled="disabled" id="js-txt-file-nome" />
+                            </div>
+                            <div class="col-md-1">
+                                <i id="js-i-adicionar-upload" class="fa fa-plus fa-2x css-i-atividade-toggle" title="Adicionar na Listagem de Evidências"></i>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Listagem de Evidências</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 css-div-table">
+                                <table class="table table-bordered" id="js-tbl-evidencia">
+                                    <thead>
+                                        <tr class="active">
+                                            <th class="col-md-1">Nº</th>
+                                            <th class="col-md-4">Descrição</th>
+                                            <th class="col-md-4">Arquivo</th>
+                                            <th class="col-md-2">Dt. Upload</th>
+                                            <th class="col-md-1"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{int count = 1;}
+                                        @foreach (var item in Model.Where(x => x.editar == true))
+                                        {
+                                            <tr id-controle="@item.id" class="notDelete">
+                                                <td>@count</td>
+                                                <td>@item.descricao</td>
+                                                <td>@item.arquivo</td>
+                                                <td>@item.data</td>
+                                                <td class="css-td">
+                                                    <i class="fa fa-trash-o fa-1x css-i-atividade-toggle js-i-deletar-linha-edit" title="Deletar Arquivo"></i>
+                                                </td>
+                                            </tr>
+                                            count += 1;
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

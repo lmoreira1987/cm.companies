@@ -1,0 +1,31 @@
+<Page #pageCreateUser>
+    <!-- <ActionBar title="Create Users">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"></NavigationButton>
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar> -->
+
+    <header-action-bar></header-action-bar>
+
+    <GridLayout rows="auto, auto">
+        <StackLayout>
+            <Label class="header-page" text="Users"></Label>
+        </StackLayout>
+    
+        <StackLayout row="1" class="body-page">
+            <WrapLayout orientation="horizontal" itemWidth="auto" itemHeight="auto" class="sub-header-page">
+                <Label class="sub-header-bold-page" text="Users >> "></Label>
+                <Label text="Create"></Label>
+            </WrapLayout>
+            
+            <TextField #name hint="Name"></TextField>
+            <TextField #email hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField #password hint="Password" secure="true" ></TextField>
+
+            <StackLayout orientation="horizontal">
+                <Button text="Create" class="submit-button" (tap)="goToPage('createuser')" width="70%"></Button>
+                <Button text="Back" (tap)="goToPage('dashboard')" width="30%"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </GridLayout>
+</Page>    

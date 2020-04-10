@@ -1,0 +1,41 @@
+﻿@model GServiceManagerMVC.ViewModels.Global.LoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutAzul.cshtml";
+}
+<link href="~/Content/LayoutAzul/desbloquear.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row tallRow">
+        <div class="panel panel-default col-md-8 col-md-offset-2">
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <img class="col-md-12" src="~/Resources/Avatar/@Model.avatar">
+                    <a href="#" class="btn btn-primary col-md-10 col-md-offset-1" id="js-btn-naoVoce">Não é você?</a>
+                </div>
+                <div class="input-group col-md-6">
+                    <img class="image" src="~/Images/Logo_op_gsm.png">
+                    <h3 id="js-h3-login" js-login="@Model.login">@Model.nome</h3>
+                    <div class="input-group">
+
+
+                        <div class="submit-line">
+
+                            <input id="js-txt-senha" type="password" placeholder="Senha">
+                            <button class="submit-lente" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <a class="btn btn-primary col-md-5 btnDesbloquear" id="js-btn-desbloquear">Desbloquear</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Login/Desbloquear.js"></script>
+<script type="text/javascript">
+    LocalAPI.Init();
+</script>

@@ -1,0 +1,35 @@
+<!-- DockLayout
+The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, 
+bottom or center of the layout. To define the docking side of a child element, use its dock property. 
+To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the 
+stretchLastChild property of the DockLayout must be set to true. -->
+
+
+<Page>
+    <ActionBar title="Dock Layout">
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <!-- <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="false">
+        <Label text="left" dock="left" width="60" backgroundColor="red"></Label>
+        <Label text="top" dock="top" height="60" backgroundColor="green"></Label>
+        <Label text="right" dock="right" width="60" backgroundColor="blue"></Label>
+        <Label text="bottom" dock="bottom" height="60" backgroundColor="yellow"></Label>
+    </DockLayout>
+
+    <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
+        <Label text="left" dock="left" backgroundColor="red"></Label>
+        <Label text="top" dock="top" backgroundColor="green"></Label>
+        <Label text="right" dock="right" backgroundColor="blue"></Label>
+        <Label text="bottom" dock="bottom" backgroundColor="yellow"></Label>
+    </DockLayout> -->
+
+    <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
+        <Label text="left1" dock="left" backgroundColor="red"></Label>
+        <Label text="left2" dock="left" backgroundColor="green"></Label>
+        <Label text="left3" dock="left" backgroundColor="blue"></Label>
+        <Label text="last child" backgroundColor="yellow"></Label>
+    </DockLayout>
+</Page>
+
+    

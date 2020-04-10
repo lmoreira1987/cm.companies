@@ -1,0 +1,228 @@
+﻿@model GServiceManagerMVC.ViewModels.Fabrica.EditarAtividadeViewModel
+
+<div class="panel col-md-12 css-div-partial" style="border-color:#4A8BC2 !important;">
+    <div class="panel-heading col-md-12" style="background-color:#4A8BC2 !important;">
+        <i class="fa fa-bars css-i-atividade-toggle js-i-toggle-atividade"></i><span> Descrição da OS</span>
+    </div>
+    <div class="row-fluid">
+        <div class="panel-body js-div-panel-atividade">
+            <br />
+            <div class="row css-div-margin">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="css-label">OS:</label>
+                                <span> @Model.osDescricao.id - @Model.osDescricao.assunto</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="css-label">Projeto:</label>
+                                <span> @Model.osDescricao.projeto</span>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="css-label">Tipo Ordem:</label>
+                                <span> @Model.osDescricao.tipo</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <label class="css-label">Data Estimativa Iní.:</label>
+                                @if (Model.osDescricao.dataEstimativaIni.HasValue)
+                                {
+                                    <span> @Model.osDescricao.dataEstimativaIni.Value.ToString("dd/MM/yyyy")</span>
+                                }
+                                else
+                                {
+                                    <span> Não Estimada</span>
+                                }
+                            </div>
+                            <div class="col-md-5">
+                                <label class="css-label">Data Estimativa Fim:</label>
+                                @if (Model.osDescricao.dataEstimativaFim.HasValue)
+                                {
+                                    <span> @Model.osDescricao.dataEstimativaFim.Value.ToString("dd/MM/yyyy")</span>
+                                }
+                                else
+                                {
+                                    <span> Não Estimada</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel col-md-12" style="border-color:#4A8BC2 !important;">
+                        <div class="panel-heading col-md-12" style="background-color:#4A8BC2 !important;">
+                            <i class="fa fa-bars"></i><span> Descrição</span>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="panel-body">
+                                <br />
+                                <div class="row css-div-margin">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span> @Model.osDescricao.os</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row"></div>
+
+<div class="css-div-partial panel col-md-12 css-div-partial" style="border-color:#74B749 !important; min-height:450px;">
+    <div class="panel-heading col-md-12" style="background-color:#74B749 !important;">
+        <i class="fa fa-bars"></i><span>
+            Editar Atividade
+        </span>
+    </div>
+    <div class="row-fluid">
+        <div class="panel-body js-div-panel-atividade">
+            <br />
+            <div class="row css-div-margin">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input id="js-txt-typeahead-edit" disabled="disabled" class="form-control" type="text" value="@Model.id" />
+                    </div>
+                    <div class="col-md-4">
+                        <input type="button" class="btn btn-danger" id="js-btn-cancelar-os" value="Cancelar" />
+                        <input type="button" class="btn btn-info" id="js-btn-limpar-os" value="Limpar" />
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="css-label">Tipo de Atividade</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select id="js-slc-tipo-ati" class="form-control" id-valor="@Model.tipoAti">
+                                    <option value="0">Selecione</option>
+                                    @foreach (var item in ViewBag.TipoAtividade)
+                                    {
+                                        if (item.id == Model.tipoAti)
+                                        {
+                                            <option value="@item.id" selected="selected">@item.nome</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.id">@item.nome</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="css-label">Atividade</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input id-valor="@Model.atividade" type="text" id="js-txt-ati-nome" class="form-control" value="@Model.atividade">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label class="css-label">Descrição</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea id-valor="@Model.descricao" class="form-control css-txt-area-descricao" id="js-txtarea-descricao">@Model.descricao</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="js-hdn-calendar" class="css-txt-calendar" />
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8 checkbox">
+                                <label>
+                                    <input type="checkbox" id="js-ckb-propagar" class=""> Propagar Atividade
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label class="css-label">Início</label>
+                            </div>
+                            <div class="col-md-2">
+                                @if (Model.dataIni.HasValue)
+                                {
+                                    <input id-valor="@Model.dataIni.Value.ToString("dd/MM/yyyy")" type="text" id="js-txt-ati-ini" class="form-control mask-date datepicker" value="@Model.dataIni.Value.ToString("dd/MM/yyyy")">
+                                }
+                                else
+                                {
+                                    <input id-valor="" type="text" id="js-txt-ati-ini" class="form-control mask-date datepicker">
+                                }
+                            </div>
+                            <div class="col-md-2">
+                                <label class="css-label">Fim</label>
+                            </div>
+                            <div class="col-md-2">
+                                @if (Model.dataFim.HasValue)
+                                {
+                                    <input id-valor="@Model.dataFim.Value.ToString("dd/MM/yyyy")" type="text" id="js-txt-ati-fim" class="form-control mask-date datepicker" value="@Model.dataFim.Value.ToString("dd/MM/yyyy")">
+                                }
+                                else
+                                {
+                                    <input id-valor="" type="text" id="js-txt-ati-ini" class="form-control mask-date datepicker">
+                                }
+                                
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label class="css-label">Prazo</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input id-valor="@Model.prazo" type="text" id="js-txt-ati-prazo" class="form-control  mask-number" maxlength="10" value="@Model.prazo">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="css-label">Recurso</label>
+                            </div>
+                            <div class="col-md-2">
+                                <select id="js-slc-recurso-ati" class="form-control" disabled="disabled">
+                                    <option id-tec="0" value="0">Selecione</option>
+                                    @foreach (var item in ViewBag.Recurso)
+                                    {
+                                        if (item.idRecurso == Model.recursoTec)
+                                        {
+                                            <option id-tec="@item.idRecurso" value="@item.id" selected="selected">@item.nome</option>
+                                        }
+                                        else
+                                        {
+                                            <option id-tec="@item.idRecurso" value="@item.id">@item.nome</option>
+                                        }
+                                    }
+                                </select>
+
+
+
+                            </div>
+                            <div class="col-md-2 pull-right">
+                                <input id-valor="@Model.idAti" type="button" class="btn btn-success" id="js-btn-confirmar-ati" value="Salvar Atividade(s)" />
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div id="js-div-partial-edit-atividade-conteudo-anexo">
+                    @Html.Action("EditAtividadeConteudoAnexo", "Fabrica", new { id = Model.idAti })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

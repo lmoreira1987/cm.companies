@@ -1,0 +1,3710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_GServiceManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AditivoContrato">
+    <Key>
+      <PropertyRef Name="aditivoContratoId" />
+    </Key>
+    <Property Name="aditivoContratoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="identificador" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="70" />
+    <Property Name="dataInicioVigencia" Type="datetime" Nullable="false" />
+    <Property Name="dataFimVigencia" Type="datetime" />
+    <Property Name="tempoDuracaoMeses" Type="int" />
+    <Property Name="valorEstimadoConsumo" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="criterioConsumo" Type="varchar" MaxLength="30" />
+    <Property Name="contemplaSLA" Type="bit" />
+    <Property Name="contratoId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Anexo">
+    <Key>
+      <PropertyRef Name="anexoId" />
+    </Key>
+    <Property Name="anexoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaAnexo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="nomeInterno" Type="varchar" MaxLength="200" />
+    <Property Name="caminho" Type="varchar" MaxLength="255" />
+    <Property Name="servicoId" Type="bigint" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="logOrdemServicoId" Type="bigint" />
+    <Property Name="parecerId" Type="bigint" />
+    <Property Name="dataUpload" Type="datetime" />
+    <Property Name="anexo" Type="int" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="atividadeId" Type="bigint" />
+    <Property Name="logAtividadeId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Aplicativo">
+    <Key>
+      <PropertyRef Name="aplicativoId" />
+    </Key>
+    <Property Name="aplicativoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="plataforma" Type="varchar" MaxLength="50" />
+    <Property Name="parametroGeral" Type="varchar" MaxLength="50" />
+    <Property Name="projetoId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.AplicativoOrdem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AplicativoOrdem">
+    <Key>
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="aplicativoId" Type="bigint" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.AplicativoServico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AplicativoServico">
+    <Key>
+      <PropertyRef Name="aplicativoId" />
+      <PropertyRef Name="servicoId" />
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="aplicativoId" Type="bigint" Nullable="false" />
+    <Property Name="servicoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="areaId" />
+    </Key>
+    <Property Name="areaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="empresaId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="atividadeId" />
+    </Key>
+    <Property Name="atividadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaAtividade" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="8000" />
+    <Property Name="prioridade" Type="int" />
+    <Property Name="dataEstimadaInicio" Type="datetime" />
+    <Property Name="dataEstimadaFim" Type="datetime" />
+    <Property Name="dataEfetivaInicio" Type="datetime" />
+    <Property Name="dataEfetivaFim" Type="datetime" />
+    <Property Name="subAtividadeRelacionada" Type="bigint" />
+    <Property Name="tipoAtividadeId" Type="bigint" Nullable="false" />
+    <Property Name="servicoId" Type="bigint" Nullable="false" />
+    <Property Name="statusAtividadeId" Type="bigint" Nullable="false" />
+    <Property Name="tecnologiaId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="prazoEfetivo" Type="int" />
+  </EntityType>
+  <EntityType Name="AtividadeExecucao">
+    <Key>
+      <PropertyRef Name="AtividadeExecucaoId" />
+    </Key>
+    <Property Name="AtividadeExecucaoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="300" />
+    <Property Name="descricao" Type="varchar" MaxLength="600" />
+    <Property Name="prioridade" Type="int" />
+    <Property Name="dataExecucao" Type="datetime" />
+    <Property Name="AtividadeId" Type="bigint" />
+    <Property Name="StatusAtividadeExecucaoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="AtividadePrazo">
+    <Key>
+      <PropertyRef Name="atividadePrazoId" />
+    </Key>
+    <Property Name="atividadeId" Type="bigint" Nullable="false" />
+    <Property Name="atividadePrazoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dataEstimadaInicio" Type="datetime" />
+    <Property Name="dataEstimadaFim" Type="datetime" />
+    <Property Name="prazoEstimadoConclusao" Type="int" />
+    <Property Name="atividadeIdDependencia" Type="bigint" />
+    <Property Name="usuarioIdEstimado" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bancoHoras">
+    <Key>
+      <PropertyRef Name="bancoId" />
+    </Key>
+    <Property Name="bancoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioId" Type="int" Nullable="false" />
+    <Property Name="dataOcorrencia" Type="datetime" Nullable="false" />
+    <Property Name="horasBanco" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="cargoId" />
+    </Key>
+    <Property Name="cargoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="areaId" Type="bigint" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Checklist">
+    <Key>
+      <PropertyRef Name="checklistId" />
+    </Key>
+    <Property Name="checklistId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logAtividadeId" Type="bigint" Nullable="false" />
+    <Property Name="perguntaId" Type="bigint" Nullable="false" />
+    <Property Name="perfilId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClausulaContrato">
+    <Key>
+      <PropertyRef Name="clausulaContratoId" />
+    </Key>
+    <Property Name="clausulaContratoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="identificador" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="clausulaRelacionada" Type="bigint" />
+    <Property Name="valorAplicavel" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="aditivoContratoId" Type="bigint" />
+    <Property Name="contratoId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="clienteId" />
+    </Key>
+    <Property Name="clienteId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="tipoCliente" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="documentoIdentificacao" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="identificadorGrupo" Type="varchar" MaxLength="15" />
+    <Property Name="empresaId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguradorObjeto">
+    <Key>
+      <PropertyRef Name="configuradorObjetoId" />
+    </Key>
+    <Property Name="configuradorObjetoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="configuradorOrdemServicoId" Type="bigint" Nullable="false" />
+    <Property Name="Formulario" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Objeto" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguradorOrdemServico">
+    <Key>
+      <PropertyRef Name="configuradorOrdemServicoId" />
+    </Key>
+    <Property Name="configuradorOrdemServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="projetoId" Type="bigint" Nullable="false" />
+    <Property Name="tipoOrdemServicoId" Type="bigint" />
+    <Property Name="faseId" Type="bigint" Nullable="false" />
+    <Property Name="statusId" Type="bigint" Nullable="false" />
+    <Property Name="usuario" Type="bigint" Nullable="false" />
+    <Property Name="usuarioProximo" Type="bigint" />
+    <Property Name="vigenciaInicio" Type="datetime" Nullable="false" />
+    <Property Name="vigenciaFim" Type="datetime" />
+    <Property Name="ordemExecucao" Type="int" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfiguradorProjetoUsuario">
+    <Key>
+      <PropertyRef Name="configuradorProjetoUsuarioId" />
+    </Key>
+    <Property Name="configuradorProjetoUsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projetoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contrato">
+    <Key>
+      <PropertyRef Name="contratoId" />
+    </Key>
+    <Property Name="contratoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="identificador" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="70" />
+    <Property Name="dataInicioVigencia" Type="datetime" Nullable="false" />
+    <Property Name="dataFimVigencia" Type="datetime" Nullable="false" />
+    <Property Name="tempoDuracaoMeses" Type="int" />
+    <Property Name="valorEstimadoConsumo" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="criterioConsumo" Type="varchar" MaxLength="30" />
+    <Property Name="contemplaSLA" Type="bit" Nullable="false" />
+    <Property Name="tipoSituacaoId" Type="bigint" Nullable="false" />
+    <Property Name="contratoRelacionado" Type="bigint" />
+    <Property Name="clienteId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DashboardCharts">
+    <Key>
+      <PropertyRef Name="chartId" />
+    </Key>
+    <Property Name="chartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="chartTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="chartSubTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="chartProc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="chartType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="chartTask" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="chartGroup" Type="int" />
+  </EntityType>
+  <EntityType Name="Despesa">
+    <Key>
+      <PropertyRef Name="DespesaId" />
+    </Key>
+    <Property Name="DespesaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Despesa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentoExterno">
+    <Key>
+      <PropertyRef Name="documentoExternoId" />
+    </Key>
+    <Property Name="documentoExternoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clienteId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DominiosValidos">
+    <Key>
+      <PropertyRef Name="dominiosValidosId" />
+    </Key>
+    <Property Name="dominiosValidosId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dominiosValidos" Type="varchar" MaxLength="50" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="emailId" />
+    </Key>
+    <Property Name="emailId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="isPrincipal" Type="bit" Nullable="false" />
+    <Property Name="tipoContato" Type="int" Nullable="false" />
+    <Property Name="prefixo" Type="varchar" MaxLength="10" />
+    <Property Name="conteudo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sufixo" Type="varchar" MaxLength="20" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailNovoUsuario">
+    <Key>
+      <PropertyRef Name="emailNovoUsuarioId" />
+    </Key>
+    <Property Name="emailNovoUsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" />
+    <Property Name="empresaId" Type="bigint" />
+    <Property Name="empresaNome" Type="varchar" MaxLength="70" />
+    <Property Name="cargoId" Type="bigint" />
+    <Property Name="cargoNome" Type="varchar" MaxLength="60" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="telefone" Type="varchar" MaxLength="20" />
+    <Property Name="perfilId" Type="bigint" />
+    <Property Name="perfilNome" Type="varchar" MaxLength="70" />
+    <Property Name="grupoUsuarioId" Type="bigint" />
+    <Property Name="grupoUsuarioNome" Type="varchar" MaxLength="60" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="empresaId" />
+    </Key>
+    <Property Name="empresaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fase">
+    <Key>
+      <PropertyRef Name="faseId" />
+    </Key>
+    <Property Name="faseId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaseOrdemServico">
+    <Key>
+      <PropertyRef Name="faseOrdemServicoId" />
+    </Key>
+    <Property Name="faseOrdemServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaFaseOrdemServico" Type="int" Nullable="false" />
+    <Property Name="data" Type="datetime" Nullable="false" />
+    <Property Name="faseId" Type="bigint" Nullable="false" />
+    <Property Name="parecerId" Type="bigint" Nullable="false" />
+    <Property Name="statusAtual" Type="bigint" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feriado">
+    <Key>
+      <PropertyRef Name="FeriadoId" />
+    </Key>
+    <Property Name="FeriadoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Feriado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="idFormulario" />
+    </Key>
+    <Property Name="idFormulario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="confirmado" Type="bit" Nullable="false" />
+    <Property Name="formulario" Type="varchar" MaxLength="50" />
+    <Property Name="grupo" Type="varchar" MaxLength="50" />
+    <Property Name="data" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FraseKanban">
+    <Key>
+      <PropertyRef Name="fraseid" />
+    </Key>
+    <Property Name="fraseid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projetoId" Type="bigint" />
+    <Property Name="frase" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="dataInicio" Type="datetime" Nullable="false" />
+    <Property Name="dataFim" Type="datetime" Nullable="false" />
+    <Property Name="ativo" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Funcionalidade">
+    <Key>
+      <PropertyRef Name="funcionalidadeId" />
+    </Key>
+    <Property Name="funcionalidadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aplicativoId" Type="bigint" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="uri" Type="varchar" MaxLength="100" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.FuncionalidadeOrdem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FuncionalidadeOrdem">
+    <Key>
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="funcionalidadeId" Type="bigint" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.FuncionalidadePerfil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FuncionalidadePerfil">
+    <Key>
+      <PropertyRef Name="funcionalidadeId" />
+      <PropertyRef Name="perfilId" />
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="funcionalidadeId" Type="bigint" Nullable="false" />
+    <Property Name="perfilId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.FuncionalidadeServico' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FuncionalidadeServico">
+    <Key>
+      <PropertyRef Name="funcionalidadeId" />
+      <PropertyRef Name="servicoId" />
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="funcionalidadeId" Type="bigint" Nullable="false" />
+    <Property Name="servicoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupoUsuario">
+    <Key>
+      <PropertyRef Name="grupoUsuarioId" />
+    </Key>
+    <Property Name="grupoUsuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empresaId" Type="bigint" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flag_Celula" Type="bit" />
+  </EntityType>
+  <EntityType Name="Homologacao">
+    <Key>
+      <PropertyRef Name="ordemHomologId" />
+    </Key>
+    <Property Name="ordemHomologId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="dataInicio" Type="datetime" Nullable="false" />
+    <Property Name="dataFim" Type="datetime" Nullable="false" />
+    <Property Name="usuarioClienteId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioTesterId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Horas">
+    <Key>
+      <PropertyRef Name="HoraId" />
+    </Key>
+    <Property Name="HoraId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+    <Property Name="ProjetoId" Type="bigint" Nullable="false" />
+    <Property Name="dtLancamento" Type="datetime" Nullable="false" />
+    <Property Name="hrInicial" Type="datetime" />
+    <Property Name="hrSaidaAlmoco" Type="datetime" />
+    <Property Name="hrVoltaAlmoco" Type="datetime" />
+    <Property Name="hrFinal" Type="datetime" />
+    <Property Name="dsTarefa" Type="varchar" MaxLength="8000" />
+    <Property Name="Total" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="smallint" />
+    <Property Name="Motivo" Type="varchar" MaxLength="8000" />
+    <Property Name="Abonar" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogAtividade">
+    <Key>
+      <PropertyRef Name="logAtividadeId" />
+    </Key>
+    <Property Name="logAtividadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaLogAtividade" Type="int" Nullable="false" />
+    <Property Name="dataOcorrencia" Type="datetime" Nullable="false" />
+    <Property Name="tempoEfetivoConsumido" Type="int" />
+    <Property Name="apontamento" Type="text" />
+    <Property Name="recurso" Type="bigint" />
+    <Property Name="atividadeId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Retrabalho" Type="bit" />
+  </EntityType>
+  <EntityType Name="LogOrdemServico">
+    <Key>
+      <PropertyRef Name="logOrdemServicoId" />
+    </Key>
+    <Property Name="logOrdemServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaLogOrdemServico" Type="int" Nullable="false" />
+    <Property Name="tipoEventoId" Type="bigint" Nullable="false" />
+    <Property Name="dataEvento" Type="datetime" Nullable="false" />
+    <Property Name="apontamento" Type="text" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="areaId" Type="bigint" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="IdMenu" />
+    </Key>
+    <Property Name="IdMenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu" Type="varchar" MaxLength="50" />
+    <Property Name="IdMenuPai" Type="int" />
+    <Property Name="Url" Type="varchar" MaxLength="255" />
+    <Property Name="StatusCorrespondente" Type="int" />
+    <Property Name="MostraContador" Type="tinyint" />
+    <Property Name="Obrigatorio" Type="int" />
+    <Property Name="status" Type="char" MaxLength="1" />
+    <Property Name="Imagem" Type="varchar" MaxLength="100" />
+    <Property Name="Ordem" Type="int" />
+  </EntityType>
+  <EntityType Name="Notificacao">
+    <Key>
+      <PropertyRef Name="notificacaoId" />
+    </Key>
+    <Property Name="notificacaoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaNotificacao" Type="int" Nullable="false" />
+    <Property Name="tipoNotificacaoId" Type="bigint" Nullable="false" />
+    <Property Name="dataEnvio" Type="datetime" Nullable="false" />
+    <Property Name="destinatario" Type="varchar" MaxLength="70" />
+    <Property Name="mensagem" Type="text" />
+    <Property Name="parecerId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordem">
+    <Key>
+      <PropertyRef Name="ordemId" />
+    </Key>
+    <Property Name="ordemId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="os" Type="text" Nullable="false" />
+    <Property Name="assunto" Type="varchar" MaxLength="150" />
+    <Property Name="dataOrdem" Type="datetime" Nullable="false" />
+    <Property Name="dataFimOrdem" Type="datetime" />
+    <Property Name="horasEfetivas" Type="int" />
+    <Property Name="prioridade" Type="int" Nullable="false" />
+    <Property Name="projetoId" Type="bigint" Nullable="false" />
+    <Property Name="funcionalidadeId" Type="bigint" />
+    <Property Name="responsavelExecutor" Type="bigint" />
+    <Property Name="tipoOrdemServicoId" Type="bigint" Nullable="false" />
+    <Property Name="valorCobrarId" Type="bigint" />
+    <Property Name="documentoExternoId" Type="bigint" />
+    <Property Name="codigoDocumentoExterno" Type="varchar" MaxLength="30" />
+    <Property Name="faseAtual" Type="bigint" />
+    <Property Name="statusAtual" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="faturamentoId" Type="smallint" />
+    <Property Name="dataFaturamento" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ParametroContrato">
+    <Key>
+      <PropertyRef Name="parametroContratoId" />
+    </Key>
+    <Property Name="parametroContratoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="tipoCriticidadeId" Type="bigint" Nullable="false" />
+    <Property Name="tipoServicoId" Type="bigint" />
+    <Property Name="proporcaoSLA" Type="float" />
+    <Property Name="expressaoCalculo" Type="varchar" MaxLength="20" />
+    <Property Name="regra" Type="text" />
+    <Property Name="aditivoContratoId" Type="bigint" />
+    <Property Name="contratoId" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="BaseLine" Type="bit" Nullable="false" />
+    <Property Name="ValorTotal" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Parecer">
+    <Key>
+      <PropertyRef Name="parecerId" />
+    </Key>
+    <Property Name="parecerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaParecer" Type="int" Nullable="false" />
+    <Property Name="dataParecer" Type="datetime" Nullable="false" />
+    <Property Name="areaId" Type="bigint" />
+    <Property Name="parecer" Type="text" />
+    <Property Name="tipoParecerId" Type="bigint" Nullable="false" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="perfilId" />
+    </Key>
+    <Property Name="perfilId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empresaId" Type="bigint" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="admin" Type="bit" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.PerfilAcesso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PerfilAcesso">
+    <Key>
+      <PropertyRef Name="IdMenu" />
+      <PropertyRef Name="perfilId" />
+    </Key>
+    <Property Name="IdMenu" Type="int" Nullable="false" />
+    <Property Name="perfilId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pergunta">
+    <Key>
+      <PropertyRef Name="perguntaId" />
+    </Key>
+    <Property Name="perguntaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pergunta" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="tipoAtividadeId" Type="bigint" Nullable="false" />
+    <Property Name="perfilId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ponto">
+    <Key>
+      <PropertyRef Name="pontoId" />
+    </Key>
+    <Property Name="pontoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dataIni" Type="datetime" />
+    <Property Name="dataFim" Type="datetime" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+    <Property Name="dominio" Type="varchar" MaxLength="50" />
+    <Property Name="maquina" Type="varchar" MaxLength="100" />
+    <Property Name="macAddressLocal" Type="varchar" MaxLength="100" />
+    <Property Name="macAddressWifi" Type="varchar" MaxLength="100" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.PrioridadeAlteracaoPrazo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PrioridadeAlteracaoPrazo">
+    <Key>
+      <PropertyRef Name="GrupoUsuarioId" />
+    </Key>
+    <Property Name="prioridadeAlteracaoId" Type="uniqueidentifier" />
+    <Property Name="prioridadeAlteracaoTipo" Type="tinyint" />
+    <Property Name="demandaId" Type="bigint" />
+    <Property Name="demandaPrazoId" Type="bigint" />
+    <Property Name="demandaAssunto" Type="varchar" MaxLength="30" />
+    <Property Name="dataDemanda" Type="datetime" />
+    <Property Name="dataEstimadaInicio" Type="datetime" />
+    <Property Name="dataEstimadaFim" Type="datetime" />
+    <Property Name="prazoEstimadoConclusao" Type="int" />
+    <Property Name="demandaIdDependencia" Type="bigint" />
+    <Property Name="usuarioIdEstimado" Type="bigint" />
+    <Property Name="dtAlteracao" Type="datetime" />
+    <Property Name="GrupoUsuarioId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrioridadeOrdemlog">
+    <Key>
+      <PropertyRef Name="PrioridadeOrdemlogId" />
+    </Key>
+    <Property Name="PrioridadeOrdemlogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ordemId" Type="bigint" />
+    <Property Name="prioridade" Type="int" />
+    <Property Name="usuarioIdInclusao" Type="bigint" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="projetoId" />
+    </Key>
+    <Property Name="projetoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="sigla" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="aditivoContratoId" Type="bigint" />
+    <Property Name="contratoId" Type="bigint" />
+    <Property Name="tipoSituacaoId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectLead" Type="bigint" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjetoAdministrativo">
+    <Key>
+      <PropertyRef Name="projetoAdministrativoId" />
+    </Key>
+    <Property Name="projetoAdministrativoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projetoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropostaPrazo">
+    <Key>
+      <PropertyRef Name="propostaPrazoId" />
+    </Key>
+    <Property Name="propostaPrazoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaPropostaPrazo" Type="int" Nullable="false" />
+    <Property Name="dataEstimadaInicio" Type="datetime" />
+    <Property Name="dataEstimadaFim" Type="datetime" />
+    <Property Name="prazoEstimadoConclusao" Type="int" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropostaValor">
+    <Key>
+      <PropertyRef Name="propostaValorId" />
+    </Key>
+    <Property Name="propostaValorId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaPropostaValor" Type="int" Nullable="false" />
+    <Property Name="tipoServicoId" Type="bigint" />
+    <Property Name="tempoTotal" Type="int" />
+    <Property Name="valorTotal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ramal">
+    <Key>
+      <PropertyRef Name="ramalId" />
+    </Key>
+    <Property Name="ramalId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="isPrincipal" Type="bit" Nullable="false" />
+    <Property Name="tipoContato" Type="int" Nullable="false" />
+    <Property Name="prefixo" Type="varchar" MaxLength="10" />
+    <Property Name="conteudo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sufixo" Type="varchar" MaxLength="20" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recurso">
+    <Key>
+      <PropertyRef Name="recursoId" />
+    </Key>
+    <Property Name="recursoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="tipoRecurso" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="custo" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="recursoRelacionado" Type="bigint" />
+    <Property Name="tipoAtividadeId" Type="bigint" />
+    <Property Name="usuarioId" Type="bigint" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoEfetivo">
+    <Key>
+      <PropertyRef Name="recursoEfetivoId" />
+    </Key>
+    <Property Name="recursoEfetivoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="valorEfetivo" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="criterioCobranca" Type="varchar" MaxLength="30" />
+    <Property Name="atividadeId" Type="bigint" Nullable="false" />
+    <Property Name="recursoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoOrcado">
+    <Key>
+      <PropertyRef Name="recursoOrcadoId" />
+    </Key>
+    <Property Name="recursoOrcadoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="recursoId" Type="bigint" Nullable="false" />
+    <Property Name="valorProposto" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="criterioCobranca" Type="varchar" MaxLength="30" />
+    <Property Name="propostaValorId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reembolso">
+    <Key>
+      <PropertyRef Name="ReembolsoId" />
+    </Key>
+    <Property Name="ReembolsoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DespesaId" Type="bigint" Nullable="false" />
+    <Property Name="ProjetoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+    <Property Name="dtReembolso" Type="datetime" Nullable="false" />
+    <Property Name="Valor" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="smallint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.SASFEVEREIRO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SASFEVEREIRO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Descrição da Rotina" Type="nvarchar" MaxLength="255" />
+    <Property Name="Responsável" Type="nvarchar" MaxLength="255" />
+    <Property Name="1" Type="nvarchar" MaxLength="255" />
+    <Property Name="2" Type="float" />
+    <Property Name="3" Type="float" />
+    <Property Name="4" Type="float" />
+    <Property Name="5" Type="float" />
+    <Property Name="6" Type="float" />
+    <Property Name="7" Type="nvarchar" MaxLength="255" />
+    <Property Name="8" Type="nvarchar" MaxLength="255" />
+    <Property Name="9" Type="float" />
+    <Property Name="10" Type="float" />
+    <Property Name="11" Type="float" />
+    <Property Name="12" Type="float" />
+    <Property Name="13" Type="float" />
+    <Property Name="14" Type="nvarchar" MaxLength="255" />
+    <Property Name="15" Type="nvarchar" MaxLength="255" />
+    <Property Name="16" Type="float" />
+    <Property Name="17" Type="nvarchar" MaxLength="255" />
+    <Property Name="18" Type="float" />
+    <Property Name="19" Type="float" />
+    <Property Name="20" Type="float" />
+    <Property Name="21" Type="nvarchar" MaxLength="255" />
+    <Property Name="22" Type="nvarchar" MaxLength="255" />
+    <Property Name="23" Type="float" />
+    <Property Name="24" Type="float" />
+    <Property Name="25" Type="float" />
+    <Property Name="26" Type="float" />
+    <Property Name="27" Type="float" />
+    <Property Name="28" Type="nvarchar" MaxLength="255" />
+    <Property Name="Qtd" Type="float" />
+    <Property Name="Horas" Type="float" />
+    <Property Name="Qtdxhoras" Type="float" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servico">
+    <Key>
+      <PropertyRef Name="servicoId" />
+    </Key>
+    <Property Name="servicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaServico" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="prioridade" Type="int" />
+    <Property Name="tipoServicoId" Type="bigint" />
+    <Property Name="dataServico" Type="datetime" />
+    <Property Name="previsaoHorasExecucao" Type="int" />
+    <Property Name="valorEstipulado" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="atenderSLA" Type="bit" />
+    <Property Name="ordemId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="8000" />
+    <Property Name="GrupoUsuarioId" Type="bigint" />
+    <Property Name="subservicoRelacionado" Type="bigint" />
+    <Property Name="tecnologiaId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="statusId" />
+    </Key>
+    <Property Name="statusId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusAtividade">
+    <Key>
+      <PropertyRef Name="statusAtividadeId" />
+    </Key>
+    <Property Name="statusAtividadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusAtividadeExecucao">
+    <Key>
+      <PropertyRef Name="StatusAtividadeExecucaoId" />
+    </Key>
+    <Property Name="StatusAtividadeExecucaoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusAtividadeId" Type="bigint" />
+    <Property Name="nome" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="StatusOrdemServico">
+    <Key>
+      <PropertyRef Name="statusOrdemServicoId" />
+    </Key>
+    <Property Name="statusOrdemServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sequenciaStatusOrdemServico" Type="int" Nullable="false" />
+    <Property Name="data" Type="datetime" />
+    <Property Name="statusId" Type="bigint" Nullable="false" />
+    <Property Name="parecerRelacionado" Type="bigint" Nullable="false" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="faseOrdemServicoId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TblLog">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dsStackTrace" Type="varchar(max)" />
+    <Property Name="dsErrorMessage" Type="varchar(max)" />
+    <Property Name="dsInnerException" Type="varchar(max)" />
+    <Property Name="dsResponsibleMethod" Type="varchar(max)" />
+    <Property Name="dsExceptionType" Type="varchar(max)" />
+    <Property Name="dsMachineName" Type="varchar(max)" />
+    <Property Name="dtOccured" Type="datetime" Nullable="false" />
+    <Property Name="dsUserHostAddress" Type="varchar(max)" />
+    <Property Name="dsBrowser" Type="varchar(max)" />
+    <Property Name="dsUrlWhereErrorOccured" Type="varchar(max)" />
+    <Property Name="dsRefereer" Type="varchar(max)" />
+    <Property Name="dsSession" Type="varchar(max)" />
+    <Property Name="dsQueryString" Type="varchar(max)" />
+    <Property Name="dsForm" Type="varchar(max)" />
+    <Property Name="dsCookie" Type="varchar(max)" />
+    <Property Name="dsApplication" Type="varchar(max)" />
+    <Property Name="dsServerVariables" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Tecnologia">
+    <Key>
+      <PropertyRef Name="tecnologiaId" />
+    </Key>
+    <Property Name="tecnologiaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.TecnologiaProjeto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TecnologiaProjeto">
+    <Key>
+      <PropertyRef Name="projetoid" />
+      <PropertyRef Name="tecnologiaid" />
+    </Key>
+    <Property Name="projetoid" Type="bigint" Nullable="false" />
+    <Property Name="tecnologiaid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.TecnologiaUsuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TecnologiaUsuario">
+    <Key>
+      <PropertyRef Name="usuarioid" />
+      <PropertyRef Name="tecnologiaid" />
+    </Key>
+    <Property Name="usuarioid" Type="bigint" Nullable="false" />
+    <Property Name="tecnologiaid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Telefone">
+    <Key>
+      <PropertyRef Name="telefoneId" />
+    </Key>
+    <Property Name="telefoneId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="isPrincipal" Type="bit" Nullable="false" />
+    <Property Name="tipoContato" Type="int" Nullable="false" />
+    <Property Name="prefixo" Type="varchar" MaxLength="10" />
+    <Property Name="conteudo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sufixo" Type="varchar" MaxLength="20" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.TempRel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempRel">
+    <Key>
+      <PropertyRef Name="HorasPrevistaDia" />
+      <PropertyRef Name="DataEstimadaInicio" />
+      <PropertyRef Name="DataEstimadaFim" />
+    </Key>
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+    <Property Name="Projeto" Type="varchar" MaxLength="80" />
+    <Property Name="Servico" Type="varchar" MaxLength="80" />
+    <Property Name="Atividade" Type="varchar" MaxLength="80" />
+    <Property Name="HorasEstimadas" Type="int" />
+    <Property Name="HorasPrevistaDia" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DataEstimadaInicio" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DataEstimadaFim" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="D2014_January_1" Type="int" />
+    <Property Name="D2014_May_30" Type="int" />
+    <Property Name="TotalHorasExecutadas" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoAtividade">
+    <Key>
+      <PropertyRef Name="tipoAtividadeId" />
+    </Key>
+    <Property Name="tipoAtividadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="tempoEstimado" Type="int" />
+    <Property Name="valorada" Type="bit" Nullable="false" />
+    <Property Name="valorEstimado" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="criterioCobranca" Type="varchar" MaxLength="30" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoCriticidade">
+    <Key>
+      <PropertyRef Name="tipoCriticidadeId" />
+    </Key>
+    <Property Name="tipoCriticidadeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoEvento">
+    <Key>
+      <PropertyRef Name="tipoEventoId" />
+    </Key>
+    <Property Name="tipoEventoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoNotificacao">
+    <Key>
+      <PropertyRef Name="tipoNotificacaoId" />
+    </Key>
+    <Property Name="tipoNotificacaoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoOrdemServico">
+    <Key>
+      <PropertyRef Name="tipoOrdemServicoId" />
+    </Key>
+    <Property Name="tipoOrdemServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="demandaServico" Type="bit" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoOrdemServicoPergunta">
+    <Key>
+      <PropertyRef Name="tipoOrdemServicoPerguntaId" />
+    </Key>
+    <Property Name="tipoOrdemServicoPerguntaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoOrdemServicoId" Type="bigint" Nullable="false" />
+    <Property Name="pergunta" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoParecer">
+    <Key>
+      <PropertyRef Name="tipoParecerId" />
+    </Key>
+    <Property Name="tipoParecerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="geraNotificacao" Type="bit" Nullable="false" />
+    <Property Name="geraRetorno" Type="bit" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoServico">
+    <Key>
+      <PropertyRef Name="tipoServicoId" />
+    </Key>
+    <Property Name="tipoServicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="observacao" Type="text" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoSituacao">
+    <Key>
+      <PropertyRef Name="tipoSituacaoId" />
+    </Key>
+    <Property Name="tipoSituacaoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.tvRanking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tvRanking">
+    <Key>
+      <PropertyRef Name="usuarioId" />
+    </Key>
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuarioId" />
+    </Key>
+    <Property Name="usuarioId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cargoId" Type="bigint" />
+    <Property Name="empresaId" Type="bigint" />
+    <Property Name="login" Type="varchar" MaxLength="60" />
+    <Property Name="nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="senha" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="autenticaDominio" Type="bit" Nullable="false" />
+    <Property Name="senhaExpira" Type="bit" Nullable="false" />
+    <Property Name="qtdDiasExpiracao" Type="int" />
+    <Property Name="dataAniversario" Type="datetime" />
+    <Property Name="foto" Type="varchar" MaxLength="200" />
+    <Property Name="usuarioIdInclusao" Type="bigint" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="ultimoAcesso" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="telefone" Type="varchar" MaxLength="20" />
+    <Property Name="macAddressLocal" Type="varchar" MaxLength="100" />
+    <Property Name="macAddressWifi" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.UsuarioGrupoUsuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UsuarioGrupoUsuario">
+    <Key>
+      <PropertyRef Name="usuarioId" />
+      <PropertyRef Name="grupoUsuarioId" />
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="grupoUsuarioId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GSM_ATUALIZADO.dbo.UsuarioPerfil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UsuarioPerfil">
+    <Key>
+      <PropertyRef Name="usuarioId" />
+      <PropertyRef Name="perfilId" />
+      <PropertyRef Name="usuarioIdInclusao" />
+      <PropertyRef Name="dataInclusao" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="usuarioId" Type="bigint" Nullable="false" />
+    <Property Name="perfilId" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValorCobrar">
+    <Key>
+      <PropertyRef Name="valorCobrarId" />
+    </Key>
+    <Property Name="valorCobrarId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dataLancamento" Type="datetime" Nullable="false" />
+    <Property Name="valorTotal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="desconto" Type="float" />
+    <Property Name="acrescimo" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="valorFinal" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="totalConsumido" Type="int" />
+    <Property Name="usuarioIdInclusao" Type="bigint" Nullable="false" />
+    <Property Name="usuarioIdAlteracao" Type="bigint" />
+    <Property Name="dataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="dataAlteracao" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Reembolso__Despe__0A096455">
+    <End Role="Despesa" Type="Self.Despesa" Multiplicity="1" />
+    <End Role="Reembolso" Type="Self.Reembolso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Despesa">
+        <PropertyRef Name="DespesaId" />
+      </Principal>
+      <Dependent Role="Reembolso">
+        <PropertyRef Name="DespesaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reembolso__Proje__0AFD888E">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="Reembolso" Type="Self.Reembolso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="Reembolso">
+        <PropertyRef Name="ProjetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reembolso__Usuar__0BF1ACC7">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Reembolso" Type="Self.Reembolso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Reembolso">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AditivoContrato_Contrato">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="0..1" />
+    <End Role="AditivoContrato" Type="Self.AditivoContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="contratoId" />
+      </Principal>
+      <Dependent Role="AditivoContrato">
+        <PropertyRef Name="contratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anexo_LogOrdemServico">
+    <End Role="LogOrdemServico" Type="Self.LogOrdemServico" Multiplicity="0..1" />
+    <End Role="Anexo" Type="Self.Anexo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogOrdemServico">
+        <PropertyRef Name="logOrdemServicoId" />
+      </Principal>
+      <Dependent Role="Anexo">
+        <PropertyRef Name="logOrdemServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anexo_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="0..1" />
+    <End Role="Anexo" Type="Self.Anexo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="Anexo">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anexo_Parecer">
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="0..1" />
+    <End Role="Anexo" Type="Self.Anexo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parecer">
+        <PropertyRef Name="parecerId" />
+      </Principal>
+      <Dependent Role="Anexo">
+        <PropertyRef Name="parecerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anexo_Servico">
+    <End Role="Servico" Type="Self.Servico" Multiplicity="0..1" />
+    <End Role="Anexo" Type="Self.Anexo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servico">
+        <PropertyRef Name="servicoId" />
+      </Principal>
+      <Dependent Role="Anexo">
+        <PropertyRef Name="servicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aplicativo_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="0..1" />
+    <End Role="Aplicativo" Type="Self.Aplicativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="Aplicativo">
+        <PropertyRef Name="projetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AplicativoOrdem_Aplicativo">
+    <End Role="Aplicativo" Type="Self.Aplicativo" Multiplicity="0..1" />
+    <End Role="AplicativoOrdem" Type="Self.AplicativoOrdem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicativo">
+        <PropertyRef Name="aplicativoId" />
+      </Principal>
+      <Dependent Role="AplicativoOrdem">
+        <PropertyRef Name="aplicativoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AplicativoOrdem_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="0..1" />
+    <End Role="AplicativoOrdem" Type="Self.AplicativoOrdem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="AplicativoOrdem">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AplicativoServico_Aplicativo">
+    <End Role="Aplicativo" Type="Self.Aplicativo" Multiplicity="1" />
+    <End Role="AplicativoServico" Type="Self.AplicativoServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicativo">
+        <PropertyRef Name="aplicativoId" />
+      </Principal>
+      <Dependent Role="AplicativoServico">
+        <PropertyRef Name="aplicativoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AplicativoServico_Servico">
+    <End Role="Servico" Type="Self.Servico" Multiplicity="1" />
+    <End Role="AplicativoServico" Type="Self.AplicativoServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servico">
+        <PropertyRef Name="servicoId" />
+      </Principal>
+      <Dependent Role="AplicativoServico">
+        <PropertyRef Name="servicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Area_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Area" Type="Self.Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresaId" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="empresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atividade_Atividade">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="0..1" />
+    <End Role="Atividade1" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="atividadeId" />
+      </Principal>
+      <Dependent Role="Atividade1">
+        <PropertyRef Name="subAtividadeRelacionada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atividade_Servico">
+    <End Role="Servico" Type="Self.Servico" Multiplicity="1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servico">
+        <PropertyRef Name="servicoId" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="servicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atividade_StatusAtividade">
+    <End Role="StatusAtividade" Type="Self.StatusAtividade" Multiplicity="1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusAtividade">
+        <PropertyRef Name="statusAtividadeId" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="statusAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atividade_Tecnologia">
+    <End Role="Tecnologia" Type="Self.Tecnologia" Multiplicity="0..1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnologia">
+        <PropertyRef Name="tecnologiaId" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="tecnologiaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Atividade_TipoAtividade">
+    <End Role="TipoAtividade" Type="Self.TipoAtividade" Multiplicity="1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAtividade">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AtividadeExecucao_Atividade">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="0..1" />
+    <End Role="AtividadeExecucao" Type="Self.AtividadeExecucao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="atividadeId" />
+      </Principal>
+      <Dependent Role="AtividadeExecucao">
+        <PropertyRef Name="AtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AtividadeExecucao_StatusAtividadeExecucao">
+    <End Role="StatusAtividadeExecucao" Type="Self.StatusAtividadeExecucao" Multiplicity="1" />
+    <End Role="AtividadeExecucao" Type="Self.AtividadeExecucao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusAtividadeExecucao">
+        <PropertyRef Name="StatusAtividadeExecucaoId" />
+      </Principal>
+      <Dependent Role="AtividadeExecucao">
+        <PropertyRef Name="StatusAtividadeExecucaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AtividadePrazo_Ordem">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
+    <End Role="AtividadePrazo" Type="Self.AtividadePrazo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="atividadeId" />
+      </Principal>
+      <Dependent Role="AtividadePrazo">
+        <PropertyRef Name="atividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AtividadePrazo_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="AtividadePrazo" Type="Self.AtividadePrazo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="AtividadePrazo">
+        <PropertyRef Name="usuarioIdEstimado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cargo_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="areaId" />
+      </Principal>
+      <Dependent Role="Cargo">
+        <PropertyRef Name="areaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Checklist_LogAtividade">
+    <End Role="LogAtividade" Type="Self.LogAtividade" Multiplicity="1" />
+    <End Role="Checklist" Type="Self.Checklist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogAtividade">
+        <PropertyRef Name="logAtividadeId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="logAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Checklist_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Checklist" Type="Self.Checklist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="perfilId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="perfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Checklist_Pergunta">
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="1" />
+    <End Role="Checklist" Type="Self.Checklist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pergunta">
+        <PropertyRef Name="perguntaId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="perguntaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Checklist_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Checklist" Type="Self.Checklist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="usuarioIdInclusao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Checklist_Usuario1">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Checklist" Type="Self.Checklist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="usuarioIdAlteracao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClausulaContrato_AditivoContrato">
+    <End Role="AditivoContrato" Type="Self.AditivoContrato" Multiplicity="0..1" />
+    <End Role="ClausulaContrato" Type="Self.ClausulaContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AditivoContrato">
+        <PropertyRef Name="aditivoContratoId" />
+      </Principal>
+      <Dependent Role="ClausulaContrato">
+        <PropertyRef Name="aditivoContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClausulaContrato_ClausulaContrato">
+    <End Role="ClausulaContrato" Type="Self.ClausulaContrato" Multiplicity="0..1" />
+    <End Role="ClausulaContrato1" Type="Self.ClausulaContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClausulaContrato">
+        <PropertyRef Name="clausulaContratoId" />
+      </Principal>
+      <Dependent Role="ClausulaContrato1">
+        <PropertyRef Name="clausulaRelacionada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClausulaContrato_Contrato">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="0..1" />
+    <End Role="ClausulaContrato" Type="Self.ClausulaContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="contratoId" />
+      </Principal>
+      <Dependent Role="ClausulaContrato">
+        <PropertyRef Name="contratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresaId" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="empresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorObjeto_ConfiguradorOrdemServico">
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="1" />
+    <End Role="ConfiguradorObjeto" Type="Self.ConfiguradorObjeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="configuradorOrdemServicoId" />
+      </Principal>
+      <Dependent Role="ConfiguradorObjeto">
+        <PropertyRef Name="configuradorOrdemServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_Fase">
+    <End Role="Fase" Type="Self.Fase" Multiplicity="1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fase">
+        <PropertyRef Name="faseId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="faseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="0..1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="projetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorOrdemServico_UsuarioProximo">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="ConfiguradorOrdemServico" Type="Self.ConfiguradorOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="ConfiguradorOrdemServico">
+        <PropertyRef Name="usuarioProximo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorProjetoUsuario_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="ConfiguradorProjetoUsuario" Type="Self.ConfiguradorProjetoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="ConfiguradorProjetoUsuario">
+        <PropertyRef Name="projetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConfiguradorProjetoUsuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ConfiguradorProjetoUsuario" Type="Self.ConfiguradorProjetoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="ConfiguradorProjetoUsuario">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrato_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="clienteId" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="clienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrato_Contrato">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="0..1" />
+    <End Role="Contrato1" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="contratoId" />
+      </Principal>
+      <Dependent Role="Contrato1">
+        <PropertyRef Name="contratoRelacionado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrato_TipoSituacao">
+    <End Role="TipoSituacao" Type="Self.TipoSituacao" Multiplicity="1" />
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoSituacao">
+        <PropertyRef Name="tipoSituacaoId" />
+      </Principal>
+      <Dependent Role="Contrato">
+        <PropertyRef Name="tipoSituacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoExterno_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="DocumentoExterno" Type="Self.DocumentoExterno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="clienteId" />
+      </Principal>
+      <Dependent Role="DocumentoExterno">
+        <PropertyRef Name="clienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Email_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Email" Type="Self.Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Email">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FaseOrdemServico_Fase">
+    <End Role="Fase" Type="Self.Fase" Multiplicity="1" />
+    <End Role="FaseOrdemServico" Type="Self.FaseOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fase">
+        <PropertyRef Name="faseId" />
+      </Principal>
+      <Dependent Role="FaseOrdemServico">
+        <PropertyRef Name="faseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FaseOrdemServico_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="FaseOrdemServico" Type="Self.FaseOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="FaseOrdemServico">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FaseOrdemServico_Parecer">
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="1" />
+    <End Role="FaseOrdemServico" Type="Self.FaseOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parecer">
+        <PropertyRef Name="parecerId" />
+      </Principal>
+      <Dependent Role="FaseOrdemServico">
+        <PropertyRef Name="parecerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FaseOrdemServico_StatusOrdemServico">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="FaseOrdemServico" Type="Self.FaseOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="FaseOrdemServico">
+        <PropertyRef Name="statusAtual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Funcionalidade_Aplicativo">
+    <End Role="Aplicativo" Type="Self.Aplicativo" Multiplicity="1" />
+    <End Role="Funcionalidade" Type="Self.Funcionalidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicativo">
+        <PropertyRef Name="aplicativoId" />
+      </Principal>
+      <Dependent Role="Funcionalidade">
+        <PropertyRef Name="aplicativoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuncionalidadeOrdem_Funcionalidade">
+    <End Role="Funcionalidade" Type="Self.Funcionalidade" Multiplicity="0..1" />
+    <End Role="FuncionalidadeOrdem" Type="Self.FuncionalidadeOrdem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidade">
+        <PropertyRef Name="funcionalidadeId" />
+      </Principal>
+      <Dependent Role="FuncionalidadeOrdem">
+        <PropertyRef Name="funcionalidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuncionalidadeOrdem_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="0..1" />
+    <End Role="FuncionalidadeOrdem" Type="Self.FuncionalidadeOrdem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="FuncionalidadeOrdem">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuncionalidadePerfil_Funcionalidade">
+    <End Role="Funcionalidade" Type="Self.Funcionalidade" Multiplicity="1" />
+    <End Role="FuncionalidadePerfil" Type="Self.FuncionalidadePerfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidade">
+        <PropertyRef Name="funcionalidadeId" />
+      </Principal>
+      <Dependent Role="FuncionalidadePerfil">
+        <PropertyRef Name="funcionalidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuncionalidadeServico_Funcionalidade">
+    <End Role="Funcionalidade" Type="Self.Funcionalidade" Multiplicity="1" />
+    <End Role="FuncionalidadeServico" Type="Self.FuncionalidadeServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidade">
+        <PropertyRef Name="funcionalidadeId" />
+      </Principal>
+      <Dependent Role="FuncionalidadeServico">
+        <PropertyRef Name="funcionalidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuncionalidadeServico_Servico">
+    <End Role="Servico" Type="Self.Servico" Multiplicity="1" />
+    <End Role="FuncionalidadeServico" Type="Self.FuncionalidadeServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servico">
+        <PropertyRef Name="servicoId" />
+      </Principal>
+      <Dependent Role="FuncionalidadeServico">
+        <PropertyRef Name="servicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrupoUsuario_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="GrupoUsuario" Type="Self.GrupoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresaId" />
+      </Principal>
+      <Dependent Role="GrupoUsuario">
+        <PropertyRef Name="empresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Homologacao_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="Homologacao" Type="Self.Homologacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="Homologacao">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Homologacao_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Homologacao" Type="Self.Homologacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Homologacao">
+        <PropertyRef Name="usuarioClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Homologacao_Usuario1">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Homologacao" Type="Self.Homologacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Homologacao">
+        <PropertyRef Name="usuarioTesterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogAtividade_Atividade">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="0..1" />
+    <End Role="LogAtividade" Type="Self.LogAtividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="atividadeId" />
+      </Principal>
+      <Dependent Role="LogAtividade">
+        <PropertyRef Name="atividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogAtividade_Recurso">
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="0..1" />
+    <End Role="LogAtividade" Type="Self.LogAtividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="recursoId" />
+      </Principal>
+      <Dependent Role="LogAtividade">
+        <PropertyRef Name="recurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogOrdemServico_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="LogOrdemServico" Type="Self.LogOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="areaId" />
+      </Principal>
+      <Dependent Role="LogOrdemServico">
+        <PropertyRef Name="areaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogOrdemServico_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="LogOrdemServico" Type="Self.LogOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="LogOrdemServico">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogOrdemServico_TipoEvento">
+    <End Role="TipoEvento" Type="Self.TipoEvento" Multiplicity="1" />
+    <End Role="LogOrdemServico" Type="Self.LogOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoEvento">
+        <PropertyRef Name="tipoEventoId" />
+      </Principal>
+      <Dependent Role="LogOrdemServico">
+        <PropertyRef Name="tipoEventoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogOrdemServico_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="LogOrdemServico" Type="Self.LogOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="LogOrdemServico">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notificacao_Parecer">
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="0..1" />
+    <End Role="Notificacao" Type="Self.Notificacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parecer">
+        <PropertyRef Name="parecerId" />
+      </Principal>
+      <Dependent Role="Notificacao">
+        <PropertyRef Name="parecerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notificacao_TipoNotificacao">
+    <End Role="TipoNotificacao" Type="Self.TipoNotificacao" Multiplicity="1" />
+    <End Role="Notificacao" Type="Self.Notificacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoNotificacao">
+        <PropertyRef Name="tipoNotificacaoId" />
+      </Principal>
+      <Dependent Role="Notificacao">
+        <PropertyRef Name="tipoNotificacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_DocumentoExterno">
+    <End Role="DocumentoExterno" Type="Self.DocumentoExterno" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentoExterno">
+        <PropertyRef Name="documentoExternoId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="documentoExternoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_FaseOrdemServico">
+    <End Role="Fase" Type="Self.Fase" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fase">
+        <PropertyRef Name="faseId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="faseAtual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="projetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="statusAtual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_TipoOrdemServico">
+    <End Role="TipoOrdemServico" Type="Self.TipoOrdemServico" Multiplicity="1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoOrdemServico">
+        <PropertyRef Name="tipoOrdemServicoId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="tipoOrdemServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="responsavelExecutor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_UsuarioCreate">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="usuarioIdInclusao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_UsuarioUpdate">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="usuarioIdAlteracao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordem_ValorCobrar">
+    <End Role="ValorCobrar" Type="Self.ValorCobrar" Multiplicity="0..1" />
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ValorCobrar">
+        <PropertyRef Name="valorCobrarId" />
+      </Principal>
+      <Dependent Role="Ordem">
+        <PropertyRef Name="valorCobrarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParametroContrato_AditivoContrato">
+    <End Role="AditivoContrato" Type="Self.AditivoContrato" Multiplicity="0..1" />
+    <End Role="ParametroContrato" Type="Self.ParametroContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AditivoContrato">
+        <PropertyRef Name="aditivoContratoId" />
+      </Principal>
+      <Dependent Role="ParametroContrato">
+        <PropertyRef Name="aditivoContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParametroContrato_Contrato">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="0..1" />
+    <End Role="ParametroContrato" Type="Self.ParametroContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="contratoId" />
+      </Principal>
+      <Dependent Role="ParametroContrato">
+        <PropertyRef Name="contratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParametroContrato_TipoCriticidade">
+    <End Role="TipoCriticidade" Type="Self.TipoCriticidade" Multiplicity="1" />
+    <End Role="ParametroContrato" Type="Self.ParametroContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCriticidade">
+        <PropertyRef Name="tipoCriticidadeId" />
+      </Principal>
+      <Dependent Role="ParametroContrato">
+        <PropertyRef Name="tipoCriticidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParametroContrato_TipoServico">
+    <End Role="TipoServico" Type="Self.TipoServico" Multiplicity="0..1" />
+    <End Role="ParametroContrato" Type="Self.ParametroContrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoServico">
+        <PropertyRef Name="tipoServicoId" />
+      </Principal>
+      <Dependent Role="ParametroContrato">
+        <PropertyRef Name="tipoServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parecer_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="areaId" />
+      </Principal>
+      <Dependent Role="Parecer">
+        <PropertyRef Name="areaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parecer_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="0..1" />
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="Parecer">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parecer_TipoParecer">
+    <End Role="TipoParecer" Type="Self.TipoParecer" Multiplicity="1" />
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoParecer">
+        <PropertyRef Name="tipoParecerId" />
+      </Principal>
+      <Dependent Role="Parecer">
+        <PropertyRef Name="tipoParecerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parecer_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Parecer">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfil_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresaId" />
+      </Principal>
+      <Dependent Role="Perfil">
+        <PropertyRef Name="empresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilAcesso_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="PerfilAcesso" Type="Self.PerfilAcesso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="perfilId" />
+      </Principal>
+      <Dependent Role="PerfilAcesso">
+        <PropertyRef Name="perfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="perfilId" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="perfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_TipoAtividade">
+    <End Role="TipoAtividade" Type="Self.TipoAtividade" Multiplicity="1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAtividade">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="usuarioIdInclusao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_Usuario1">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="usuarioIdAlteracao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projeto_AditivoContrato">
+    <End Role="AditivoContrato" Type="Self.AditivoContrato" Multiplicity="0..1" />
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AditivoContrato">
+        <PropertyRef Name="aditivoContratoId" />
+      </Principal>
+      <Dependent Role="Projeto">
+        <PropertyRef Name="aditivoContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projeto_Contrato">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="0..1" />
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="contratoId" />
+      </Principal>
+      <Dependent Role="Projeto">
+        <PropertyRef Name="contratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projeto_TipoSituacao">
+    <End Role="TipoSituacao" Type="Self.TipoSituacao" Multiplicity="1" />
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoSituacao">
+        <PropertyRef Name="tipoSituacaoId" />
+      </Principal>
+      <Dependent Role="Projeto">
+        <PropertyRef Name="tipoSituacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Projeto_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Projeto">
+        <PropertyRef Name="ProjectLead" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjetoAdministrativo_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="ProjetoAdministrativo" Type="Self.ProjetoAdministrativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="ProjetoAdministrativo">
+        <PropertyRef Name="projetoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjetoAdministrativo_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ProjetoAdministrativo" Type="Self.ProjetoAdministrativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="ProjetoAdministrativo">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostaPrazo_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="PropostaPrazo" Type="Self.PropostaPrazo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="PropostaPrazo">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostaValor_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="PropostaValor" Type="Self.PropostaValor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="PropostaValor">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostaValor_TipoServico">
+    <End Role="TipoServico" Type="Self.TipoServico" Multiplicity="0..1" />
+    <End Role="PropostaValor" Type="Self.PropostaValor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoServico">
+        <PropertyRef Name="tipoServicoId" />
+      </Principal>
+      <Dependent Role="PropostaValor">
+        <PropertyRef Name="tipoServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ramal_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Ramal" Type="Self.Ramal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Ramal">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recurso_Recurso">
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="0..1" />
+    <End Role="Recurso1" Type="Self.Recurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="recursoId" />
+      </Principal>
+      <Dependent Role="Recurso1">
+        <PropertyRef Name="recursoRelacionado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recurso_TipoAtividade">
+    <End Role="TipoAtividade" Type="Self.TipoAtividade" Multiplicity="0..1" />
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAtividade">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Principal>
+      <Dependent Role="Recurso">
+        <PropertyRef Name="tipoAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recurso_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Recurso">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecursoEfetivo_Atividade">
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="1" />
+    <End Role="RecursoEfetivo" Type="Self.RecursoEfetivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Atividade">
+        <PropertyRef Name="atividadeId" />
+      </Principal>
+      <Dependent Role="RecursoEfetivo">
+        <PropertyRef Name="atividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecursoEfetivo_Recurso">
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="1" />
+    <End Role="RecursoEfetivo" Type="Self.RecursoEfetivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="recursoId" />
+      </Principal>
+      <Dependent Role="RecursoEfetivo">
+        <PropertyRef Name="recursoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecursoOrcado_PropostaValor">
+    <End Role="PropostaValor" Type="Self.PropostaValor" Multiplicity="1" />
+    <End Role="RecursoOrcado" Type="Self.RecursoOrcado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropostaValor">
+        <PropertyRef Name="propostaValorId" />
+      </Principal>
+      <Dependent Role="RecursoOrcado">
+        <PropertyRef Name="propostaValorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecursoOrcado_Recurso">
+    <End Role="Recurso" Type="Self.Recurso" Multiplicity="1" />
+    <End Role="RecursoOrcado" Type="Self.RecursoOrcado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="recursoId" />
+      </Principal>
+      <Dependent Role="RecursoOrcado">
+        <PropertyRef Name="recursoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servico_Ordem">
+    <End Role="Ordem" Type="Self.Ordem" Multiplicity="1" />
+    <End Role="Servico" Type="Self.Servico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordem">
+        <PropertyRef Name="ordemId" />
+      </Principal>
+      <Dependent Role="Servico">
+        <PropertyRef Name="ordemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servico_Servico">
+    <End Role="Servico" Type="Self.Servico" Multiplicity="1" />
+    <End Role="Servico1" Type="Self.Servico" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Servico">
+        <PropertyRef Name="servicoId" />
+      </Principal>
+      <Dependent Role="Servico1">
+        <PropertyRef Name="servicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servico_Tecnologia">
+    <End Role="Tecnologia" Type="Self.Tecnologia" Multiplicity="0..1" />
+    <End Role="Servico" Type="Self.Servico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnologia">
+        <PropertyRef Name="tecnologiaId" />
+      </Principal>
+      <Dependent Role="Servico">
+        <PropertyRef Name="tecnologiaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servico_TipoServico">
+    <End Role="TipoServico" Type="Self.TipoServico" Multiplicity="0..1" />
+    <End Role="Servico" Type="Self.Servico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoServico">
+        <PropertyRef Name="tipoServicoId" />
+      </Principal>
+      <Dependent Role="Servico">
+        <PropertyRef Name="tipoServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusAtividadeExecucao_StatusAtividade">
+    <End Role="StatusAtividade" Type="Self.StatusAtividade" Multiplicity="0..1" />
+    <End Role="StatusAtividadeExecucao" Type="Self.StatusAtividadeExecucao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusAtividade">
+        <PropertyRef Name="statusAtividadeId" />
+      </Principal>
+      <Dependent Role="StatusAtividadeExecucao">
+        <PropertyRef Name="StatusAtividadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusOrdemServico_FaseOrdemServico">
+    <End Role="FaseOrdemServico" Type="Self.FaseOrdemServico" Multiplicity="1" />
+    <End Role="StatusOrdemServico" Type="Self.StatusOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaseOrdemServico">
+        <PropertyRef Name="faseOrdemServicoId" />
+      </Principal>
+      <Dependent Role="StatusOrdemServico">
+        <PropertyRef Name="faseOrdemServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusOrdemServico_Parecer">
+    <End Role="Parecer" Type="Self.Parecer" Multiplicity="1" />
+    <End Role="StatusOrdemServico" Type="Self.StatusOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parecer">
+        <PropertyRef Name="parecerId" />
+      </Principal>
+      <Dependent Role="StatusOrdemServico">
+        <PropertyRef Name="parecerRelacionado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusOrdemServico_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="StatusOrdemServico" Type="Self.StatusOrdemServico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="StatusOrdemServico">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaProjeto_Projeto">
+    <End Role="Projeto" Type="Self.Projeto" Multiplicity="1" />
+    <End Role="TecnologiaProjeto" Type="Self.TecnologiaProjeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projeto">
+        <PropertyRef Name="projetoId" />
+      </Principal>
+      <Dependent Role="TecnologiaProjeto">
+        <PropertyRef Name="projetoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaProjeto_Tecnologia">
+    <End Role="Tecnologia" Type="Self.Tecnologia" Multiplicity="1" />
+    <End Role="TecnologiaProjeto" Type="Self.TecnologiaProjeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnologia">
+        <PropertyRef Name="tecnologiaId" />
+      </Principal>
+      <Dependent Role="TecnologiaProjeto">
+        <PropertyRef Name="tecnologiaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaUsuario_Tecnologia">
+    <End Role="Tecnologia" Type="Self.Tecnologia" Multiplicity="1" />
+    <End Role="TecnologiaUsuario" Type="Self.TecnologiaUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnologia">
+        <PropertyRef Name="tecnologiaId" />
+      </Principal>
+      <Dependent Role="TecnologiaUsuario">
+        <PropertyRef Name="tecnologiaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TecnologiaUsuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="TecnologiaUsuario" Type="Self.TecnologiaUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="TecnologiaUsuario">
+        <PropertyRef Name="usuarioid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Telefone_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Telefone" Type="Self.Telefone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="Telefone">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoOrdemServicoPergunta_TipoOrdemServico">
+    <End Role="TipoOrdemServico" Type="Self.TipoOrdemServico" Multiplicity="1" />
+    <End Role="TipoOrdemServicoPergunta" Type="Self.TipoOrdemServicoPergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoOrdemServico">
+        <PropertyRef Name="tipoOrdemServicoId" />
+      </Principal>
+      <Dependent Role="TipoOrdemServicoPergunta">
+        <PropertyRef Name="tipoOrdemServicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Cargo">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="cargoId" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="cargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="empresaId" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="empresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioGrupoUsuario_GrupoUsuario">
+    <End Role="GrupoUsuario" Type="Self.GrupoUsuario" Multiplicity="1" />
+    <End Role="UsuarioGrupoUsuario" Type="Self.UsuarioGrupoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoUsuario">
+        <PropertyRef Name="grupoUsuarioId" />
+      </Principal>
+      <Dependent Role="UsuarioGrupoUsuario">
+        <PropertyRef Name="grupoUsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioGrupoUsuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioGrupoUsuario" Type="Self.UsuarioGrupoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="UsuarioGrupoUsuario">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioPerfil_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="UsuarioPerfil" Type="Self.UsuarioPerfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="perfilId" />
+      </Principal>
+      <Dependent Role="UsuarioPerfil">
+        <PropertyRef Name="perfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioPerfil_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioPerfil" Type="Self.UsuarioPerfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioId" />
+      </Principal>
+      <Dependent Role="UsuarioPerfil">
+        <PropertyRef Name="usuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Spr_Atividades_Grupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Spr_Recursos_Selecionar_MVC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ordemId" Type="bigint" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_GServiceManagerModelStoreContainer">
+    <EntitySet Name="AditivoContrato" EntityType="Self.AditivoContrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anexo" EntityType="Self.Anexo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aplicativo" EntityType="Self.Aplicativo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AtividadeExecucao" EntityType="Self.AtividadeExecucao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AtividadePrazo" EntityType="Self.AtividadePrazo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bancoHoras" EntityType="Self.bancoHoras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Checklist" EntityType="Self.Checklist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClausulaContrato" EntityType="Self.ClausulaContrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguradorObjeto" EntityType="Self.ConfiguradorObjeto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguradorOrdemServico" EntityType="Self.ConfiguradorOrdemServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguradorProjetoUsuario" EntityType="Self.ConfiguradorProjetoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DashboardCharts" EntityType="Self.DashboardCharts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Despesa" EntityType="Self.Despesa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentoExterno" EntityType="Self.DocumentoExterno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DominiosValidos" EntityType="Self.DominiosValidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailNovoUsuario" EntityType="Self.EmailNovoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fase" EntityType="Self.Fase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaseOrdemServico" EntityType="Self.FaseOrdemServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feriado" EntityType="Self.Feriado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FraseKanban" EntityType="Self.FraseKanban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funcionalidade" EntityType="Self.Funcionalidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupoUsuario" EntityType="Self.GrupoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Homologacao" EntityType="Self.Homologacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horas" EntityType="Self.Horas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogAtividade" EntityType="Self.LogAtividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogOrdemServico" EntityType="Self.LogOrdemServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notificacao" EntityType="Self.Notificacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ordem" EntityType="Self.Ordem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParametroContrato" EntityType="Self.ParametroContrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parecer" EntityType="Self.Parecer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pergunta" EntityType="Self.Pergunta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ponto" EntityType="Self.Ponto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrioridadeOrdemlog" EntityType="Self.PrioridadeOrdemlog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projeto" EntityType="Self.Projeto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjetoAdministrativo" EntityType="Self.ProjetoAdministrativo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropostaPrazo" EntityType="Self.PropostaPrazo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropostaValor" EntityType="Self.PropostaValor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ramal" EntityType="Self.Ramal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recurso" EntityType="Self.Recurso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecursoEfetivo" EntityType="Self.RecursoEfetivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecursoOrcado" EntityType="Self.RecursoOrcado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reembolso" EntityType="Self.Reembolso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servico" EntityType="Self.Servico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusAtividade" EntityType="Self.StatusAtividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusAtividadeExecucao" EntityType="Self.StatusAtividadeExecucao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusOrdemServico" EntityType="Self.StatusOrdemServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblLog" EntityType="Self.TblLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tecnologia" EntityType="Self.Tecnologia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Telefone" EntityType="Self.Telefone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoAtividade" EntityType="Self.TipoAtividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoCriticidade" EntityType="Self.TipoCriticidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoEvento" EntityType="Self.TipoEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoNotificacao" EntityType="Self.TipoNotificacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoOrdemServico" EntityType="Self.TipoOrdemServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoOrdemServicoPergunta" EntityType="Self.TipoOrdemServicoPergunta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoParecer" EntityType="Self.TipoParecer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoServico" EntityType="Self.TipoServico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoSituacao" EntityType="Self.TipoSituacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ValorCobrar" EntityType="Self.ValorCobrar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AplicativoOrdem" EntityType="Self.AplicativoOrdem" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AplicativoOrdem].[aplicativoId] AS [aplicativoId], 
+[AplicativoOrdem].[ordemId] AS [ordemId], 
+[AplicativoOrdem].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[AplicativoOrdem].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[AplicativoOrdem].[dataInclusao] AS [dataInclusao], 
+[AplicativoOrdem].[dataAlteracao] AS [dataAlteracao], 
+[AplicativoOrdem].[status] AS [status]
+FROM [dbo].[AplicativoOrdem] AS [AplicativoOrdem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AplicativoServico" EntityType="Self.AplicativoServico" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[AplicativoServico].[aplicativoId] AS [aplicativoId], 
+[AplicativoServico].[servicoId] AS [servicoId], 
+[AplicativoServico].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[AplicativoServico].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[AplicativoServico].[dataInclusao] AS [dataInclusao], 
+[AplicativoServico].[dataAlteracao] AS [dataAlteracao], 
+[AplicativoServico].[status] AS [status]
+FROM [dbo].[AplicativoServico] AS [AplicativoServico]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FuncionalidadeOrdem" EntityType="Self.FuncionalidadeOrdem" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[FuncionalidadeOrdem].[funcionalidadeId] AS [funcionalidadeId], 
+[FuncionalidadeOrdem].[ordemId] AS [ordemId], 
+[FuncionalidadeOrdem].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[FuncionalidadeOrdem].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[FuncionalidadeOrdem].[dataInclusao] AS [dataInclusao], 
+[FuncionalidadeOrdem].[dataAlteracao] AS [dataAlteracao], 
+[FuncionalidadeOrdem].[status] AS [status]
+FROM [dbo].[FuncionalidadeOrdem] AS [FuncionalidadeOrdem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FuncionalidadePerfil" EntityType="Self.FuncionalidadePerfil" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[FuncionalidadePerfil].[funcionalidadeId] AS [funcionalidadeId], 
+[FuncionalidadePerfil].[perfilId] AS [perfilId], 
+[FuncionalidadePerfil].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[FuncionalidadePerfil].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[FuncionalidadePerfil].[dataInclusao] AS [dataInclusao], 
+[FuncionalidadePerfil].[dataAlteracao] AS [dataAlteracao], 
+[FuncionalidadePerfil].[status] AS [status]
+FROM [dbo].[FuncionalidadePerfil] AS [FuncionalidadePerfil]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FuncionalidadeServico" EntityType="Self.FuncionalidadeServico" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[FuncionalidadeServico].[funcionalidadeId] AS [funcionalidadeId], 
+[FuncionalidadeServico].[servicoId] AS [servicoId], 
+[FuncionalidadeServico].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[FuncionalidadeServico].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[FuncionalidadeServico].[dataInclusao] AS [dataInclusao], 
+[FuncionalidadeServico].[dataAlteracao] AS [dataAlteracao], 
+[FuncionalidadeServico].[status] AS [status]
+FROM [dbo].[FuncionalidadeServico] AS [FuncionalidadeServico]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Menu" EntityType="Self.Menu" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Menu].[IdMenu] AS [IdMenu], 
+[Menu].[Menu] AS [Menu], 
+[Menu].[IdMenuPai] AS [IdMenuPai], 
+[Menu].[Url] AS [Url], 
+[Menu].[StatusCorrespondente] AS [StatusCorrespondente], 
+[Menu].[MostraContador] AS [MostraContador], 
+[Menu].[Obrigatorio] AS [Obrigatorio], 
+[Menu].[status] AS [status], 
+[Menu].[Imagem] AS [Imagem], 
+[Menu].[Ordem] AS [Ordem]
+FROM [dbo].[Menu] AS [Menu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PerfilAcesso" EntityType="Self.PerfilAcesso" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PerfilAcesso].[IdMenu] AS [IdMenu], 
+[PerfilAcesso].[perfilId] AS [perfilId]
+FROM [dbo].[PerfilAcesso] AS [PerfilAcesso]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PrioridadeAlteracaoPrazo" EntityType="Self.PrioridadeAlteracaoPrazo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PrioridadeAlteracaoPrazo].[prioridadeAlteracaoId] AS [prioridadeAlteracaoId], 
+[PrioridadeAlteracaoPrazo].[prioridadeAlteracaoTipo] AS [prioridadeAlteracaoTipo], 
+[PrioridadeAlteracaoPrazo].[demandaId] AS [demandaId], 
+[PrioridadeAlteracaoPrazo].[demandaPrazoId] AS [demandaPrazoId], 
+[PrioridadeAlteracaoPrazo].[demandaAssunto] AS [demandaAssunto], 
+[PrioridadeAlteracaoPrazo].[dataDemanda] AS [dataDemanda], 
+[PrioridadeAlteracaoPrazo].[dataEstimadaInicio] AS [dataEstimadaInicio], 
+[PrioridadeAlteracaoPrazo].[dataEstimadaFim] AS [dataEstimadaFim], 
+[PrioridadeAlteracaoPrazo].[prazoEstimadoConclusao] AS [prazoEstimadoConclusao], 
+[PrioridadeAlteracaoPrazo].[demandaIdDependencia] AS [demandaIdDependencia], 
+[PrioridadeAlteracaoPrazo].[usuarioIdEstimado] AS [usuarioIdEstimado], 
+[PrioridadeAlteracaoPrazo].[dtAlteracao] AS [dtAlteracao], 
+[PrioridadeAlteracaoPrazo].[GrupoUsuarioId] AS [GrupoUsuarioId]
+FROM [dbo].[PrioridadeAlteracaoPrazo] AS [PrioridadeAlteracaoPrazo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SASFEVEREIRO" EntityType="Self.SASFEVEREIRO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[SASFEVEREIRO].[Descrição da Rotina] AS [Descrição da Rotina], 
+[SASFEVEREIRO].[Responsável] AS [Responsável], 
+[SASFEVEREIRO].[1] AS [1], 
+[SASFEVEREIRO].[2] AS [2], 
+[SASFEVEREIRO].[3] AS [3], 
+[SASFEVEREIRO].[4] AS [4], 
+[SASFEVEREIRO].[5] AS [5], 
+[SASFEVEREIRO].[6] AS [6], 
+[SASFEVEREIRO].[7] AS [7], 
+[SASFEVEREIRO].[8] AS [8], 
+[SASFEVEREIRO].[9] AS [9], 
+[SASFEVEREIRO].[10] AS [10], 
+[SASFEVEREIRO].[11] AS [11], 
+[SASFEVEREIRO].[12] AS [12], 
+[SASFEVEREIRO].[13] AS [13], 
+[SASFEVEREIRO].[14] AS [14], 
+[SASFEVEREIRO].[15] AS [15], 
+[SASFEVEREIRO].[16] AS [16], 
+[SASFEVEREIRO].[17] AS [17], 
+[SASFEVEREIRO].[18] AS [18], 
+[SASFEVEREIRO].[19] AS [19], 
+[SASFEVEREIRO].[20] AS [20], 
+[SASFEVEREIRO].[21] AS [21], 
+[SASFEVEREIRO].[22] AS [22], 
+[SASFEVEREIRO].[23] AS [23], 
+[SASFEVEREIRO].[24] AS [24], 
+[SASFEVEREIRO].[25] AS [25], 
+[SASFEVEREIRO].[26] AS [26], 
+[SASFEVEREIRO].[27] AS [27], 
+[SASFEVEREIRO].[28] AS [28], 
+[SASFEVEREIRO].[Qtd] AS [Qtd], 
+[SASFEVEREIRO].[Horas] AS [Horas], 
+[SASFEVEREIRO].[Qtdxhoras] AS [Qtdxhoras], 
+[SASFEVEREIRO].[id] AS [id]
+FROM [dbo].[SASFEVEREIRO] AS [SASFEVEREIRO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TecnologiaProjeto" EntityType="Self.TecnologiaProjeto" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TecnologiaProjeto].[projetoid] AS [projetoid], 
+[TecnologiaProjeto].[tecnologiaid] AS [tecnologiaid]
+FROM [dbo].[TecnologiaProjeto] AS [TecnologiaProjeto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TecnologiaUsuario" EntityType="Self.TecnologiaUsuario" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TecnologiaUsuario].[usuarioid] AS [usuarioid], 
+[TecnologiaUsuario].[tecnologiaid] AS [tecnologiaid]
+FROM [dbo].[TecnologiaUsuario] AS [TecnologiaUsuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TempRel" EntityType="Self.TempRel" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TempRel].[Nome] AS [Nome], 
+[TempRel].[Projeto] AS [Projeto], 
+[TempRel].[Servico] AS [Servico], 
+[TempRel].[Atividade] AS [Atividade], 
+[TempRel].[HorasEstimadas] AS [HorasEstimadas], 
+[TempRel].[HorasPrevistaDia] AS [HorasPrevistaDia], 
+[TempRel].[DataEstimadaInicio] AS [DataEstimadaInicio], 
+[TempRel].[DataEstimadaFim] AS [DataEstimadaFim], 
+[TempRel].[D2014_January_1] AS [D2014_January_1], 
+[TempRel].[D2014_May_30] AS [D2014_May_30], 
+[TempRel].[TotalHorasExecutadas] AS [TotalHorasExecutadas]
+FROM [dbo].[TempRel] AS [TempRel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tvRanking" EntityType="Self.tvRanking" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tvRanking].[usuarioId] AS [usuarioId]
+FROM [dbo].[tvRanking] AS [tvRanking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UsuarioGrupoUsuario" EntityType="Self.UsuarioGrupoUsuario" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[UsuarioGrupoUsuario].[usuarioId] AS [usuarioId], 
+[UsuarioGrupoUsuario].[grupoUsuarioId] AS [grupoUsuarioId], 
+[UsuarioGrupoUsuario].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[UsuarioGrupoUsuario].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[UsuarioGrupoUsuario].[dataInclusao] AS [dataInclusao], 
+[UsuarioGrupoUsuario].[dataAlteracao] AS [dataAlteracao], 
+[UsuarioGrupoUsuario].[status] AS [status]
+FROM [dbo].[UsuarioGrupoUsuario] AS [UsuarioGrupoUsuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UsuarioPerfil" EntityType="Self.UsuarioPerfil" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[UsuarioPerfil].[usuarioId] AS [usuarioId], 
+[UsuarioPerfil].[perfilId] AS [perfilId], 
+[UsuarioPerfil].[usuarioIdInclusao] AS [usuarioIdInclusao], 
+[UsuarioPerfil].[usuarioIdAlteracao] AS [usuarioIdAlteracao], 
+[UsuarioPerfil].[dataInclusao] AS [dataInclusao], 
+[UsuarioPerfil].[dataAlteracao] AS [dataAlteracao], 
+[UsuarioPerfil].[status] AS [status]
+FROM [dbo].[UsuarioPerfil] AS [UsuarioPerfil]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Reembolso__Despe__0A096455" Association="Self.FK__Reembolso__Despe__0A096455">
+      <End Role="Despesa" EntitySet="Despesa" />
+      <End Role="Reembolso" EntitySet="Reembolso" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reembolso__Proje__0AFD888E" Association="Self.FK__Reembolso__Proje__0AFD888E">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="Reembolso" EntitySet="Reembolso" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reembolso__Usuar__0BF1ACC7" Association="Self.FK__Reembolso__Usuar__0BF1ACC7">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Reembolso" EntitySet="Reembolso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AditivoContrato_Contrato" Association="Self.FK_AditivoContrato_Contrato">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="AditivoContrato" EntitySet="AditivoContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anexo_LogOrdemServico" Association="Self.FK_Anexo_LogOrdemServico">
+      <End Role="LogOrdemServico" EntitySet="LogOrdemServico" />
+      <End Role="Anexo" EntitySet="Anexo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anexo_Ordem" Association="Self.FK_Anexo_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="Anexo" EntitySet="Anexo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anexo_Parecer" Association="Self.FK_Anexo_Parecer">
+      <End Role="Parecer" EntitySet="Parecer" />
+      <End Role="Anexo" EntitySet="Anexo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anexo_Servico" Association="Self.FK_Anexo_Servico">
+      <End Role="Servico" EntitySet="Servico" />
+      <End Role="Anexo" EntitySet="Anexo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aplicativo_Projeto" Association="Self.FK_Aplicativo_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="Aplicativo" EntitySet="Aplicativo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AplicativoOrdem_Aplicativo" Association="Self.FK_AplicativoOrdem_Aplicativo">
+      <End Role="Aplicativo" EntitySet="Aplicativo" />
+      <End Role="AplicativoOrdem" EntitySet="AplicativoOrdem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AplicativoOrdem_Ordem" Association="Self.FK_AplicativoOrdem_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="AplicativoOrdem" EntitySet="AplicativoOrdem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AplicativoServico_Aplicativo" Association="Self.FK_AplicativoServico_Aplicativo">
+      <End Role="Aplicativo" EntitySet="Aplicativo" />
+      <End Role="AplicativoServico" EntitySet="AplicativoServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AplicativoServico_Servico" Association="Self.FK_AplicativoServico_Servico">
+      <End Role="Servico" EntitySet="Servico" />
+      <End Role="AplicativoServico" EntitySet="AplicativoServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Area_Empresa" Association="Self.FK_Area_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Area" EntitySet="Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atividade_Atividade" Association="Self.FK_Atividade_Atividade">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="Atividade1" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atividade_Servico" Association="Self.FK_Atividade_Servico">
+      <End Role="Servico" EntitySet="Servico" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atividade_StatusAtividade" Association="Self.FK_Atividade_StatusAtividade">
+      <End Role="StatusAtividade" EntitySet="StatusAtividade" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atividade_Tecnologia" Association="Self.FK_Atividade_Tecnologia">
+      <End Role="Tecnologia" EntitySet="Tecnologia" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Atividade_TipoAtividade" Association="Self.FK_Atividade_TipoAtividade">
+      <End Role="TipoAtividade" EntitySet="TipoAtividade" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AtividadeExecucao_Atividade" Association="Self.FK_AtividadeExecucao_Atividade">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="AtividadeExecucao" EntitySet="AtividadeExecucao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AtividadeExecucao_StatusAtividadeExecucao" Association="Self.FK_AtividadeExecucao_StatusAtividadeExecucao">
+      <End Role="StatusAtividadeExecucao" EntitySet="StatusAtividadeExecucao" />
+      <End Role="AtividadeExecucao" EntitySet="AtividadeExecucao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AtividadePrazo_Ordem" Association="Self.FK_AtividadePrazo_Ordem">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="AtividadePrazo" EntitySet="AtividadePrazo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AtividadePrazo_Usuario" Association="Self.FK_AtividadePrazo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="AtividadePrazo" EntitySet="AtividadePrazo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cargo_Area" Association="Self.FK_Cargo_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Cargo" EntitySet="Cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Checklist_LogAtividade" Association="Self.FK_Checklist_LogAtividade">
+      <End Role="LogAtividade" EntitySet="LogAtividade" />
+      <End Role="Checklist" EntitySet="Checklist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Checklist_Perfil" Association="Self.FK_Checklist_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Checklist" EntitySet="Checklist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Checklist_Pergunta" Association="Self.FK_Checklist_Pergunta">
+      <End Role="Pergunta" EntitySet="Pergunta" />
+      <End Role="Checklist" EntitySet="Checklist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Checklist_Usuario" Association="Self.FK_Checklist_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Checklist" EntitySet="Checklist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Checklist_Usuario1" Association="Self.FK_Checklist_Usuario1">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Checklist" EntitySet="Checklist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClausulaContrato_AditivoContrato" Association="Self.FK_ClausulaContrato_AditivoContrato">
+      <End Role="AditivoContrato" EntitySet="AditivoContrato" />
+      <End Role="ClausulaContrato" EntitySet="ClausulaContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClausulaContrato_ClausulaContrato" Association="Self.FK_ClausulaContrato_ClausulaContrato">
+      <End Role="ClausulaContrato" EntitySet="ClausulaContrato" />
+      <End Role="ClausulaContrato1" EntitySet="ClausulaContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClausulaContrato_Contrato" Association="Self.FK_ClausulaContrato_Contrato">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="ClausulaContrato" EntitySet="ClausulaContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Empresa" Association="Self.FK_Cliente_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorObjeto_ConfiguradorOrdemServico" Association="Self.FK_ConfiguradorObjeto_ConfiguradorOrdemServico">
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+      <End Role="ConfiguradorObjeto" EntitySet="ConfiguradorObjeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_Fase" Association="Self.FK_ConfiguradorOrdemServico_Fase">
+      <End Role="Fase" EntitySet="Fase" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_Ordem" Association="Self.FK_ConfiguradorOrdemServico_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_Projeto" Association="Self.FK_ConfiguradorOrdemServico_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_Status" Association="Self.FK_ConfiguradorOrdemServico_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_Usuario" Association="Self.FK_ConfiguradorOrdemServico_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorOrdemServico_UsuarioProximo" Association="Self.FK_ConfiguradorOrdemServico_UsuarioProximo">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ConfiguradorOrdemServico" EntitySet="ConfiguradorOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorProjetoUsuario_Projeto" Association="Self.FK_ConfiguradorProjetoUsuario_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="ConfiguradorProjetoUsuario" EntitySet="ConfiguradorProjetoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConfiguradorProjetoUsuario_Usuario" Association="Self.FK_ConfiguradorProjetoUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ConfiguradorProjetoUsuario" EntitySet="ConfiguradorProjetoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrato_Cliente" Association="Self.FK_Contrato_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrato_Contrato" Association="Self.FK_Contrato_Contrato">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="Contrato1" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrato_TipoSituacao" Association="Self.FK_Contrato_TipoSituacao">
+      <End Role="TipoSituacao" EntitySet="TipoSituacao" />
+      <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoExterno_Cliente" Association="Self.FK_DocumentoExterno_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="DocumentoExterno" EntitySet="DocumentoExterno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Email_Usuario" Association="Self.FK_Email_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Email" EntitySet="Email" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FaseOrdemServico_Fase" Association="Self.FK_FaseOrdemServico_Fase">
+      <End Role="Fase" EntitySet="Fase" />
+      <End Role="FaseOrdemServico" EntitySet="FaseOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FaseOrdemServico_Ordem" Association="Self.FK_FaseOrdemServico_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="FaseOrdemServico" EntitySet="FaseOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FaseOrdemServico_Parecer" Association="Self.FK_FaseOrdemServico_Parecer">
+      <End Role="Parecer" EntitySet="Parecer" />
+      <End Role="FaseOrdemServico" EntitySet="FaseOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FaseOrdemServico_StatusOrdemServico" Association="Self.FK_FaseOrdemServico_StatusOrdemServico">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="FaseOrdemServico" EntitySet="FaseOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Funcionalidade_Aplicativo" Association="Self.FK_Funcionalidade_Aplicativo">
+      <End Role="Aplicativo" EntitySet="Aplicativo" />
+      <End Role="Funcionalidade" EntitySet="Funcionalidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuncionalidadeOrdem_Funcionalidade" Association="Self.FK_FuncionalidadeOrdem_Funcionalidade">
+      <End Role="Funcionalidade" EntitySet="Funcionalidade" />
+      <End Role="FuncionalidadeOrdem" EntitySet="FuncionalidadeOrdem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuncionalidadeOrdem_Ordem" Association="Self.FK_FuncionalidadeOrdem_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="FuncionalidadeOrdem" EntitySet="FuncionalidadeOrdem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuncionalidadePerfil_Funcionalidade" Association="Self.FK_FuncionalidadePerfil_Funcionalidade">
+      <End Role="Funcionalidade" EntitySet="Funcionalidade" />
+      <End Role="FuncionalidadePerfil" EntitySet="FuncionalidadePerfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuncionalidadeServico_Funcionalidade" Association="Self.FK_FuncionalidadeServico_Funcionalidade">
+      <End Role="Funcionalidade" EntitySet="Funcionalidade" />
+      <End Role="FuncionalidadeServico" EntitySet="FuncionalidadeServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuncionalidadeServico_Servico" Association="Self.FK_FuncionalidadeServico_Servico">
+      <End Role="Servico" EntitySet="Servico" />
+      <End Role="FuncionalidadeServico" EntitySet="FuncionalidadeServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrupoUsuario_Empresa" Association="Self.FK_GrupoUsuario_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="GrupoUsuario" EntitySet="GrupoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Homologacao_Ordem" Association="Self.FK_Homologacao_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="Homologacao" EntitySet="Homologacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Homologacao_Usuario" Association="Self.FK_Homologacao_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Homologacao" EntitySet="Homologacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Homologacao_Usuario1" Association="Self.FK_Homologacao_Usuario1">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Homologacao" EntitySet="Homologacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogAtividade_Atividade" Association="Self.FK_LogAtividade_Atividade">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="LogAtividade" EntitySet="LogAtividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogAtividade_Recurso" Association="Self.FK_LogAtividade_Recurso">
+      <End Role="Recurso" EntitySet="Recurso" />
+      <End Role="LogAtividade" EntitySet="LogAtividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogOrdemServico_Area" Association="Self.FK_LogOrdemServico_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="LogOrdemServico" EntitySet="LogOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogOrdemServico_Ordem" Association="Self.FK_LogOrdemServico_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="LogOrdemServico" EntitySet="LogOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogOrdemServico_TipoEvento" Association="Self.FK_LogOrdemServico_TipoEvento">
+      <End Role="TipoEvento" EntitySet="TipoEvento" />
+      <End Role="LogOrdemServico" EntitySet="LogOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogOrdemServico_Usuario" Association="Self.FK_LogOrdemServico_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="LogOrdemServico" EntitySet="LogOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notificacao_Parecer" Association="Self.FK_Notificacao_Parecer">
+      <End Role="Parecer" EntitySet="Parecer" />
+      <End Role="Notificacao" EntitySet="Notificacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notificacao_TipoNotificacao" Association="Self.FK_Notificacao_TipoNotificacao">
+      <End Role="TipoNotificacao" EntitySet="TipoNotificacao" />
+      <End Role="Notificacao" EntitySet="Notificacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_DocumentoExterno" Association="Self.FK_Ordem_DocumentoExterno">
+      <End Role="DocumentoExterno" EntitySet="DocumentoExterno" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_FaseOrdemServico" Association="Self.FK_Ordem_FaseOrdemServico">
+      <End Role="Fase" EntitySet="Fase" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_Projeto" Association="Self.FK_Ordem_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_Status" Association="Self.FK_Ordem_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_TipoOrdemServico" Association="Self.FK_Ordem_TipoOrdemServico">
+      <End Role="TipoOrdemServico" EntitySet="TipoOrdemServico" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_Usuario" Association="Self.FK_Ordem_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_UsuarioCreate" Association="Self.FK_Ordem_UsuarioCreate">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_UsuarioUpdate" Association="Self.FK_Ordem_UsuarioUpdate">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordem_ValorCobrar" Association="Self.FK_Ordem_ValorCobrar">
+      <End Role="ValorCobrar" EntitySet="ValorCobrar" />
+      <End Role="Ordem" EntitySet="Ordem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParametroContrato_AditivoContrato" Association="Self.FK_ParametroContrato_AditivoContrato">
+      <End Role="AditivoContrato" EntitySet="AditivoContrato" />
+      <End Role="ParametroContrato" EntitySet="ParametroContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParametroContrato_Contrato" Association="Self.FK_ParametroContrato_Contrato">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="ParametroContrato" EntitySet="ParametroContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParametroContrato_TipoCriticidade" Association="Self.FK_ParametroContrato_TipoCriticidade">
+      <End Role="TipoCriticidade" EntitySet="TipoCriticidade" />
+      <End Role="ParametroContrato" EntitySet="ParametroContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParametroContrato_TipoServico" Association="Self.FK_ParametroContrato_TipoServico">
+      <End Role="TipoServico" EntitySet="TipoServico" />
+      <End Role="ParametroContrato" EntitySet="ParametroContrato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parecer_Area" Association="Self.FK_Parecer_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Parecer" EntitySet="Parecer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parecer_Ordem" Association="Self.FK_Parecer_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="Parecer" EntitySet="Parecer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parecer_TipoParecer" Association="Self.FK_Parecer_TipoParecer">
+      <End Role="TipoParecer" EntitySet="TipoParecer" />
+      <End Role="Parecer" EntitySet="Parecer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parecer_Usuario" Association="Self.FK_Parecer_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Parecer" EntitySet="Parecer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfil_Empresa" Association="Self.FK_Perfil_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Perfil" EntitySet="Perfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilAcesso_Perfil" Association="Self.FK_PerfilAcesso_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="PerfilAcesso" EntitySet="PerfilAcesso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_Perfil" Association="Self.FK_Pergunta_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_TipoAtividade" Association="Self.FK_Pergunta_TipoAtividade">
+      <End Role="TipoAtividade" EntitySet="TipoAtividade" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_Usuario" Association="Self.FK_Pergunta_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_Usuario1" Association="Self.FK_Pergunta_Usuario1">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projeto_AditivoContrato" Association="Self.FK_Projeto_AditivoContrato">
+      <End Role="AditivoContrato" EntitySet="AditivoContrato" />
+      <End Role="Projeto" EntitySet="Projeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projeto_Contrato" Association="Self.FK_Projeto_Contrato">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="Projeto" EntitySet="Projeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projeto_TipoSituacao" Association="Self.FK_Projeto_TipoSituacao">
+      <End Role="TipoSituacao" EntitySet="TipoSituacao" />
+      <End Role="Projeto" EntitySet="Projeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Projeto_Usuario" Association="Self.FK_Projeto_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Projeto" EntitySet="Projeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjetoAdministrativo_Projeto" Association="Self.FK_ProjetoAdministrativo_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="ProjetoAdministrativo" EntitySet="ProjetoAdministrativo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjetoAdministrativo_Usuario" Association="Self.FK_ProjetoAdministrativo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ProjetoAdministrativo" EntitySet="ProjetoAdministrativo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostaPrazo_Ordem" Association="Self.FK_PropostaPrazo_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="PropostaPrazo" EntitySet="PropostaPrazo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostaValor_Ordem" Association="Self.FK_PropostaValor_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="PropostaValor" EntitySet="PropostaValor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostaValor_TipoServico" Association="Self.FK_PropostaValor_TipoServico">
+      <End Role="TipoServico" EntitySet="TipoServico" />
+      <End Role="PropostaValor" EntitySet="PropostaValor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ramal_Usuario" Association="Self.FK_Ramal_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Ramal" EntitySet="Ramal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recurso_Recurso" Association="Self.FK_Recurso_Recurso">
+      <End Role="Recurso" EntitySet="Recurso" />
+      <End Role="Recurso1" EntitySet="Recurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recurso_TipoAtividade" Association="Self.FK_Recurso_TipoAtividade">
+      <End Role="TipoAtividade" EntitySet="TipoAtividade" />
+      <End Role="Recurso" EntitySet="Recurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recurso_Usuario" Association="Self.FK_Recurso_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Recurso" EntitySet="Recurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecursoEfetivo_Atividade" Association="Self.FK_RecursoEfetivo_Atividade">
+      <End Role="Atividade" EntitySet="Atividade" />
+      <End Role="RecursoEfetivo" EntitySet="RecursoEfetivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecursoEfetivo_Recurso" Association="Self.FK_RecursoEfetivo_Recurso">
+      <End Role="Recurso" EntitySet="Recurso" />
+      <End Role="RecursoEfetivo" EntitySet="RecursoEfetivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecursoOrcado_PropostaValor" Association="Self.FK_RecursoOrcado_PropostaValor">
+      <End Role="PropostaValor" EntitySet="PropostaValor" />
+      <End Role="RecursoOrcado" EntitySet="RecursoOrcado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecursoOrcado_Recurso" Association="Self.FK_RecursoOrcado_Recurso">
+      <End Role="Recurso" EntitySet="Recurso" />
+      <End Role="RecursoOrcado" EntitySet="RecursoOrcado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servico_Ordem" Association="Self.FK_Servico_Ordem">
+      <End Role="Ordem" EntitySet="Ordem" />
+      <End Role="Servico" EntitySet="Servico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servico_Servico" Association="Self.FK_Servico_Servico">
+      <End Role="Servico" EntitySet="Servico" />
+      <End Role="Servico1" EntitySet="Servico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servico_Tecnologia" Association="Self.FK_Servico_Tecnologia">
+      <End Role="Tecnologia" EntitySet="Tecnologia" />
+      <End Role="Servico" EntitySet="Servico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servico_TipoServico" Association="Self.FK_Servico_TipoServico">
+      <End Role="TipoServico" EntitySet="TipoServico" />
+      <End Role="Servico" EntitySet="Servico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusAtividadeExecucao_StatusAtividade" Association="Self.FK_StatusAtividadeExecucao_StatusAtividade">
+      <End Role="StatusAtividade" EntitySet="StatusAtividade" />
+      <End Role="StatusAtividadeExecucao" EntitySet="StatusAtividadeExecucao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusOrdemServico_FaseOrdemServico" Association="Self.FK_StatusOrdemServico_FaseOrdemServico">
+      <End Role="FaseOrdemServico" EntitySet="FaseOrdemServico" />
+      <End Role="StatusOrdemServico" EntitySet="StatusOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusOrdemServico_Parecer" Association="Self.FK_StatusOrdemServico_Parecer">
+      <End Role="Parecer" EntitySet="Parecer" />
+      <End Role="StatusOrdemServico" EntitySet="StatusOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusOrdemServico_Status" Association="Self.FK_StatusOrdemServico_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="StatusOrdemServico" EntitySet="StatusOrdemServico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaProjeto_Projeto" Association="Self.FK_TecnologiaProjeto_Projeto">
+      <End Role="Projeto" EntitySet="Projeto" />
+      <End Role="TecnologiaProjeto" EntitySet="TecnologiaProjeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaProjeto_Tecnologia" Association="Self.FK_TecnologiaProjeto_Tecnologia">
+      <End Role="Tecnologia" EntitySet="Tecnologia" />
+      <End Role="TecnologiaProjeto" EntitySet="TecnologiaProjeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaUsuario_Tecnologia" Association="Self.FK_TecnologiaUsuario_Tecnologia">
+      <End Role="Tecnologia" EntitySet="Tecnologia" />
+      <End Role="TecnologiaUsuario" EntitySet="TecnologiaUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TecnologiaUsuario_Usuario" Association="Self.FK_TecnologiaUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TecnologiaUsuario" EntitySet="TecnologiaUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Telefone_Usuario" Association="Self.FK_Telefone_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Telefone" EntitySet="Telefone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoOrdemServicoPergunta_TipoOrdemServico" Association="Self.FK_TipoOrdemServicoPergunta_TipoOrdemServico">
+      <End Role="TipoOrdemServico" EntitySet="TipoOrdemServico" />
+      <End Role="TipoOrdemServicoPergunta" EntitySet="TipoOrdemServicoPergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Cargo" Association="Self.FK_Usuario_Cargo">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Empresa" Association="Self.FK_Usuario_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioGrupoUsuario_GrupoUsuario" Association="Self.FK_UsuarioGrupoUsuario_GrupoUsuario">
+      <End Role="GrupoUsuario" EntitySet="GrupoUsuario" />
+      <End Role="UsuarioGrupoUsuario" EntitySet="UsuarioGrupoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioGrupoUsuario_Usuario" Association="Self.FK_UsuarioGrupoUsuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioGrupoUsuario" EntitySet="UsuarioGrupoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioPerfil_Perfil" Association="Self.FK_UsuarioPerfil_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioPerfil_Usuario" Association="Self.FK_UsuarioPerfil_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioPerfil" EntitySet="UsuarioPerfil" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

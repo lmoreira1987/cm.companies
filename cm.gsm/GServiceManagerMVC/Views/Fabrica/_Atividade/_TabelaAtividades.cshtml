@@ -1,0 +1,20 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Fabrica.AtividadeViewModel>
+
+<br />
+<div class="row css-div-margin">
+    <div id="js-div-atividade-parcial">
+        <div class="col-md-12 css-div-table">
+            <div id="js-div-tabela-atividades-conteudo">
+                @Html.Partial("~/Views/Fabrica/_Atividade/_TabelaAtividadesConteudo.cshtml", Model)
+            </div>
+            <center>
+                @ViewBag.MensagemVazia
+            </center>
+            <center>
+                <div id="page-selection">
+                    <p class="js-p-paginar-atividade" id-count="@ViewBag.Count"></p>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>

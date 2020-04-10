@@ -1,0 +1,87 @@
+﻿
+<div class="col-md-8">
+    <div class="row">
+        <div class="col-md-3">
+            <label class="css-label">Tipo de Atividade</label>
+        </div>
+        <div class="col-md-3">
+            <select id="js-slc-tipo-ati" class="form-control">
+                <option value="0">Selecione</option>
+                @foreach (var item in ViewBag.TipoAtividade)
+                {
+                    <option value="@item.id">@item.nome</option>
+                }
+            </select>
+
+        </div>
+        <div class="col-md-2">
+            <label class="css-label">Atividade</label>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="js-txt-ati-nome" class="form-control">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <label class="css-label">Descrição</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <textarea class="form-control css-txt-area-descricao" id="js-txtarea-descricao"></textarea>
+        </div>
+
+    </div>
+</div>
+<div class="col-md-4">
+    <input type="text" id="js-hdn-calendar" class="css-txt-calendar" />
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8 checkbox">
+            <label>
+                <input type="checkbox" id="js-ckb-propagar" class=""> Propagar Atividade
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label class="css-label">Início</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="js-txt-ati-ini" class="form-control mask-date datepicker">
+        </div>
+        <div class="col-md-2">
+            <label class="css-label">Fim</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="js-txt-ati-fim" class="form-control mask-date datepicker">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <label class="css-label">Prazo</label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="js-txt-ati-prazo" class="form-control  mask-number" maxlength="10">
+        </div>
+        <div class="col-md-2">
+            <label class="css-label">Recurso</label>
+        </div>
+        <div class="col-md-2">
+            <select id="js-slc-recurso-ati" class="form-control">
+                <option id-tec="0" value="0">Selecione</option>
+                @foreach (var item in ViewBag.Recurso)
+                {
+                    <option id-tec="@item.idRecurso" value="@item.id">@item.nome</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2 pull-right">
+            <input type="button" class="btn btn-success" id="js-btn-confirmar-ati" value="Salvar Atividade(s)" />
+        </div>
+    </div>
+    <br />
+</div>

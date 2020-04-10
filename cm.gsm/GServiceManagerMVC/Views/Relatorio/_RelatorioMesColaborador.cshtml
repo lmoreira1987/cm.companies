@@ -1,0 +1,72 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Relatorio.ColaboradorViewModel>
+
+<div class="col-md-12 css-div-table">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="col-md-1">Ordem</th>
+                <th class="col-md-1">Servico</th>
+                <th class="col-md-1">Atividade</th>
+                <th class="col-md-1">Tipo Atividade</th>
+                <th class="col-md-1">Status Atividade</th>
+                <th class="col-md-1">Data Ocorrência</th>
+                <th class="col-md-1">Tempo Efetivo Consumido</th>
+                <th class="col-md-1">Prazo Estimado Conclusão</th>
+                <th class="col-md-1">Apontamento</th>
+                <th class="col-md-1">Data Estimada Início</th>
+                <th class="col-md-1">Data Estimada Fim</th>
+                <th class="col-md-1">Data Efetiva Início</th>
+                <th class="col-md-1">Data Efetiva Fim</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ordem</td>
+                    <td>@item.servico</td>
+                    <td>@item.atividade</td>
+                    <td>@item.tipoAtividade</td>
+                    <td>@item.statusAtividade</td>
+                    <td>@item.dataOcorrencia.ToString("dd/MM/yyy")</td>
+                    <td>@item.tempoEfetivo</td>
+                    <td>@item.prazoEstimado</td>
+                    <td>@item.apontamento</td>
+
+                    @if (item.dataEstimativaIni.HasValue)
+                    {
+                        <td>@item.dataEstimativaIni.Value</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    @if (item.dataEstimativaFim.HasValue)
+                    {
+                        <td>@item.dataEstimativaFim.Value</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    @if (item.dataEfetivaIni.HasValue)
+                    {
+                        <td>@item.dataEfetivaIni.Value</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    @if (item.dataEfetivaFim.HasValue)
+                    {
+                        <td>@item.dataEfetivaFim.Value</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

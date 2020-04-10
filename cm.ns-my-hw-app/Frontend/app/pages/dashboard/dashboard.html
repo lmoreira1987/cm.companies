@@ -1,0 +1,15 @@
+<Page #pageDashboard>
+    
+    <ActionBar title="Dashboard"> 
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto">
+        <StackLayout class="body-page">
+            <Button text="Layouts" class="submit-button" (tap)="goToLayouts()"></Button>
+            <Button text="CRUD User" (tap)="goToUsers()" class="submit-button"></Button>
+        </StackLayout>
+    </GridLayout>
+    
+</Page>    

@@ -1,0 +1,78 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Dashboard.AtividadeGrupo>
+
+<div class="row">
+    <div class="container-spaceless">
+        <div class="panel col-md-12 col-xs-12 css-panel-dash css-group-pan-border">
+            <div class="panel-heading col-md-12 col-xs-12 css-panel-header-dash css-pan-blue"><i class="fa fa-bars css-sides-padd"></i> Atividades do Grupo</div>
+            <div class="panel-body css-sides-padd css-panel-body-scroll">
+                <h4 class="css-sides-padd">Pendentes</h4>
+                <div class="row" style="max-width:97%!important; margin-left:5px;">
+                    <table class="table table-bordered css-table">
+                        <thead>
+                            <tr class="active">
+                                <th class="col-md-3 col-xs-3">Projeto</th>
+                                <th class="col-md-4 col-xs-4">Atividade</th>
+                                <th class="col-md-1 col-xs-1">Dt Est. Inicio</th>
+                                <th class="col-md-1 col-xs-1">Dt Est. Fim</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var act in Model)
+                            {
+                                <tr class="painel" class="collapse" data-toggle="collapse" data-target="#td-@act.atividadeId"
+                                    aria-expanded="false" aria-controls="td-@act.atividadeId">
+                                    <td class="projeto">@Convert.ToString(act.nomeProjeto)</td>
+                                    <td class="atividade">@act.nomeAtividade</td>
+                                    <td class="dtEstIni" value=" - ">
+                                        @if (!string.IsNullOrEmpty(act.dataEstimadaInicio))
+                                        {
+                                            @act.dataEstimadaInicio;
+                                        }
+                                        else
+                                        {
+                                            string dataVazia = " - ";
+                                            @dataVazia;
+
+                                        }
+                                    </td>
+
+                                    <td class="dtEstFim">
+                                        @if (!string.IsNullOrEmpty(act.dataEstimadaFim))
+                                        {
+                                            @act.dataEstimadaFim;
+                                        }
+                                        else
+                                        {
+                                            string dataVazia = " - ";
+                                            @dataVazia;
+                                        }
+                                    </td>
+                                </tr>
+                                <tr class="collapse" id="td-@act.atividadeId">
+                                    <td colspan=3 class="css-td-descricao">
+                                        <div class="container-spaceless">
+                                            <div>
+                                                <label>Descrição</label>
+                                                <p>@act.atividadeDescricao</p>
+                                                <label>Estimado - @act.atividadePrazoEstimado h</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="css-td-play-icon">
+                                        <div class="container-spaceless">
+                                            <div class="col-md-12">
+                                                <i class="btn fa fa-play-circle fa-3x css-play-icon-group js-btn-Iniciar"
+                                                   title="Iniciar Atividades" id="@act.atividadeId"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

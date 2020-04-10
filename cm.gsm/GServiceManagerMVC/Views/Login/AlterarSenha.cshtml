@@ -1,0 +1,62 @@
+﻿@model GServiceManagerMVC.ViewModels.Global.LoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutAzul.cshtml";
+}
+
+<div class="modal" id="js-div-alterar-senha" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:350px; margin-top:10%;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#337ab7;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align:center; color:white;">Alterar Senha</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Usuário</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input id="js-txt-login" type="text" disabled="disabled" value="@Model.login">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Senha</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input id="js-txt-senha" type="password" disabled="disabled" value="@Model.senha">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Nova Senha</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="password" id="js-txt-novasenha1">
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Nova Senha</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="password" id="js-txt-novasenha2">
+                    </div>                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="js-btn-cancelar" type="button" class="btn btn-default">Cancelar</button>
+                <button id="js-btn-confirmar" type="button" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Login/AlterarSenha.js"></script>
+<script type="text/javascript">
+    LocalAPI.Init();
+</script>

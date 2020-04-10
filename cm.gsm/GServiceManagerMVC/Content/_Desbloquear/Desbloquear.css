@@ -1,0 +1,65 @@
+﻿body {
+    background-color: #428bca;
+}
+
+.panel {
+    box-shadow: 0 0px;
+}
+
+.btn {
+    border-radius: 0px;
+    margin-top: 1%;
+    background-color: #105897;
+    border: 0;
+}
+
+    .btn:hover {
+        background-color: #035190;
+    }
+
+.btnDesbloquear {
+    margin-top: 1%;
+    background-color: #404040;
+    border: 0;
+}
+
+    .btnDesbloquear:hover {
+        background-color: #303030;
+    }
+
+.panel.panel-default {
+    border: 0;
+    background-color: #428bca;
+}
+
+.image {
+    margin-bottom: 20%;
+}
+
+h3 {
+    color: #fff;
+    font-family: Verdana;
+}
+
+.submit-lente {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.submit-line {
+    position: relative;
+    width: 200px;
+}
+
+    .submit-line input {
+        width: 100%;
+    }
+
+.tallRow {
+    margin-top: 10%;
+}

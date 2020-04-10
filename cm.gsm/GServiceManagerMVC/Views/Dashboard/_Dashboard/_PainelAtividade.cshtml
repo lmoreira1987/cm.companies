@@ -1,0 +1,104 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.AtividadeLog
+<div>
+    @{
+        string atividade = " #" + Model.atividadeId + " - " + Model.atividadeNome;
+        string dataFim = " - ";
+        string prazoEstimado = Model.atividadePrazoEstimado + "h";
+        if (Model.atividadeDataEstimadaFim.HasValue)
+        {
+            dataFim = Model.atividadeDataEstimadaFim.Value.ToString("dd/MM/yyyy");
+        }
+
+        string statusIcon;
+        string title;
+
+        if (Model.statusAtividadeNome == "Pendente")
+        {
+            statusIcon = "fa-play";
+            title = "Iniciar";
+        }
+        else
+        {
+            if (Model.statusAtividadeNome == "Start")
+            {
+                statusIcon = "fa-play";
+                title = "Iniciar";
+            }
+            else
+            {
+                if (Model.statusAtividadeNome == "Em processo")
+                {
+                    statusIcon = "fa-pause";
+                    title = "Pausar";
+                }
+                else
+                {
+                    if (Model.statusAtividadeNome == "Impedimento")
+                    {
+                        statusIcon = "fa-stop";
+                        title = "Em impedimento";
+                    }
+                    else
+                    {
+                        statusIcon = "";
+                        title = "Concluída";
+                    }
+                }
+            }
+        }
+    }
+</div>
+
+<div class="row">
+    <div class="panel css-panel-atividades col-md-12 col-xs-12">
+        <div class="panel-heading col-md-12 col-xs-12">
+            <i class="fa fa-bars js-tgl-atividade"></i>
+            @atividade
+            <div class="icons pull-right">
+                <i class="btn fa fa-clock-o col-md-3" title="LogWork" id="js-btn-LogWork"></i>
+                @if (title != "Concluída")
+                {
+                    <i class="btn fa js-btn @statusIcon    col-md-3" title="@title" id="js-btn-Iniciar" js-status="@Model.statusAtividadeNome"></i>
+                    <i class="btn fa fa-exclamation col-md-3" title="Impedimento" id="js-btn-Impedimento"></i>
+                    <i class="btn fa fa-check col-md-3 css-check" title="Concluir" id="js-btn-Concluir"></i>
+                }
+            </div>
+        </div>
+        <div class="panel-body col-md-12 col-xs-12" id="js-painel-atividade">
+            <div class="item col-md-2 col-sm-6">
+                <label>Data Est. Ini.</label>
+                <p>@Model.atividadeDataEstimadaInicio.Value.ToString("dd/MM/yyyy")</p>
+            </div>
+            <div class="item col-md-2 col-sm-6">
+                <label>Data Est. Fim.</label>
+                <p>
+                    @dataFim
+                </p>
+            </div>
+            <div class="item col-md-2 col-sm-6">
+                <label>Estimado</label>
+                <p>
+                    @prazoEstimado
+                </p>
+            </div>
+            <div class="item col-md-3 col-sm-6">
+                <label>Tipo Atividade</label>
+                <p>
+                    @Model.tipoAtividadeNome
+                </p>
+            </div>
+            <div class="item col-md-3 col-sm-6">
+                <label>Status Atividade</label>
+                <p>
+                    @Model.statusAtividadeNome
+                </p>
+            </div>
+            <div class="item col-md-12 col-sm-12">
+                <label>Descrição</label>
+                <p>
+                    @Model.atividadeDescricao
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

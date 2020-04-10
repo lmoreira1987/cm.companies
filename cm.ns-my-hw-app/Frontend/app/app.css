@@ -1,0 +1,67 @@
+@import url("~/platform.css");
+
+Page {
+    background-color: white;
+    font-size: 15;
+}
+
+TextField {
+    padding: 10;
+    font-size: 13;
+}
+.small-spacing {
+    margin: 5;
+}
+.medium-spacing {
+    margin: 10;
+}
+ActionBar {
+    padding-top: 10;
+    background-color: black;
+    color: white;
+}
+
+.submit-button {
+    background-color: #6296c7;
+    color: white;
+    height: 50;
+}
+
+.default-button {
+    height: 50;
+    background-color: lightgray;
+    color: #000;
+}
+
+.body-page {
+    margin-left: 15;
+    margin-right: 15;
+    margin-top: 20;
+    margin-bottom: 20;
+    padding: 10;
+    background-color: white;
+}
+
+.header-page {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 15;
+    font-weight: bold;
+    color: #6296c7;
+    background-color: white;
+}
+
+.sub-header-page {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5;
+    padding-bottom: 15;
+    padding-left: 15;
+    color: #6296c7;
+    background-color: white;
+}
+
+.sub-header-page .sub-header-bold-page {
+    font-size: 14px;
+    font-weight: bold;
+}

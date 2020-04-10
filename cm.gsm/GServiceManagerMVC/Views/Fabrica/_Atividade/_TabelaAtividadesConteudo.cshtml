@@ -1,0 +1,23 @@
+﻿@model List<GServiceManagerMVC.ViewModels.Fabrica.AtividadeViewModel>
+
+<table id="js-tbl-ati-conteudo" class="table table-bordered">
+    <thead>
+        <tr class="active">
+            <th class="col-md-1"></th>
+            <th class="col-md-1">ID</th>
+            <th class="col-md-8">Atividade</th>
+            <th class="col-md-2 ">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="@item.id">
+                <td class="css-td"><i class="fa fa-trash-o css-i-atividade-toggle js-i-cancelar-ati" title="Cancelar atividade"></i></td>
+                <td class="js-td-editar-ati css-i-atividade-toggle">@item.id</td>
+                <td class="js-td-editar-ati css-i-atividade-toggle">@item.nome</td>
+                <td class="js-td-editar-ati css-i-atividade-toggle">@item.status</td>
+            </tr>
+        }
+    </tbody>
+</table>

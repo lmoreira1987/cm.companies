@@ -1,0 +1,45 @@
+/*Font css*/
+
+@font-face {
+    font-family: 'allerregular';
+    src: url('../fonts//uni_sans_thin.eot');
+    src: url('../fonts//uni_sans_thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts//uni_sans_thin.woff') format('woff'),
+         url('../fonts//uni_sans_thin.ttf') format('truetype'),
+         url('../fonts/uni_sans_thin.svg#allerregular') format('svg');
+
+}
+
+@font-face {
+    font-family: 'allerbold';
+    src: url('../fonts//aller_bd-webfont.eot');
+    src: url('../fonts//aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts//aller_bd-webfont.woff') format('woff'),
+         url('../fonts//aller_bd-webfont.ttf') format('truetype'),
+         url('../fonts/aller_bd-webfont.svg#allerbold') format('svg');
+
+
+}
+
+
+@font-face {
+    font-family: 'aller_lightregular';
+    src: url('../fonts//aller_lt-webfont.eot');
+    src: url('../fonts//aller_lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts//aller_lt-webfont.woff') format('woff'),
+         url('../fonts//aller_lt-webfont.ttf') format('truetype'),
+         url('../fonts/aller_lt-webfont.svg#aller_lightregular') format('svg');
+
+
+}
+
+
+@font-face {
+	font-family: 'aller_displayregular';
+	src: url('../fonts//uni_sans_heavy.otf');
+	src: url('../fonts//uni_sans_heavy.eot?#iefix') format('embedded-opentype'),
+         url('../fonts//uni_sans_heavy.woff') format('woff'),
+         url('../fonts//uni_sans_heavy.ttf') format('truetype'),
+         url('../fonts/uni_sans_heavy.svg#aller_displayregular') format('svg');
+
+}

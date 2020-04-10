@@ -1,0 +1,39 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.informacoesUser
+
+
+<div class="row">
+    <div class="container-spaceless">
+        <div class="panel col-md-12 col-xs-12 css-panel-dash">
+            <div class="panel-heading col-md-12 col-xs-12 css-panel-header-dash"><i class="fa fa-bars css-sides-padd"></i> Atividades do Grupo</div>
+            <div class="panel-body css-sides-padd" style="overflow-x:scroll">
+                <h4 class="css-sides-padd">Pendentes</h4>
+                <div class="row" style="max-width:97%!important; margin-left:5px;">
+                    <table class="table table-bordered css-table">
+                        <thead>
+                            <tr class="active">
+                                <th class="col-md-1">Nome Projeto</th>
+                                @foreach (var day in Model.horasMes.diasMes)
+                                {
+                                    <th>@day</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var proj in Model.horasMes.projetosMes)
+                            {
+                                <tr>
+                                    <td class="col-md-2">@proj.projeto</td>
+                                    @foreach (var horas in proj.tempoEfetivoConsumido)
+                                    {
+                                        <td>@horas</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

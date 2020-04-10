@@ -1,0 +1,36 @@
+<!-- GridLayout
+The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, 
+they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. 
+To add additional columns and rows, you have to specify column definition items (separated by commas) to the columns property and row definition items 
+(separated by commas) to the rows property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, 
+as a percentage of the available space or automatically:
+
+Absolute: Fixed size of pixels.
+Star (*): Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. 
+So 3/7 means the same as 30/70.
+Auto: Takes as much space as needed by the contained child element(s). -->
+
+
+
+<Page>
+    <ActionBar title="Grid Layout">
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    
+    <StackLayout #container>
+        <Image src="res://icon_new" stretch="none" horizontalAlignment="center"></Image>
+      
+        <TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+          autocorrect="false" autocapitalizationType="none"></TextField>
+        <TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+      
+        <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
+        <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+    </StackLayout>
+
+
+  </Page>
+    
+
+    

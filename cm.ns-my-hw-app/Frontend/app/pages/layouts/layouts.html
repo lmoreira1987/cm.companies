@@ -1,0 +1,18 @@
+<Page #pageLayouts>
+    <ActionBar title="Layouts">
+        <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="auto">
+        <StackLayout class="body-page">
+            <Button text="Absolute Layout" class="submit-button" (tap)="goToPage('absolutelayout')"></Button>
+            <Button text="Dock Layout" class="submit-button" (tap)="goToPage('docklayout')"></Button>
+            <Button text="Flexbox Layout" class="submit-button" (tap)="goToPage('flexboxlayout')"></Button>
+            <Button text="Grid Layout" class="submit-button" (tap)="goToPage('gridlayout')"></Button>
+            <Button text="Stack Layout" class="submit-button" (tap)="goToPage('stacklayout')"></Button>
+            <Button text="Wrap Layout" class="submit-button" (tap)="goToPage('wraplayout')"></Button>
+            <Button text="Mixed Layout" class="submit-button" (tap)="goToPage('mixedlayout')"></Button>
+        </StackLayout>
+    </GridLayout>
+    
+</Page>

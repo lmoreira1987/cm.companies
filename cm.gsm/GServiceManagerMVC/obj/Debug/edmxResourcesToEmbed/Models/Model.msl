@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_GServiceManagerModelStoreContainer" CdmEntityContainer="GSMEntities">
+    <EntitySetMapping Name="AditivoContratoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.AditivoContrato">
+        <MappingFragment StoreEntitySet="AditivoContrato">
+          <ScalarProperty Name="aditivoContratoId" ColumnName="aditivoContratoId" />
+          <ScalarProperty Name="identificador" ColumnName="identificador" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dataInicioVigencia" ColumnName="dataInicioVigencia" />
+          <ScalarProperty Name="dataFimVigencia" ColumnName="dataFimVigencia" />
+          <ScalarProperty Name="tempoDuracaoMeses" ColumnName="tempoDuracaoMeses" />
+          <ScalarProperty Name="valorEstimadoConsumo" ColumnName="valorEstimadoConsumo" />
+          <ScalarProperty Name="criterioConsumo" ColumnName="criterioConsumo" />
+          <ScalarProperty Name="contemplaSLA" ColumnName="contemplaSLA" />
+          <ScalarProperty Name="contratoId" ColumnName="contratoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anexoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Anexo">
+        <MappingFragment StoreEntitySet="Anexo">
+          <ScalarProperty Name="anexoId" ColumnName="anexoId" />
+          <ScalarProperty Name="sequenciaAnexo" ColumnName="sequenciaAnexo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nomeInterno" ColumnName="nomeInterno" />
+          <ScalarProperty Name="caminho" ColumnName="caminho" />
+          <ScalarProperty Name="servicoId" ColumnName="servicoId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="logOrdemServicoId" ColumnName="logOrdemServicoId" />
+          <ScalarProperty Name="parecerId" ColumnName="parecerId" />
+          <ScalarProperty Name="dataUpload" ColumnName="dataUpload" />
+          <ScalarProperty Name="anexo1" ColumnName="anexo" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="logAtividadeId" ColumnName="logAtividadeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aplicativoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Aplicativo">
+        <MappingFragment StoreEntitySet="Aplicativo">
+          <ScalarProperty Name="aplicativoId" ColumnName="aplicativoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="plataforma" ColumnName="plataforma" />
+          <ScalarProperty Name="parametroGeral" ColumnName="parametroGeral" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="areaId" ColumnName="areaId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atividades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Atividade">
+        <MappingFragment StoreEntitySet="Atividade">
+          <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaId" />
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="sequenciaAtividade" ColumnName="sequenciaAtividade" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="dataEstimadaInicio" ColumnName="dataEstimadaInicio" />
+          <ScalarProperty Name="dataEstimadaFim" ColumnName="dataEstimadaFim" />
+          <ScalarProperty Name="dataEfetivaInicio" ColumnName="dataEfetivaInicio" />
+          <ScalarProperty Name="dataEfetivaFim" ColumnName="dataEfetivaFim" />
+          <ScalarProperty Name="subAtividadeRelacionada" ColumnName="subAtividadeRelacionada" />
+          <ScalarProperty Name="tipoAtividadeId" ColumnName="tipoAtividadeId" />
+          <ScalarProperty Name="servicoId" ColumnName="servicoId" />
+          <ScalarProperty Name="statusAtividadeId" ColumnName="statusAtividadeId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="prazoEfetivo" ColumnName="prazoEfetivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AtividadeExecucaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.AtividadeExecucao">
+        <MappingFragment StoreEntitySet="AtividadeExecucao">
+          <ScalarProperty Name="AtividadeExecucaoId" ColumnName="AtividadeExecucaoId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="dataExecucao" ColumnName="dataExecucao" />
+          <ScalarProperty Name="AtividadeId" ColumnName="AtividadeId" />
+          <ScalarProperty Name="StatusAtividadeExecucaoId" ColumnName="StatusAtividadeExecucaoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AtividadePrazoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.AtividadePrazo">
+        <MappingFragment StoreEntitySet="AtividadePrazo">
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="atividadePrazoId" ColumnName="atividadePrazoId" />
+          <ScalarProperty Name="dataEstimadaInicio" ColumnName="dataEstimadaInicio" />
+          <ScalarProperty Name="dataEstimadaFim" ColumnName="dataEstimadaFim" />
+          <ScalarProperty Name="prazoEstimadoConclusao" ColumnName="prazoEstimadoConclusao" />
+          <ScalarProperty Name="atividadeIdDependencia" ColumnName="atividadeIdDependencia" />
+          <ScalarProperty Name="usuarioIdEstimado" ColumnName="usuarioIdEstimado" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bancoHoras">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.bancoHora">
+        <MappingFragment StoreEntitySet="bancoHoras">
+          <ScalarProperty Name="bancoId" ColumnName="bancoId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="dataOcorrencia" ColumnName="dataOcorrencia" />
+          <ScalarProperty Name="horasBanco" ColumnName="horasBanco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="areaId" ColumnName="areaId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Checklists">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Checklist">
+        <MappingFragment StoreEntitySet="Checklist">
+          <ScalarProperty Name="checklistId" ColumnName="checklistId" />
+          <ScalarProperty Name="logAtividadeId" ColumnName="logAtividadeId" />
+          <ScalarProperty Name="perguntaId" ColumnName="perguntaId" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClausulaContratoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ClausulaContrato">
+        <MappingFragment StoreEntitySet="ClausulaContrato">
+          <ScalarProperty Name="clausulaContratoId" ColumnName="clausulaContratoId" />
+          <ScalarProperty Name="identificador" ColumnName="identificador" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="clausulaRelacionada" ColumnName="clausulaRelacionada" />
+          <ScalarProperty Name="valorAplicavel" ColumnName="valorAplicavel" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="aditivoContratoId" ColumnName="aditivoContratoId" />
+          <ScalarProperty Name="contratoId" ColumnName="contratoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tipoCliente" ColumnName="tipoCliente" />
+          <ScalarProperty Name="documentoIdentificacao" ColumnName="documentoIdentificacao" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="identificadorGrupo" ColumnName="identificadorGrupo" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguradorObjetoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ConfiguradorObjeto">
+        <MappingFragment StoreEntitySet="ConfiguradorObjeto">
+          <ScalarProperty Name="configuradorObjetoId" ColumnName="configuradorObjetoId" />
+          <ScalarProperty Name="configuradorOrdemServicoId" ColumnName="configuradorOrdemServicoId" />
+          <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+          <ScalarProperty Name="Objeto" ColumnName="Objeto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguradorOrdemServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ConfiguradorOrdemServico">
+        <MappingFragment StoreEntitySet="ConfiguradorOrdemServico">
+          <ScalarProperty Name="configuradorOrdemServicoId" ColumnName="configuradorOrdemServicoId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="tipoOrdemServicoId" ColumnName="tipoOrdemServicoId" />
+          <ScalarProperty Name="faseId" ColumnName="faseId" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="usuarioProximo" ColumnName="usuarioProximo" />
+          <ScalarProperty Name="vigenciaInicio" ColumnName="vigenciaInicio" />
+          <ScalarProperty Name="vigenciaFim" ColumnName="vigenciaFim" />
+          <ScalarProperty Name="ordemExecucao" ColumnName="ordemExecucao" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguradorProjetoUsuarios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ConfiguradorProjetoUsuario">
+        <MappingFragment StoreEntitySet="ConfiguradorProjetoUsuario">
+          <ScalarProperty Name="configuradorProjetoUsuarioId" ColumnName="configuradorProjetoUsuarioId" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contratoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Contrato">
+        <MappingFragment StoreEntitySet="Contrato">
+          <ScalarProperty Name="contratoId" ColumnName="contratoId" />
+          <ScalarProperty Name="identificador" ColumnName="identificador" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dataInicioVigencia" ColumnName="dataInicioVigencia" />
+          <ScalarProperty Name="dataFimVigencia" ColumnName="dataFimVigencia" />
+          <ScalarProperty Name="tempoDuracaoMeses" ColumnName="tempoDuracaoMeses" />
+          <ScalarProperty Name="valorEstimadoConsumo" ColumnName="valorEstimadoConsumo" />
+          <ScalarProperty Name="criterioConsumo" ColumnName="criterioConsumo" />
+          <ScalarProperty Name="contemplaSLA" ColumnName="contemplaSLA" />
+          <ScalarProperty Name="tipoSituacaoId" ColumnName="tipoSituacaoId" />
+          <ScalarProperty Name="contratoRelacionado" ColumnName="contratoRelacionado" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DashboardCharts">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.DashboardChart">
+        <MappingFragment StoreEntitySet="DashboardCharts">
+          <ScalarProperty Name="chartId" ColumnName="chartId" />
+          <ScalarProperty Name="chartTitle" ColumnName="chartTitle" />
+          <ScalarProperty Name="chartSubTitle" ColumnName="chartSubTitle" />
+          <ScalarProperty Name="chartProc" ColumnName="chartProc" />
+          <ScalarProperty Name="chartType" ColumnName="chartType" />
+          <ScalarProperty Name="chartTask" ColumnName="chartTask" />
+          <ScalarProperty Name="chartGroup" ColumnName="chartGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Despesas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Despesa">
+        <MappingFragment StoreEntitySet="Despesa">
+          <ScalarProperty Name="DespesaId" ColumnName="DespesaId" />
+          <ScalarProperty Name="Despesa1" ColumnName="Despesa" />
+          <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentoExternoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.DocumentoExterno">
+        <MappingFragment StoreEntitySet="DocumentoExterno">
+          <ScalarProperty Name="documentoExternoId" ColumnName="documentoExternoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DominiosValidos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.DominiosValido">
+        <MappingFragment StoreEntitySet="DominiosValidos">
+          <ScalarProperty Name="dominiosValidosId" ColumnName="dominiosValidosId" />
+          <ScalarProperty Name="dominiosValidos" ColumnName="dominiosValidos" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="isPrincipal" ColumnName="isPrincipal" />
+          <ScalarProperty Name="tipoContato" ColumnName="tipoContato" />
+          <ScalarProperty Name="prefixo" ColumnName="prefixo" />
+          <ScalarProperty Name="conteudo" ColumnName="conteudo" />
+          <ScalarProperty Name="sufixo" ColumnName="sufixo" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailNovoUsuarios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.EmailNovoUsuario">
+        <MappingFragment StoreEntitySet="EmailNovoUsuario">
+          <ScalarProperty Name="emailNovoUsuarioId" ColumnName="emailNovoUsuarioId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="empresaNome" ColumnName="empresaNome" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="cargoNome" ColumnName="cargoNome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="perfilNome" ColumnName="perfilNome" />
+          <ScalarProperty Name="grupoUsuarioId" ColumnName="grupoUsuarioId" />
+          <ScalarProperty Name="grupoUsuarioNome" ColumnName="grupoUsuarioNome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fases">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Fase">
+        <MappingFragment StoreEntitySet="Fase">
+          <ScalarProperty Name="faseId" ColumnName="faseId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaseOrdemServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.FaseOrdemServico">
+        <MappingFragment StoreEntitySet="FaseOrdemServico">
+          <ScalarProperty Name="faseOrdemServicoId" ColumnName="faseOrdemServicoId" />
+          <ScalarProperty Name="sequenciaFaseOrdemServico" ColumnName="sequenciaFaseOrdemServico" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="faseId" ColumnName="faseId" />
+          <ScalarProperty Name="parecerId" ColumnName="parecerId" />
+          <ScalarProperty Name="statusAtual" ColumnName="statusAtual" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feriadoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Feriado">
+        <MappingFragment StoreEntitySet="Feriado">
+          <ScalarProperty Name="FeriadoId" ColumnName="FeriadoId" />
+          <ScalarProperty Name="Feriado1" ColumnName="Feriado" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formularios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Formulario">
+        <MappingFragment StoreEntitySet="Formulario">
+          <ScalarProperty Name="idFormulario" ColumnName="idFormulario" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="confirmado" ColumnName="confirmado" />
+          <ScalarProperty Name="formulario1" ColumnName="formulario" />
+          <ScalarProperty Name="grupo" ColumnName="grupo" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FraseKanbans">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.FraseKanban">
+        <MappingFragment StoreEntitySet="FraseKanban">
+          <ScalarProperty Name="fraseid" ColumnName="fraseid" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="frase" ColumnName="frase" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+          <ScalarProperty Name="ativo" ColumnName="ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionalidades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Funcionalidade">
+        <MappingFragment StoreEntitySet="Funcionalidade">
+          <ScalarProperty Name="funcionalidadeId" ColumnName="funcionalidadeId" />
+          <ScalarProperty Name="aplicativoId" ColumnName="aplicativoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="uri" ColumnName="uri" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoUsuarios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.GrupoUsuario">
+        <MappingFragment StoreEntitySet="GrupoUsuario">
+          <ScalarProperty Name="grupoUsuarioId" ColumnName="grupoUsuarioId" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="flag_Celula" ColumnName="flag_Celula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homologacaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Homologacao">
+        <MappingFragment StoreEntitySet="Homologacao">
+          <ScalarProperty Name="ordemHomologId" ColumnName="ordemHomologId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+          <ScalarProperty Name="usuarioClienteId" ColumnName="usuarioClienteId" />
+          <ScalarProperty Name="usuarioTesterId" ColumnName="usuarioTesterId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Hora">
+        <MappingFragment StoreEntitySet="Horas">
+          <ScalarProperty Name="HoraId" ColumnName="HoraId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+          <ScalarProperty Name="dtLancamento" ColumnName="dtLancamento" />
+          <ScalarProperty Name="hrInicial" ColumnName="hrInicial" />
+          <ScalarProperty Name="hrSaidaAlmoco" ColumnName="hrSaidaAlmoco" />
+          <ScalarProperty Name="hrVoltaAlmoco" ColumnName="hrVoltaAlmoco" />
+          <ScalarProperty Name="hrFinal" ColumnName="hrFinal" />
+          <ScalarProperty Name="dsTarefa" ColumnName="dsTarefa" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Abonar" ColumnName="Abonar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogAtividades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.LogAtividade">
+        <MappingFragment StoreEntitySet="LogAtividade">
+          <ScalarProperty Name="logAtividadeId" ColumnName="logAtividadeId" />
+          <ScalarProperty Name="sequenciaLogAtividade" ColumnName="sequenciaLogAtividade" />
+          <ScalarProperty Name="dataOcorrencia" ColumnName="dataOcorrencia" />
+          <ScalarProperty Name="tempoEfetivoConsumido" ColumnName="tempoEfetivoConsumido" />
+          <ScalarProperty Name="apontamento" ColumnName="apontamento" />
+          <ScalarProperty Name="recurso" ColumnName="recurso" />
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Retrabalho" ColumnName="Retrabalho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogOrdemServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.LogOrdemServico">
+        <MappingFragment StoreEntitySet="LogOrdemServico">
+          <ScalarProperty Name="logOrdemServicoId" ColumnName="logOrdemServicoId" />
+          <ScalarProperty Name="sequenciaLogOrdemServico" ColumnName="sequenciaLogOrdemServico" />
+          <ScalarProperty Name="tipoEventoId" ColumnName="tipoEventoId" />
+          <ScalarProperty Name="dataEvento" ColumnName="dataEvento" />
+          <ScalarProperty Name="apontamento" ColumnName="apontamento" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="areaId" ColumnName="areaId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notificacaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Notificacao">
+        <MappingFragment StoreEntitySet="Notificacao">
+          <ScalarProperty Name="notificacaoId" ColumnName="notificacaoId" />
+          <ScalarProperty Name="sequenciaNotificacao" ColumnName="sequenciaNotificacao" />
+          <ScalarProperty Name="tipoNotificacaoId" ColumnName="tipoNotificacaoId" />
+          <ScalarProperty Name="dataEnvio" ColumnName="dataEnvio" />
+          <ScalarProperty Name="destinatario" ColumnName="destinatario" />
+          <ScalarProperty Name="mensagem" ColumnName="mensagem" />
+          <ScalarProperty Name="parecerId" ColumnName="parecerId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordems">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Ordem">
+        <MappingFragment StoreEntitySet="Ordem">
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="os" ColumnName="os" />
+          <ScalarProperty Name="assunto" ColumnName="assunto" />
+          <ScalarProperty Name="dataOrdem" ColumnName="dataOrdem" />
+          <ScalarProperty Name="dataFimOrdem" ColumnName="dataFimOrdem" />
+          <ScalarProperty Name="horasEfetivas" ColumnName="horasEfetivas" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="funcionalidadeId" ColumnName="funcionalidadeId" />
+          <ScalarProperty Name="responsavelExecutor" ColumnName="responsavelExecutor" />
+          <ScalarProperty Name="tipoOrdemServicoId" ColumnName="tipoOrdemServicoId" />
+          <ScalarProperty Name="valorCobrarId" ColumnName="valorCobrarId" />
+          <ScalarProperty Name="documentoExternoId" ColumnName="documentoExternoId" />
+          <ScalarProperty Name="codigoDocumentoExterno" ColumnName="codigoDocumentoExterno" />
+          <ScalarProperty Name="faseAtual" ColumnName="faseAtual" />
+          <ScalarProperty Name="statusAtual" ColumnName="statusAtual" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="faturamentoId" ColumnName="faturamentoId" />
+          <ScalarProperty Name="dataFaturamento" ColumnName="dataFaturamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametroContratoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ParametroContrato">
+        <MappingFragment StoreEntitySet="ParametroContrato">
+          <ScalarProperty Name="parametroContratoId" ColumnName="parametroContratoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="tipoCriticidadeId" ColumnName="tipoCriticidadeId" />
+          <ScalarProperty Name="tipoServicoId" ColumnName="tipoServicoId" />
+          <ScalarProperty Name="proporcaoSLA" ColumnName="proporcaoSLA" />
+          <ScalarProperty Name="expressaoCalculo" ColumnName="expressaoCalculo" />
+          <ScalarProperty Name="regra" ColumnName="regra" />
+          <ScalarProperty Name="aditivoContratoId" ColumnName="aditivoContratoId" />
+          <ScalarProperty Name="contratoId" ColumnName="contratoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="BaseLine" ColumnName="BaseLine" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parecers">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Parecer">
+        <MappingFragment StoreEntitySet="Parecer">
+          <ScalarProperty Name="parecerId" ColumnName="parecerId" />
+          <ScalarProperty Name="sequenciaParecer" ColumnName="sequenciaParecer" />
+          <ScalarProperty Name="dataParecer" ColumnName="dataParecer" />
+          <ScalarProperty Name="areaId" ColumnName="areaId" />
+          <ScalarProperty Name="parecer1" ColumnName="parecer" />
+          <ScalarProperty Name="tipoParecerId" ColumnName="tipoParecerId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfils">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Perfil">
+        <MappingFragment StoreEntitySet="Perfil">
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perguntas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Pergunta">
+        <MappingFragment StoreEntitySet="Pergunta">
+          <ScalarProperty Name="perguntaId" ColumnName="perguntaId" />
+          <ScalarProperty Name="pergunta1" ColumnName="pergunta" />
+          <ScalarProperty Name="tipoAtividadeId" ColumnName="tipoAtividadeId" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pontoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Ponto">
+        <MappingFragment StoreEntitySet="Ponto">
+          <ScalarProperty Name="pontoId" ColumnName="pontoId" />
+          <ScalarProperty Name="dataIni" ColumnName="dataIni" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="dominio" ColumnName="dominio" />
+          <ScalarProperty Name="maquina" ColumnName="maquina" />
+          <ScalarProperty Name="macAddressLocal" ColumnName="macAddressLocal" />
+          <ScalarProperty Name="macAddressWifi" ColumnName="macAddressWifi" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrioridadeOrdemlogs">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.PrioridadeOrdemlog">
+        <MappingFragment StoreEntitySet="PrioridadeOrdemlog">
+          <ScalarProperty Name="PrioridadeOrdemlogId" ColumnName="PrioridadeOrdemlogId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projetoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Projeto">
+        <MappingFragment StoreEntitySet="Projeto">
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sigla" ColumnName="sigla" />
+          <ScalarProperty Name="aditivoContratoId" ColumnName="aditivoContratoId" />
+          <ScalarProperty Name="contratoId" ColumnName="contratoId" />
+          <ScalarProperty Name="tipoSituacaoId" ColumnName="tipoSituacaoId" />
+          <ScalarProperty Name="ProjectLead" ColumnName="ProjectLead" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoAdministrativoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ProjetoAdministrativo">
+        <MappingFragment StoreEntitySet="ProjetoAdministrativo">
+          <ScalarProperty Name="projetoAdministrativoId" ColumnName="projetoAdministrativoId" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropostaPrazoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.PropostaPrazo">
+        <MappingFragment StoreEntitySet="PropostaPrazo">
+          <ScalarProperty Name="propostaPrazoId" ColumnName="propostaPrazoId" />
+          <ScalarProperty Name="sequenciaPropostaPrazo" ColumnName="sequenciaPropostaPrazo" />
+          <ScalarProperty Name="dataEstimadaInicio" ColumnName="dataEstimadaInicio" />
+          <ScalarProperty Name="dataEstimadaFim" ColumnName="dataEstimadaFim" />
+          <ScalarProperty Name="prazoEstimadoConclusao" ColumnName="prazoEstimadoConclusao" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropostaValors">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.PropostaValor">
+        <MappingFragment StoreEntitySet="PropostaValor">
+          <ScalarProperty Name="propostaValorId" ColumnName="propostaValorId" />
+          <ScalarProperty Name="sequenciaPropostaValor" ColumnName="sequenciaPropostaValor" />
+          <ScalarProperty Name="tipoServicoId" ColumnName="tipoServicoId" />
+          <ScalarProperty Name="tempoTotal" ColumnName="tempoTotal" />
+          <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ramals">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Ramal">
+        <MappingFragment StoreEntitySet="Ramal">
+          <ScalarProperty Name="ramalId" ColumnName="ramalId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="isPrincipal" ColumnName="isPrincipal" />
+          <ScalarProperty Name="tipoContato" ColumnName="tipoContato" />
+          <ScalarProperty Name="prefixo" ColumnName="prefixo" />
+          <ScalarProperty Name="conteudo" ColumnName="conteudo" />
+          <ScalarProperty Name="sufixo" ColumnName="sufixo" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recursoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Recurso">
+        <MappingFragment StoreEntitySet="Recurso">
+          <ScalarProperty Name="recursoId" ColumnName="recursoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="tipoRecurso" ColumnName="tipoRecurso" />
+          <ScalarProperty Name="custo" ColumnName="custo" />
+          <ScalarProperty Name="recursoRelacionado" ColumnName="recursoRelacionado" />
+          <ScalarProperty Name="tipoAtividadeId" ColumnName="tipoAtividadeId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecursoEfetivoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.RecursoEfetivo">
+        <MappingFragment StoreEntitySet="RecursoEfetivo">
+          <ScalarProperty Name="recursoEfetivoId" ColumnName="recursoEfetivoId" />
+          <ScalarProperty Name="valorEfetivo" ColumnName="valorEfetivo" />
+          <ScalarProperty Name="criterioCobranca" ColumnName="criterioCobranca" />
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="recursoId" ColumnName="recursoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecursoOrcadoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.RecursoOrcado">
+        <MappingFragment StoreEntitySet="RecursoOrcado">
+          <ScalarProperty Name="recursoOrcadoId" ColumnName="recursoOrcadoId" />
+          <ScalarProperty Name="recursoId" ColumnName="recursoId" />
+          <ScalarProperty Name="valorProposto" ColumnName="valorProposto" />
+          <ScalarProperty Name="criterioCobranca" ColumnName="criterioCobranca" />
+          <ScalarProperty Name="propostaValorId" ColumnName="propostaValorId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reembolsoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Reembolso">
+        <MappingFragment StoreEntitySet="Reembolso">
+          <ScalarProperty Name="ReembolsoId" ColumnName="ReembolsoId" />
+          <ScalarProperty Name="DespesaId" ColumnName="DespesaId" />
+          <ScalarProperty Name="ProjetoId" ColumnName="ProjetoId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="dtReembolso" ColumnName="dtReembolso" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Servico">
+        <MappingFragment StoreEntitySet="Servico">
+          <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaId" />
+          <ScalarProperty Name="servicoId" ColumnName="servicoId" />
+          <ScalarProperty Name="sequenciaServico" ColumnName="sequenciaServico" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="prioridade" ColumnName="prioridade" />
+          <ScalarProperty Name="tipoServicoId" ColumnName="tipoServicoId" />
+          <ScalarProperty Name="dataServico" ColumnName="dataServico" />
+          <ScalarProperty Name="previsaoHorasExecucao" ColumnName="previsaoHorasExecucao" />
+          <ScalarProperty Name="valorEstipulado" ColumnName="valorEstipulado" />
+          <ScalarProperty Name="atenderSLA" ColumnName="atenderSLA" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="GrupoUsuarioId" ColumnName="GrupoUsuarioId" />
+          <ScalarProperty Name="subservicoRelacionado" ColumnName="subservicoRelacionado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status1" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusAtividades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.StatusAtividade">
+        <MappingFragment StoreEntitySet="StatusAtividade">
+          <ScalarProperty Name="statusAtividadeId" ColumnName="statusAtividadeId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusAtividadeExecucaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.StatusAtividadeExecucao">
+        <MappingFragment StoreEntitySet="StatusAtividadeExecucao">
+          <ScalarProperty Name="StatusAtividadeExecucaoId" ColumnName="StatusAtividadeExecucaoId" />
+          <ScalarProperty Name="StatusAtividadeId" ColumnName="StatusAtividadeId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusOrdemServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.StatusOrdemServico">
+        <MappingFragment StoreEntitySet="StatusOrdemServico">
+          <ScalarProperty Name="statusOrdemServicoId" ColumnName="statusOrdemServicoId" />
+          <ScalarProperty Name="sequenciaStatusOrdemServico" ColumnName="sequenciaStatusOrdemServico" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="parecerRelacionado" ColumnName="parecerRelacionado" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="faseOrdemServicoId" ColumnName="faseOrdemServicoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblLogs">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TblLog">
+        <MappingFragment StoreEntitySet="TblLog">
+          <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+          <ScalarProperty Name="dsStackTrace" ColumnName="dsStackTrace" />
+          <ScalarProperty Name="dsErrorMessage" ColumnName="dsErrorMessage" />
+          <ScalarProperty Name="dsInnerException" ColumnName="dsInnerException" />
+          <ScalarProperty Name="dsResponsibleMethod" ColumnName="dsResponsibleMethod" />
+          <ScalarProperty Name="dsExceptionType" ColumnName="dsExceptionType" />
+          <ScalarProperty Name="dsMachineName" ColumnName="dsMachineName" />
+          <ScalarProperty Name="dtOccured" ColumnName="dtOccured" />
+          <ScalarProperty Name="dsUserHostAddress" ColumnName="dsUserHostAddress" />
+          <ScalarProperty Name="dsBrowser" ColumnName="dsBrowser" />
+          <ScalarProperty Name="dsUrlWhereErrorOccured" ColumnName="dsUrlWhereErrorOccured" />
+          <ScalarProperty Name="dsRefereer" ColumnName="dsRefereer" />
+          <ScalarProperty Name="dsSession" ColumnName="dsSession" />
+          <ScalarProperty Name="dsQueryString" ColumnName="dsQueryString" />
+          <ScalarProperty Name="dsForm" ColumnName="dsForm" />
+          <ScalarProperty Name="dsCookie" ColumnName="dsCookie" />
+          <ScalarProperty Name="dsApplication" ColumnName="dsApplication" />
+          <ScalarProperty Name="dsServerVariables" ColumnName="dsServerVariables" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tecnologias">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Tecnologia">
+        <MappingFragment StoreEntitySet="Tecnologia">
+          <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefones">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Telefone">
+        <MappingFragment StoreEntitySet="Telefone">
+          <ScalarProperty Name="telefoneId" ColumnName="telefoneId" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="isPrincipal" ColumnName="isPrincipal" />
+          <ScalarProperty Name="tipoContato" ColumnName="tipoContato" />
+          <ScalarProperty Name="prefixo" ColumnName="prefixo" />
+          <ScalarProperty Name="conteudo" ColumnName="conteudo" />
+          <ScalarProperty Name="sufixo" ColumnName="sufixo" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAtividades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoAtividade">
+        <MappingFragment StoreEntitySet="TipoAtividade">
+          <ScalarProperty Name="tipoAtividadeId" ColumnName="tipoAtividadeId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="tempoEstimado" ColumnName="tempoEstimado" />
+          <ScalarProperty Name="valorada" ColumnName="valorada" />
+          <ScalarProperty Name="valorEstimado" ColumnName="valorEstimado" />
+          <ScalarProperty Name="criterioCobranca" ColumnName="criterioCobranca" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCriticidades">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoCriticidade">
+        <MappingFragment StoreEntitySet="TipoCriticidade">
+          <ScalarProperty Name="tipoCriticidadeId" ColumnName="tipoCriticidadeId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEventoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoEvento">
+        <MappingFragment StoreEntitySet="TipoEvento">
+          <ScalarProperty Name="tipoEventoId" ColumnName="tipoEventoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoNotificacaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoNotificacao">
+        <MappingFragment StoreEntitySet="TipoNotificacao">
+          <ScalarProperty Name="tipoNotificacaoId" ColumnName="tipoNotificacaoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoOrdemServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoOrdemServico">
+        <MappingFragment StoreEntitySet="TipoOrdemServico">
+          <ScalarProperty Name="tipoOrdemServicoId" ColumnName="tipoOrdemServicoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="demandaServico" ColumnName="demandaServico" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoOrdemServicoPerguntas">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoOrdemServicoPergunta">
+        <MappingFragment StoreEntitySet="TipoOrdemServicoPergunta">
+          <ScalarProperty Name="tipoOrdemServicoPerguntaId" ColumnName="tipoOrdemServicoPerguntaId" />
+          <ScalarProperty Name="tipoOrdemServicoId" ColumnName="tipoOrdemServicoId" />
+          <ScalarProperty Name="pergunta" ColumnName="pergunta" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoParecers">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoParecer">
+        <MappingFragment StoreEntitySet="TipoParecer">
+          <ScalarProperty Name="tipoParecerId" ColumnName="tipoParecerId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="geraNotificacao" ColumnName="geraNotificacao" />
+          <ScalarProperty Name="geraRetorno" ColumnName="geraRetorno" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoServico">
+        <MappingFragment StoreEntitySet="TipoServico">
+          <ScalarProperty Name="tipoServicoId" ColumnName="tipoServicoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoSituacaos">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TipoSituacao">
+        <MappingFragment StoreEntitySet="TipoSituacao">
+          <ScalarProperty Name="tipoSituacaoId" ColumnName="tipoSituacaoId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="cargoId" ColumnName="cargoId" />
+          <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="autenticaDominio" ColumnName="autenticaDominio" />
+          <ScalarProperty Name="senhaExpira" ColumnName="senhaExpira" />
+          <ScalarProperty Name="qtdDiasExpiracao" ColumnName="qtdDiasExpiracao" />
+          <ScalarProperty Name="dataAniversario" ColumnName="dataAniversario" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="ultimoAcesso" ColumnName="ultimoAcesso" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="macAddressLocal" ColumnName="macAddressLocal" />
+          <ScalarProperty Name="macAddressWifi" ColumnName="macAddressWifi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValorCobrars">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.ValorCobrar">
+        <MappingFragment StoreEntitySet="ValorCobrar">
+          <ScalarProperty Name="valorCobrarId" ColumnName="valorCobrarId" />
+          <ScalarProperty Name="dataLancamento" ColumnName="dataLancamento" />
+          <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
+          <ScalarProperty Name="desconto" ColumnName="desconto" />
+          <ScalarProperty Name="acrescimo" ColumnName="acrescimo" />
+          <ScalarProperty Name="valorFinal" ColumnName="valorFinal" />
+          <ScalarProperty Name="totalConsumido" ColumnName="totalConsumido" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AplicativoOrdems">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.AplicativoOrdem">
+        <MappingFragment StoreEntitySet="AplicativoOrdem">
+          <ScalarProperty Name="aplicativoId" ColumnName="aplicativoId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AplicativoServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.AplicativoServico">
+        <MappingFragment StoreEntitySet="AplicativoServico">
+          <ScalarProperty Name="aplicativoId" ColumnName="aplicativoId" />
+          <ScalarProperty Name="servicoId" ColumnName="servicoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionalidadeOrdems">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.FuncionalidadeOrdem">
+        <MappingFragment StoreEntitySet="FuncionalidadeOrdem">
+          <ScalarProperty Name="funcionalidadeId" ColumnName="funcionalidadeId" />
+          <ScalarProperty Name="ordemId" ColumnName="ordemId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionalidadePerfils">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.FuncionalidadePerfil">
+        <MappingFragment StoreEntitySet="FuncionalidadePerfil">
+          <ScalarProperty Name="funcionalidadeId" ColumnName="funcionalidadeId" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionalidadeServicoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.FuncionalidadeServico">
+        <MappingFragment StoreEntitySet="FuncionalidadeServico">
+          <ScalarProperty Name="funcionalidadeId" ColumnName="funcionalidadeId" />
+          <ScalarProperty Name="servicoId" ColumnName="servicoId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+          <ScalarProperty Name="Menu1" ColumnName="Menu" />
+          <ScalarProperty Name="IdMenuPai" ColumnName="IdMenuPai" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="StatusCorrespondente" ColumnName="StatusCorrespondente" />
+          <ScalarProperty Name="MostraContador" ColumnName="MostraContador" />
+          <ScalarProperty Name="Obrigatorio" ColumnName="Obrigatorio" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+          <ScalarProperty Name="Ordem" ColumnName="Ordem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerfilAcessoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.PerfilAcesso">
+        <MappingFragment StoreEntitySet="PerfilAcesso">
+          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrioridadeAlteracaoPrazoes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.PrioridadeAlteracaoPrazo">
+        <MappingFragment StoreEntitySet="PrioridadeAlteracaoPrazo">
+          <ScalarProperty Name="prioridadeAlteracaoId" ColumnName="prioridadeAlteracaoId" />
+          <ScalarProperty Name="prioridadeAlteracaoTipo" ColumnName="prioridadeAlteracaoTipo" />
+          <ScalarProperty Name="demandaId" ColumnName="demandaId" />
+          <ScalarProperty Name="demandaPrazoId" ColumnName="demandaPrazoId" />
+          <ScalarProperty Name="demandaAssunto" ColumnName="demandaAssunto" />
+          <ScalarProperty Name="dataDemanda" ColumnName="dataDemanda" />
+          <ScalarProperty Name="dataEstimadaInicio" ColumnName="dataEstimadaInicio" />
+          <ScalarProperty Name="dataEstimadaFim" ColumnName="dataEstimadaFim" />
+          <ScalarProperty Name="prazoEstimadoConclusao" ColumnName="prazoEstimadoConclusao" />
+          <ScalarProperty Name="demandaIdDependencia" ColumnName="demandaIdDependencia" />
+          <ScalarProperty Name="usuarioIdEstimado" ColumnName="usuarioIdEstimado" />
+          <ScalarProperty Name="dtAlteracao" ColumnName="dtAlteracao" />
+          <ScalarProperty Name="GrupoUsuarioId" ColumnName="GrupoUsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SASFEVEREIROes">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.SASFEVEREIRO">
+        <MappingFragment StoreEntitySet="SASFEVEREIRO">
+          <ScalarProperty Name="Descrição_da_Rotina" ColumnName="Descrição da Rotina" />
+          <ScalarProperty Name="Responsável" ColumnName="Responsável" />
+          <ScalarProperty Name="C1" ColumnName="1" />
+          <ScalarProperty Name="C2" ColumnName="2" />
+          <ScalarProperty Name="C3" ColumnName="3" />
+          <ScalarProperty Name="C4" ColumnName="4" />
+          <ScalarProperty Name="C5" ColumnName="5" />
+          <ScalarProperty Name="C6" ColumnName="6" />
+          <ScalarProperty Name="C7" ColumnName="7" />
+          <ScalarProperty Name="C8" ColumnName="8" />
+          <ScalarProperty Name="C9" ColumnName="9" />
+          <ScalarProperty Name="C10" ColumnName="10" />
+          <ScalarProperty Name="C11" ColumnName="11" />
+          <ScalarProperty Name="C12" ColumnName="12" />
+          <ScalarProperty Name="C13" ColumnName="13" />
+          <ScalarProperty Name="C14" ColumnName="14" />
+          <ScalarProperty Name="C15" ColumnName="15" />
+          <ScalarProperty Name="C16" ColumnName="16" />
+          <ScalarProperty Name="C17" ColumnName="17" />
+          <ScalarProperty Name="C18" ColumnName="18" />
+          <ScalarProperty Name="C19" ColumnName="19" />
+          <ScalarProperty Name="C20" ColumnName="20" />
+          <ScalarProperty Name="C21" ColumnName="21" />
+          <ScalarProperty Name="C22" ColumnName="22" />
+          <ScalarProperty Name="C23" ColumnName="23" />
+          <ScalarProperty Name="C24" ColumnName="24" />
+          <ScalarProperty Name="C25" ColumnName="25" />
+          <ScalarProperty Name="C26" ColumnName="26" />
+          <ScalarProperty Name="C27" ColumnName="27" />
+          <ScalarProperty Name="C28" ColumnName="28" />
+          <ScalarProperty Name="Qtd" ColumnName="Qtd" />
+          <ScalarProperty Name="Horas" ColumnName="Horas" />
+          <ScalarProperty Name="Qtdxhoras" ColumnName="Qtdxhoras" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempRels">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.TempRel">
+        <MappingFragment StoreEntitySet="TempRel">
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Projeto" ColumnName="Projeto" />
+          <ScalarProperty Name="Servico" ColumnName="Servico" />
+          <ScalarProperty Name="Atividade" ColumnName="Atividade" />
+          <ScalarProperty Name="HorasEstimadas" ColumnName="HorasEstimadas" />
+          <ScalarProperty Name="HorasPrevistaDia" ColumnName="HorasPrevistaDia" />
+          <ScalarProperty Name="DataEstimadaInicio" ColumnName="DataEstimadaInicio" />
+          <ScalarProperty Name="DataEstimadaFim" ColumnName="DataEstimadaFim" />
+          <ScalarProperty Name="D2014_January_1" ColumnName="D2014_January_1" />
+          <ScalarProperty Name="D2014_May_30" ColumnName="D2014_May_30" />
+          <ScalarProperty Name="TotalHorasExecutadas" ColumnName="TotalHorasExecutadas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tvRankings">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.tvRanking">
+        <MappingFragment StoreEntitySet="tvRanking">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioGrupoUsuarios">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.UsuarioGrupoUsuario">
+        <MappingFragment StoreEntitySet="UsuarioGrupoUsuario">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="grupoUsuarioId" ColumnName="grupoUsuarioId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioPerfils">
+      <EntityTypeMapping TypeName="db_GServiceManagerModel.UsuarioPerfil">
+        <MappingFragment StoreEntitySet="UsuarioPerfil">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="perfilId" ColumnName="perfilId" />
+          <ScalarProperty Name="usuarioIdInclusao" ColumnName="usuarioIdInclusao" />
+          <ScalarProperty Name="usuarioIdAlteracao" ColumnName="usuarioIdAlteracao" />
+          <ScalarProperty Name="dataInclusao" ColumnName="dataInclusao" />
+          <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TecnologiaUsuario" TypeName="db_GServiceManagerModel.TecnologiaUsuario" StoreEntitySet="TecnologiaUsuario">
+      <EndProperty Name="Tecnologia">
+        <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaid" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="usuarioId" ColumnName="usuarioid" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TecnologiaProjeto" TypeName="db_GServiceManagerModel.TecnologiaProjeto" StoreEntitySet="TecnologiaProjeto">
+      <EndProperty Name="Tecnologia">
+        <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaid" />
+      </EndProperty>
+      <EndProperty Name="Projeto">
+        <ScalarProperty Name="projetoId" ColumnName="projetoid" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="Spr_Recursos_Selecionar_MVC" FunctionName="db_GServiceManagerModel.Store.Spr_Recursos_Selecionar_MVC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_GServiceManagerModel.Spr_Recursos_Selecionar_MVC_Result1">
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="tecnologiaId" ColumnName="tecnologiaId" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Spr_Atividades_Grupo" FunctionName="db_GServiceManagerModel.Store.Spr_Atividades_Grupo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_GServiceManagerModel.Spr_Atividades_Grupo_Result1">
+          <ScalarProperty Name="atividadeId" ColumnName="atividadeId" />
+          <ScalarProperty Name="Projeto" ColumnName="Projeto" />
+          <ScalarProperty Name="Atividade" ColumnName="Atividade" />
+          <ScalarProperty Name="dataEstimadaInicio" ColumnName="dataEstimadaInicio" />
+          <ScalarProperty Name="dataEstimadaFim" ColumnName="dataEstimadaFim" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="nomeTipoAtividade" ColumnName="nomeTipoAtividade" />
+          <ScalarProperty Name="prazoEstimadoConclusao" ColumnName="prazoEstimadoConclusao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

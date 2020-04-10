@@ -1,0 +1,95 @@
+﻿@model GServiceManagerMVC.ViewModels.Dashboard.AtividadeLog
+
+<div>
+    @{
+        string atividade = " #" + Model.atividadeId + " - " + Model.atividadeNome;
+    }
+</div>
+
+<link href="~/Content/_JQuery/jquery.fileupload.css" rel="stylesheet" />
+<link href="~/Content/Dashboard/AtividadeLog.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="panel css-panel-atividades css-header-log-dash col-md-12 col-xs-12">
+        <div class="panel-heading col-md-12 col-xs-12">
+            <span><i class="fa fa-bars css-spaceless js-tgl-log" id="js-atividade-id" js-atividade-id="@Model.atividadeId"></i>@atividade</span>
+            <div class="icons pull-right">
+                <i class="btn fa fa-times col-md-3" title="Cancelar" id="js-btn-cancelar-log"></i>
+                <i class="btn fa fa-check fa-check-log col-md-3" title="Confirmar" id="js-btn-confirmar-log"></i>
+            </div>
+        </div>
+
+        <div class="panel-body col-md-12 col-xs-12 css-spaceless" id="js-painel-log" style="display:block;">
+
+            <div class="col-md-6 css-sides-free">
+                <div class="col-md-6 col-xs-6 css-spaceless">
+                    <div class="input-group col-md-6 col-xs-12 blocky">
+                        <span class="input-group-addon blocky" id="basic-addon2" disabled><i class="fa fa-calendar"></i></span>
+                        <input type="text" class="form-control css-input blocky" value="@DateTime.Today.ToString("dd/MM/yyyy")" aria-describedby="basic-addon2" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-6 css-spaceless">
+                    <div class="input-group col-md-6 col-xs-12 pull-right">
+                        <span class="input-group-addon blocky" id="basic-addon2"><i class="fa fa-clock-o"></i></span>
+                        <input type="text" class="form-control css-input blocky" id="js-txt-horas-trabalhadas" placeholder="Trabalhadas" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12 css-spaceless">
+                    <div class="input-group col-md-12 col-xs-12 pull-right">
+                        <textarea class="form-control blocky" id="js-txtarea-parecer" rows="10" placeholder="Parecer"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-xs-12 css-sides-free">
+                <div class="input-group col-md-12 col-xs-12 css-spaceless">
+                    <span class="input-group-addon blocky" id="basic-addon2" disabled><i class=" fa fa-archive"></i></span>
+                    <input type="text" class="form-control css-input blocky" placeholder="Descrição do arquivo" aria-describedby="basic-addon2" id="js-txt-file-descricao">
+                </div>
+
+
+
+                <div class="input-group col-md-12 col-xs-12 css-spaceless-more">
+                    <span type="file" class="btn input-group-addon btn-success fileinput-button blocky" id="js-btn-file-anexo">
+                        <i class="fa fa-upload"></i>
+                        <span>Escolher arquivo</span>
+                        <input type="file" name="files" id="js-btn-file-anexo">
+                    </span>
+                    <input type="text" class="form-control" id="js-txt-file-nome" disabled>
+                    <span class="btn btn-success input-group-addon blocky" id="js-i-adicionar-upload"><i class="fa fa-plus"></i></span>
+                </div>
+
+
+
+                <div class="col-md-12 col-xs-12 css-spaceless css-anexos">
+                    <table class="table css-tabela-spaceless col-md-12" id="js-tbl-anexo">
+                        <thead>
+                            <tr class="active css-thead">
+                                <th class="col-md-1">Número</th>
+                                <th class="col-md-1">Descrição</th>
+                                <th class="col-md-7">Arquivo</th>
+                                <th class="col-md-2 ">Dt. Upload</th>
+                                <th class="col-md-1"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var anx in Model.Anexos)
+                            {
+                                <tr>
+                                    <td>@anx.sequenciaAnexo</td>
+                                    <td class="css-td">@anx.nome</td>
+                                    <td class="css-td">@anx.nomeInterno</td>
+                                    <td class="css-td">@anx.dataUpload.Value.ToString("dd/MM/yyyy")</td>
+                                    <td class="css-td"></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
